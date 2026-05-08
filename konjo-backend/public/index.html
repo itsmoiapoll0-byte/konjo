@@ -18,23 +18,30 @@
 
     <!-- Mobile Header -->
     <header class="mobile-header">
-        <!-- FIXED: Using Font Awesome instead of image path to guarantee it loads -->
         <button class="icon-btn hamburger-btn" id="openDrawerBtn">
             <i class="fa-solid fa-bars" style="font-size: 24px; color: white;"></i>
         </button>
-        <div class="logo-area">
+        <div class="logo-area" id="homeLogoBtn" style="cursor: pointer;">
             <img src="logo.png" alt="KonjoBet">
         </div>
-        <div class="top-actions">
-            <div class="profile-dots-container" id="dotsMenuBtn">
+        
+        <!-- Logged OUT Actions -->
+        <div class="top-actions" id="loggedOutActions">
+            <div class="profile-dots-container" id="openAuthMenuBtn">
                 <span class="user-icon"><i class="fa-solid fa-user-circle"></i></span>
                 <span class="profile-initial">A</span>
                 <span class="dots-icon-vertical"><i class="fa-solid fa-ellipsis-vertical"></i></span>
             </div>
         </div>
+
+        <!-- Logged IN Actions (Hidden by default) -->
+        <div class="top-actions" id="loggedInActions" style="display: none; gap: 15px; align-items: center;">
+            <button class="icon-btn"><i class="fa-solid fa-gift" style="font-size: 20px;"></i></button>
+            <button class="icon-btn" id="openUserDrawerBtn"><i class="fa-solid fa-user" style="font-size: 20px;"></i></button>
+        </div>
     </header>
     
-    <!-- Red Top Navigation (Expanded & Enlarged) -->
+    <!-- Red Top Navigation -->
     <nav class="main-nav">
         <ul>
             <li><a href="#" class="nav-item-active">SPORT</a></li>
@@ -51,7 +58,7 @@
         </ul>
     </nav>
     
-    <!-- Action Bar (Gray FA Icons) -->
+    <!-- Action Bar -->
     <div class="action-bar">
         <button class="action-btn">
             <span class="icon"><i class="fa-solid fa-ticket"></i></span>
@@ -81,211 +88,207 @@
         </button>
     </div>
 
-    <!-- Main Content Area -->
+    <!-- MAIN WRAPPER (Toggles between Home and Payments) -->
     <main class="mobile-main">
         
-        <!-- Promo Slider -->
-        <div class="promo-slider-container" id="promoSlider">
-            <div class="slider-track">
-                <div class="slide"><img src="slide1.png" alt="Promo 1"></div>
-                <div class="slide"><img src="slide2.png" alt="Promo 2"></div>
-                <div class="slide"><img src="slide3.png" alt="Promo 3"></div>
-                <div class="slide"><img src="slide4.png" alt="Promo 4"></div>
+        <!-- ========================================== -->
+        <!-- HOME VIEW (Matches, Sliders)               -->
+        <!-- ========================================== -->
+        <div id="homeView">
+            <div class="promo-slider-container" id="promoSlider">
+                <div class="slider-track">
+                    <div class="slide"><img src="slide1.png" alt="Promo 1"></div>
+                    <div class="slide"><img src="slide2.png" alt="Promo 2"></div>
+                    <div class="slide"><img src="slide3.png" alt="Promo 3"></div>
+                    <div class="slide"><img src="slide4.png" alt="Promo 4"></div>
+                </div>
+                <div class="slider-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
             </div>
-            <div class="slider-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
+
+            <section class="center-content">
+                <div class="game-category-header">
+                    <div class="category-title">
+                        <span class="dots-icon-horiz">•••</span>
+                        <h2>Top Matches</h2>
+                    </div>
+                </div>
+                
+                <div class="matches-list">
+                    <div class="white-match-card">
+                        <div class="match-meta">
+                            <span class="league-name">England - Premier League</span>
+                            <span class="match-time">2 May 19:30</span>
+                        </div>
+                        <div class="match-teams-row">
+                            <div class="team-col team-left">
+                                <img src="arsenal.png" alt="Arsenal" class="club-logo"> 
+                                <span class="team-name">Arsenal</span>
+                            </div>
+                            <div class="match-vs-col"><div class="vs-text">vs</div></div>
+                            <div class="team-col team-right">
+                                <img src="fulham.png" alt="Fulham" class="club-logo">
+                                <span class="team-name">Fulham</span>
+                            </div>
+                        </div>
+                        <div class="match-result-label">Match Result</div>
+                        <div class="match-odds-row">
+                            <button class="white-odd-btn"><span class="odd-label">1</span><span class="odd-val">1.45</span></button>
+                            <button class="white-odd-btn active"><span class="odd-label">X</span><span class="odd-val">4.45</span></button>
+                            <button class="white-odd-btn"><span class="odd-label">2</span><span class="odd-val">7.35</span></button>
+                        </div>
+                    </div>
+
+                    <div class="white-match-card">
+                        <div class="match-meta">
+                            <span class="league-name">Spain - La Liga</span>
+                            <span class="match-time">2 May 21:00</span>
+                        </div>
+                        <div class="match-teams-row">
+                            <div class="team-col team-left">
+                                <img src="osasuna.png" alt="Osasuna" class="club-logo"> 
+                                <span class="team-name">Osasuna</span>
+                            </div>
+                            <div class="match-vs-col"><div class="vs-text">vs</div></div>
+                            <div class="team-col team-right">
+                                <img src="barcelona.png" alt="Barcelona" class="club-logo">
+                                <span class="team-name">Barcelona</span>
+                            </div>
+                        </div>
+                        <div class="match-result-label">Match Result</div>
+                        <div class="match-odds-row">
+                            <button class="white-odd-btn"><span class="odd-label">1</span><span class="odd-val">5.80</span></button>
+                            <button class="white-odd-btn"><span class="odd-label">X</span><span class="odd-val">4.10</span></button>
+                            <button class="white-odd-btn"><span class="odd-label">2</span><span class="odd-val">1.55</span></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="game-category-header" style="margin-top: 30px;">
+                    <div class="category-title"><span class="dots-icon-horiz">•••</span><h2>Popular Matches</h2></div>
+                </div>
+                <table class="matches-table">
+                    <thead><tr><th>Time</th><th>Event</th><th>1</th><th>X</th><th>2</th></tr></thead>
+                    <tbody>
+                        <tr><td>12:00</td><td>PSG - B Munich</td><td class="odds-cell">2.33</td><td class="odds-cell">3.84</td><td class="odds-cell">2.77</td></tr>
+                        <tr><td>14:30</td><td>Atl Madrid - Arsenal</td><td class="odds-cell">2.87</td><td class="odds-cell">3.21</td><td class="odds-cell">2.56</td></tr>
+                        <tr><td>18:00</td><td>Juventus - Napoli</td><td class="odds-cell">2.10</td><td class="odds-cell">3.10</td><td class="odds-cell">3.50</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="game-category-header" style="margin-top: 30px;">
+                    <div class="category-title"><span class="dots-icon-horiz">•••</span><h2>Top Leagues</h2></div>
+                </div>
+                <nav class="leagues-nav">
+                    <a href="#" class="league-tab active"><i class="fa-regular fa-futbol"></i> Football</a>
+                    <a href="#" class="league-tab"><i class="fa-solid fa-basketball"></i> Basketball</a>
+                    <a href="#" class="league-tab"><i class="fa-solid fa-hockey-puck"></i> Handball</a>
+                </nav>
+                <ul class="leagues-list">
+                    <li><a href="#"><img src="logo.png" alt="" class="league-logo placeholder-icon"> Premier League</a></li>
+                    <li><a href="#"><img src="logo.png" alt="" class="league-logo placeholder-icon"> Bundesliga</a></li>
+                    <li><a href="#"><img src="logo.png" alt="" class="league-logo placeholder-icon"> Serie A</a></li>
+                    <li><a href="#"><img src="logo.png" alt="" class="league-logo placeholder-icon"> La Liga</a></li>
+                </ul>
+            </section>
         </div>
 
-        <section class="center-content">
-            
-            <div class="game-category-header">
-                <div class="category-title">
-                    <span class="dots-icon-horiz">•••</span>
-                    <h2>Top Matches</h2>
-                </div>
+        <!-- ========================================== -->
+        <!-- PAYMENTS VIEW (Hidden by default)          -->
+        <!-- ========================================== -->
+        <div id="paymentsView" style="display: none;">
+            <div class="payments-title-bar">PAYMENTS</div>
+            <div class="payments-tabs-nav">
+                <button class="pay-tab active" id="tabDepositBtn">Deposit</button>
+                <button class="pay-tab" id="tabWithdrawBtn">Withdraw</button>
+                <button class="pay-tab" id="tabWithdrawReqBtn">Withdrawal Request</button>
             </div>
-            
-            <!-- Match Cards -->
-            <div class="matches-list">
+
+            <!-- Deposit Methods Content -->
+            <div id="depositContent" class="pay-content-area">
                 
-                <!-- Match 1 -->
-                <div class="white-match-card">
-                    <div class="match-meta">
-                        <span class="league-name">England - Premier League</span>
-                        <span class="match-time">2 May 19:30</span>
+                <!-- Telebirr -->
+                <div class="payment-card">
+                    <div class="pay-logo-area">
+                        <!-- Simulated logo grouping for Telebirr based on image -->
+                        <span style="font-size: 24px; color: #007bff; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                            <i class="fa-solid fa-mobile-screen"></i> telebirr
+                        </span>
                     </div>
-                    <div class="match-teams-row">
-                        <div class="team-col team-left">
-                            <img src="arsenal.png" alt="Arsenal" class="club-logo"> 
-                            <span class="team-name">Arsenal</span>
-                        </div>
-                        <div class="match-vs-col">
-                            <div class="vs-text">vs</div>
-                        </div>
-                        <div class="team-col team-right">
-                            <img src="fulham.png" alt="Fulham" class="club-logo">
-                            <span class="team-name">Fulham</span>
-                        </div>
-                    </div>
-                    <div class="match-result-label">Match Result</div>
-                    <div class="match-odds-row">
-                        <button class="white-odd-btn">
-                            <span class="odd-label">1</span>
-                            <span class="odd-val">1.45</span>
-                        </button>
-                        <button class="white-odd-btn active">
-                            <span class="odd-label">X</span>
-                            <span class="odd-val">4.45</span>
-                        </button>
-                        <button class="white-odd-btn">
-                            <span class="odd-label">2</span>
-                            <span class="odd-val">7.35</span>
-                        </button>
-                    </div>
+                    <div class="pay-detail-row"><span>Service Fee</span></div>
+                    <div class="pay-detail-row"><b>Free</b></div>
+                    <div class="pay-detail-row"><span>Process Time</span></div>
+                    <div class="pay-detail-row"><b>5-10 minutes</b></div>
+                    <button class="btn-deposit-action">Deposit</button>
                 </div>
 
-                <!-- Match 2 -->
-                <div class="white-match-card">
-                    <div class="match-meta">
-                        <span class="league-name">Spain - La Liga</span>
-                        <span class="match-time">2 May 21:00</span>
+                <!-- USDT TON -->
+                <div class="payment-card">
+                    <div class="pay-logo-area">
+                        <span style="font-size: 24px; color: #0088cc; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                            <i class="fa-brands fa-telegram"></i> USDT-TON
+                        </span>
                     </div>
-                    <div class="match-teams-row">
-                        <div class="team-col team-left">
-                            <img src="osasuna.png" alt="Osasuna" class="club-logo"> 
-                            <span class="team-name">Osasuna</span>
-                        </div>
-                        <div class="match-vs-col">
-                            <div class="vs-text">vs</div>
-                        </div>
-                        <div class="team-col team-right">
-                            <img src="barcelona.png" alt="Barcelona" class="club-logo">
-                            <span class="team-name">Barcelona</span>
-                        </div>
-                    </div>
-                    <div class="match-result-label">Match Result</div>
-                    <div class="match-odds-row">
-                        <button class="white-odd-btn">
-                            <span class="odd-label">1</span>
-                            <span class="odd-val">5.80</span>
-                        </button>
-                        <button class="white-odd-btn">
-                            <span class="odd-label">X</span>
-                            <span class="odd-val">4.10</span>
-                        </button>
-                        <button class="white-odd-btn">
-                            <span class="odd-label">2</span>
-                            <span class="odd-val">1.55</span>
-                        </button>
-                    </div>
+                    <div class="pay-detail-row"><span>Service Fee</span></div>
+                    <div class="pay-detail-row"><b>Free</b></div>
+                    <div class="pay-detail-row"><span>Process Time</span></div>
+                    <div class="pay-detail-row"><b>5-10 minutes</b></div>
+                    <button class="btn-deposit-action">Deposit</button>
                 </div>
 
-                <!-- Match 3 -->
-                <div class="white-match-card">
-                    <div class="match-meta">
-                        <span class="league-name">England - Premier League</span>
-                        <span class="match-time">Tomorrow 15:00</span>
+                <!-- Tether TRC20 -->
+                <div class="payment-card">
+                    <div class="pay-logo-area">
+                        <span style="font-size: 24px; color: #26a17b; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                            <i class="fa-solid fa-coins"></i> TETHER <small style="color: #666; font-size: 12px; margin-left: 5px;">USDT TRC20</small>
+                        </span>
                     </div>
-                    <div class="match-teams-row">
-                        <div class="team-col team-left">
-                            <img src="Aston villa.png" alt="Aston Villa" class="club-logo"> 
-                            <span class="team-name">Aston Villa</span>
-                        </div>
-                        <div class="match-vs-col">
-                            <div class="vs-text">vs</div>
-                        </div>
-                        <div class="team-col team-right">
-                            <img src="Tottenham.png" alt="Tottenham" class="club-logo">
-                            <span class="team-name">Tottenham</span>
-                        </div>
-                    </div>
-                    <div class="match-result-label">Match Result</div>
-                    <div class="match-odds-row">
-                        <button class="white-odd-btn">
-                            <span class="odd-label">1</span>
-                            <span class="odd-val">2.75</span>
-                        </button>
-                        <button class="white-odd-btn">
-                            <span class="odd-label">X</span>
-                            <span class="odd-val">3.60</span>
-                        </button>
-                        <button class="white-odd-btn">
-                            <span class="odd-label">2</span>
-                            <span class="odd-val">2.40</span>
-                        </button>
-                    </div>
+                    <div class="pay-detail-row"><span>Service Fee</span></div>
+                    <div class="pay-detail-row"><b>Free</b></div>
+                    <div class="pay-detail-row"><span>Process Time</span></div>
+                    <div class="pay-detail-row"><b>Instant</b></div>
+                    <button class="btn-deposit-action">Deposit</button>
                 </div>
 
-            </div>
-            
-            <!-- Popular Matches Table -->
-            <div class="game-category-header" style="margin-top: 30px;">
-                <div class="category-title">
-                    <span class="dots-icon-horiz">•••</span>
-                    <h2>Popular Matches</h2>
+                <!-- Voucher -->
+                <div class="payment-card">
+                    <div class="pay-logo-area">
+                        <span style="font-size: 24px; color: #0ea5e9; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                            <i class="fa-solid fa-ticket-simple"></i> Voucher
+                        </span>
+                    </div>
+                    <div class="pay-detail-row"><span>Service Fee</span></div>
+                    <div class="pay-detail-row"><b>Free</b></div>
+                    <div class="pay-detail-row"><span>Process Time</span></div>
+                    <div class="pay-detail-row"><b>Instant</b></div>
+                    <button class="btn-deposit-action">Deposit</button>
                 </div>
             </div>
-            <table class="matches-table">
-                <thead>
-                    <tr>
-                        <th>Time</th>
-                        <th>Event</th>
-                        <th>1</th>
-                        <th>X</th>
-                        <th>2</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>12:00</td>
-                        <td>PSG - B Munich</td>
-                        <td class="odds-cell">2.33</td>
-                        <td class="odds-cell">3.84</td>
-                        <td class="odds-cell">2.77</td>
-                    </tr>
-                    <tr>
-                        <td>14:30</td>
-                        <td>Atl Madrid - Arsenal</td>
-                        <td class="odds-cell">2.87</td>
-                        <td class="odds-cell">3.21</td>
-                        <td class="odds-cell">2.56</td>
-                    </tr>
-                    <tr>
-                        <td>18:00</td>
-                        <td>Juventus - Napoli</td>
-                        <td class="odds-cell">2.10</td>
-                        <td class="odds-cell">3.10</td>
-                        <td class="odds-cell">3.50</td>
-                    </tr>
-                </tbody>
-            </table>
 
-            <!-- Top Leagues Section -->
-            <div class="game-category-header" style="margin-top: 30px;">
-                <div class="category-title">
-                    <span class="dots-icon-horiz">•••</span>
-                    <h2>Top Leagues</h2>
+            <!-- Withdrawal Requests Content (Hidden by default) -->
+            <div id="withdrawalReqContent" class="pay-content-area" style="display: none;">
+                <div class="filter-group">
+                    <select class="filter-select"><option>Date Filter</option></select>
+                    <select class="filter-select"><option>Status Filter</option></select>
+                    <select class="filter-select"><option>Payment Filter</option></select>
                 </div>
+                <div class="filter-actions">
+                    <button class="btn-filter-search">Search</button>
+                    <button class="btn-filter-clear">Clear</button>
+                </div>
+                <table class="withdrawal-table">
+                    <thead><tr><th>Request Date</th><th>Amount</th><th>Status</th><th>Payment ID</th><th>Actions</th></tr></thead>
+                    <tbody>
+                        <tr><td colspan="5" class="empty-state-row">There are no Withdrawal Requests!</td></tr>
+                    </tbody>
+                </table>
             </div>
-            <nav class="leagues-nav">
-                <a href="#" class="league-tab active"><i class="fa-regular fa-futbol"></i> Football</a>
-                <a href="#" class="league-tab"><i class="fa-solid fa-basketball"></i> Basketball</a>
-                <a href="#" class="league-tab"><i class="fa-solid fa-hockey-puck"></i> Handball</a>
-            </nav>
-            <ul class="leagues-list">
-                <li><a href="#"><img src="logo.png" alt="" class="league-logo placeholder-icon"> Premier League</a></li>
-                <li><a href="#"><img src="logo.png" alt="" class="league-logo placeholder-icon"> Bundesliga</a></li>
-                <li><a href="#"><img src="logo.png" alt="" class="league-logo placeholder-icon"> Serie A</a></li>
-                <li><a href="#"><img src="logo.png" alt="" class="league-logo placeholder-icon"> La Liga</a></li>
-                <li><a href="#"><img src="logo.png" alt="" class="league-logo placeholder-icon"> Champions League</a></li>
-                <li><a href="#"><img src="logo.png" alt="" class="league-logo placeholder-icon"> Europa League</a></li>
-            </ul>
 
-        </section>
+        </div>
 
     </main>
 
@@ -295,10 +298,8 @@
     </div>
 
     <!-- ========================================== -->
-    <!-- EXACT REPLICA SIDE DRAWERS                 -->
+    <!-- LEFT SIDEBAR - CHOOSE A SPORT              -->
     <!-- ========================================== -->
-    
-    <!-- LEFT SIDEBAR - CHOOSE A SPORT -->
     <aside id="leftSidebar" class="side-drawer left-drawer">
         <div class="drawer-header white-bg">
             <h3>Choose a sport</h3>
@@ -311,47 +312,107 @@
                 <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-baseball"></i></span> Tennis <span class="chevron">&#10095;</span></a></li>
                 <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-hockey-puck"></i></span> Ice Hockey <span class="chevron">&#10095;</span></a></li>
                 <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-volleyball"></i></span> Volleyball <span class="chevron">&#10095;</span></a></li>
-                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-football"></i></span> Rugby Union <span class="chevron">&#10095;</span></a></li>
-                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-table-tennis-paddle-ball"></i></span> Table Tennis <span class="chevron">&#10095;</span></a></li>
-                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-football"></i></span> Rugby League <span class="chevron">&#10095;</span></a></li>
-                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-football"></i></span> American Football <span class="chevron">&#10095;</span></a></li>
-                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-handshake"></i></span> Handball <span class="chevron">&#10095;</span></a></li>
-                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-hand-fist"></i></span> Boxing <span class="chevron">&#10095;</span></a></li>
-                <li><a href="#"><span class="sport-icon"><i class="fa-regular fa-futbol"></i></span> Futsal <span class="chevron">&#10095;</span></a></li>
-                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-bowling-ball"></i></span> Snooker <span class="chevron">&#10095;</span></a></li>
             </ul>
         </div>
     </aside>
 
-    <!-- RIGHT SIDEBAR - USER MENU -->
-    <aside id="rightSidebar" class="side-drawer right-drawer">
-        <div class="drawer-header white-bg">
-            <button class="close-drawer-btn red-btn" id="closeRightBtn">✕</button>
-            <h3>Account already existing?</h3>
-        </div>
-        <div class="drawer-content white-bg">
-            <div class="drawer-body user-body">
-                <button id="drawerLoginBtn" class="btn-submit btn-submit-red full-width">LOGIN</button>
-                <h3 class="user-sub-title">New user?</h3>
-                <button id="drawerRegisterBtn" class="btn-submit btn-submit-red full-width">REGISTER</button>
+    <!-- ========================================== -->
+    <!-- RIGHT SIDEBAR - LOGGED IN MENU (Image 4)   -->
+    <!-- ========================================== -->
+    <aside id="loggedInDrawer" class="side-drawer right-drawer">
+        <div class="drawer-content white-bg" style="width: 100%; max-width: 350px;">
+            <div class="logged-in-header">
+                <button class="close-drawer-btn white-btn" id="closeUserDrawerBtn">✕</button>
+                <div class="user-id-display"><i class="fa-solid fa-user"></i> <span id="displayUserId">918173078</span></div>
             </div>
-            <div class="drawer-section gray-bg">
-                <a href="#" class="user-link"><i class="fa-solid fa-comments"></i> LIVE CHAT</a>
+            
+            <div class="balance-container">
+                <div class="balance-top-row">
+                    <div class="real-balance">
+                        <span class="bal-label">Real Balance</span>
+                        <span class="bal-amount">0 ETB</span>
+                    </div>
+                    <div class="bal-actions">
+                        <button class="btn-bal-action" onclick="openPaymentsTab('Deposit')">DEPOSIT</button>
+                        <button class="btn-bal-action" onclick="openPaymentsTab('Withdraw')">WITHDRAW</button>
+                    </div>
+                </div>
+                <div class="bonus-balance">
+                    <span class="bal-label">Bonus Balance</span>
+                    <span class="bal-amount">0.00 ETB</span>
+                </div>
+                
+                <div class="balance-breakdown">
+                    <div class="breakdown-row red-text"><span>Total Balance</span><span>0.00 ETB</span></div>
+                    <div class="breakdown-row"><span>Balance Withdrawable</span><span>0 ETB</span></div>
+                    <div class="breakdown-row"><span>Balance Not Withdrawable</span><span>0.00 ETB</span></div>
+                    <div class="breakdown-row"><span>Bonus Balance</span><span>0.00 ETB</span></div>
+                </div>
             </div>
+
+            <ul class="user-menu-list">
+                <li><a href="#" onclick="openPaymentsTab('Deposit')"><i class="fa-solid fa-money-bill-1-wave"></i> Deposit</a></li>
+                <li><a href="#"><i class="fa-solid fa-file-invoice"></i> Account History</a></li>
+                <li><a href="#"><i class="fa-solid fa-user"></i> Profile</a></li>
+                <li><a href="#"><i class="fa-solid fa-list"></i> Bet history</a></li>
+                <li><a href="#"><i class="fa-solid fa-trophy"></i> My Jackpots</a></li>
+                <li><a href="#"><i class="fa-solid fa-envelope"></i> Messages</a></li>
+                <li><a href="#"><i class="fa-solid fa-gift"></i> Bonus</a></li>
+            </ul>
+
             <div class="drawer-section white-bg text-center">
-                <!-- FIXED: Using native emoji flag to guarantee it loads -->
                 <a href="#" class="language-dropdown">
                     <span style="font-size: 16px; margin-right: 6px;">🇬🇧</span> English ⌄
                 </a>
             </div>
-             <div class="drawer-section gray-bg app-links-section">
+
+            <button class="btn-logout" id="logoutBtn"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
+
+            <div class="drawer-section gray-bg app-links-section" style="padding: 10px;">
                 <div class="app-links-row">
                     <a href="#"><i class="fa-brands fa-android fa-2x" style="color: #a4c639;"></i>Application<br><b>Android</b></a>
                     <a href="#"><i class="fa-brands fa-apple fa-2x" style="color: #999999;"></i>Application<br><b>IOS</b></a>
                 </div>
+                <div style="text-align: center; margin-top: 10px;">
+                    <a href="#" style="color: #000; font-weight: bold; text-decoration: none;"><i class="fa-solid fa-comments"></i> LIVE CHAT</a>
+                </div>
             </div>
-             <div class="drawer-section white-bg text-center social-links-section">
-                <h3 style="color: #CD122D; font-size: 12px; margin-bottom: 15px;">Follow Our Social Media!</h3>
+        </div>
+    </aside>
+
+
+    <!-- ========================================== -->
+    <!-- AUTH MENU POPUP (Image 1 Replica)          -->
+    <!-- ========================================== -->
+    <div id="authMenuModal" class="modal">
+        <div class="auth-menu-content">
+            <button class="close-auth-btn" id="closeAuthMenuBtn">✕</button>
+            
+            <div class="auth-menu-body">
+                <button id="openLoginModalBtn" class="btn-submit btn-submit-red full-width">LOGIN</button>
+                <div class="auth-subtitle">New user?</div>
+                <button id="openRegisterModalBtn" class="btn-submit btn-submit-red full-width">REGISTER</button>
+            </div>
+            
+            <div class="auth-menu-section" style="padding: 15px; border-bottom: 1px solid #eee;">
+                <a href="#" style="color: black; text-decoration: none; font-weight: bold; font-size: 14px;"><i class="fa-solid fa-comments"></i> LIVE CHAT</a>
+            </div>
+            
+            <div class="auth-menu-section text-center" style="padding: 15px; border-bottom: 1px solid #eee;">
+                <a href="#" class="language-dropdown" style="justify-content: center;">
+                    <span style="font-size: 16px; margin-right: 6px;">🇬🇧</span> English ⌄
+                </a>
+            </div>
+            
+            <div class="auth-menu-section" style="padding: 20px; background-color: #f9f9f9;">
+                <div class="app-links-row">
+                    <a href="#" style="background: white;"><i class="fa-brands fa-android fa-2x" style="color: #a4c639;"></i>Application<br><b>Android</b></a>
+                    <a href="#" style="background: white;"><i class="fa-brands fa-apple fa-2x" style="color: #999999;"></i>Application<br><b>IOS</b></a>
+                </div>
+            </div>
+            
+            <div class="auth-menu-section text-center" style="padding: 20px;">
+                <h3 style="color: #CD122D; font-size: 13px; margin-bottom: 15px;">Follow Our Social Media!</h3>
                 <div class="social-links-row">
                     <a href="#"><i class="fa-brands fa-telegram fa-2x"></i></a>
                     <a href="#"><i class="fa-brands fa-facebook fa-2x"></i></a>
@@ -360,10 +421,10 @@
                 </div>
             </div>
         </div>
-    </aside>
+    </div>
 
-    <!-- MODALS (Slimmer Login & Register) -->
-    <div id="loginModal" class="modal">
+    <!-- MODALS (Login & Register Input Forms) -->
+    <div id="loginModal" class="modal" style="z-index: 100002;">
         <div class="modal-content">
             <button class="close-modal-btn" data-modal="loginModal">✕</button>
             <div class="modal-header-area"><img src="logo.png" alt="KonjoBet" class="modal-logo"></div>
@@ -378,7 +439,7 @@
         </div>
     </div>
 
-    <div id="registerModal" class="modal">
+    <div id="registerModal" class="modal" style="z-index: 100002;">
         <div class="modal-content">
             <button class="close-modal-btn" data-modal="registerModal">✕</button>
             <div class="modal-header-area"><img src="logo.png" alt="KonjoBet" class="modal-logo"><h2 class="modal-title">Register</h2></div>
