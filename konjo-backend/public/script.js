@@ -99,7 +99,7 @@ const closeRightBtn = document.getElementById('closeRightBtn');
 const sideDrawerLeft = document.getElementById('leftSidebar');
 const sideDrawerRight = document.getElementById('rightSidebar');
 
-// Left Sport Drawer
+// Left Sport Drawer (☰)
 if (openDrawerBtn) {
     openDrawerBtn.onclick = () => {
         sideDrawerLeft.style.display = "block";
