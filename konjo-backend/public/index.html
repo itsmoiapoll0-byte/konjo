@@ -6,14 +6,17 @@
     <title>KonjoBet Replica - Sport & Live Betting</title>
     <link rel="stylesheet" href="style.css">
     
+    <!-- Real Site Typography Stack -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+    <!-- Font Awesome Kit -->
     <script src="https://kit.fontawesome.com/5d2ece54cc.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
+    <!-- Mobile Header -->
     <header class="mobile-header">
         <button class="icon-btn hamburger-btn" id="openDrawerBtn">
             <img src="menu.png" alt="Menu" class="custom-menu-icon">
@@ -30,6 +33,7 @@
         </div>
     </header>
     
+    <!-- Red Top Navigation (Expanded & Enlarged) -->
     <nav class="main-nav">
         <ul>
             <li><a href="#" class="nav-item-active">SPORT</a></li>
@@ -46,6 +50,7 @@
         </ul>
     </nav>
     
+    <!-- Action Bar (Gray FA Icons) -->
     <div class="action-bar">
         <button class="action-btn">
             <span class="icon"><i class="fa-solid fa-ticket"></i></span>
@@ -75,8 +80,10 @@
         </button>
     </div>
 
+    <!-- Main Content Area -->
     <main class="mobile-main">
         
+        <!-- Promo Slider -->
         <div class="promo-slider-container" id="promoSlider">
             <div class="slider-track">
                 <div class="slide"><img src="slide1.png" alt="Promo 1"></div>
@@ -101,8 +108,10 @@
                 </div>
             </div>
             
+            <!-- Match Cards -->
             <div class="matches-list">
                 
+                <!-- Match 1 -->
                 <div class="white-match-card">
                     <div class="match-meta">
                         <span class="league-name">England - Premier League</span>
@@ -138,6 +147,7 @@
                     </div>
                 </div>
 
+                <!-- Match 2 -->
                 <div class="white-match-card">
                     <div class="match-meta">
                         <span class="league-name">Spain - La Liga</span>
@@ -173,6 +183,7 @@
                     </div>
                 </div>
 
+                <!-- Match 3 -->
                 <div class="white-match-card">
                     <div class="match-meta">
                         <span class="league-name">England - Premier League</span>
@@ -210,6 +221,7 @@
 
             </div>
             
+            <!-- Popular Matches Table -->
             <div class="game-category-header" style="margin-top: 30px;">
                 <div class="category-title">
                     <span class="dots-icon-horiz">•••</span>
@@ -251,6 +263,7 @@
                 </tbody>
             </table>
 
+            <!-- Top Leagues Section -->
             <div class="game-category-header" style="margin-top: 30px;">
                 <div class="category-title">
                     <span class="dots-icon-horiz">•••</span>
@@ -275,10 +288,16 @@
 
     </main>
 
+    <!-- Chat Bubble -->
     <div class="floating-chat-bubble">
         <span class="chat-icon"><i class="fa-solid fa-comments"></i></span>
     </div>
 
+    <!-- ========================================== -->
+    <!-- EXACT REPLICA SIDE DRAWERS                 -->
+    <!-- ========================================== -->
+    
+    <!-- LEFT SIDEBAR - CHOOSE A SPORT -->
     <aside id="leftSidebar" class="side-drawer left-drawer">
         <div class="drawer-header white-bg">
             <h3>Choose a sport</h3>
@@ -303,6 +322,7 @@
         </div>
     </aside>
 
+    <!-- RIGHT SIDEBAR - USER MENU -->
     <aside id="rightSidebar" class="side-drawer right-drawer">
         <div class="drawer-header white-bg">
             <button class="close-drawer-btn red-btn" id="closeRightBtn">✕</button>
@@ -340,6 +360,7 @@
         </div>
     </aside>
 
+    <!-- MODALS (Slimmer Login & Register) -->
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <button class="close-modal-btn" data-modal="loginModal">✕</button>

@@ -17,9 +17,6 @@
     
     /* Specific Modal Colors */
     --modal-bg: #cd122d;
-    --modal-text: #ffffff;
-    --modal-input-bg: #ffffff;
-    --modal-input-text: #000000;
     
     --font-stack: "Roboto Condensed", "Archivo Narrow", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
@@ -62,16 +59,16 @@ body {
     justify-content: center;
 }
 
-/* UPDATED: Locked in dimensions so menu.png never looks transparent/missing */
+/* UPDATED: Locked dimensions so menu.png never fails */
 .custom-menu-icon {
-    width: 26px; 
-    height: 26px;
+    width: 24px; 
+    height: 24px;
     object-fit: contain;
     display: block;
 }
 
 .logo-area img {
-    height: 38px; /* Slightly larger to match the bigger text */
+    height: 38px; 
 }
 
 .top-actions {
@@ -111,16 +108,16 @@ body {
     font-size: 18px;
 }
 
-/* --- Red Top Navigation (Nav 1) --- */
+/* --- Red Top Navigation (Nav 1) - UPDATED TO BE LARGER --- */
 .main-nav {
     background-color: var(--bg-nav);
-    padding: 12px 15px; /* Increased padding */
+    padding: 15px 15px; /* Increased padding */
 }
 
 .main-nav ul {
     list-style: none;
     display: flex;
-    align-items: center; /* Vertically centers the text with the active box */
+    align-items: center; 
     gap: 18px; /* Increased gap */
     overflow-x: auto; 
     scrollbar-width: none;
@@ -130,20 +127,18 @@ body {
 .main-nav a {
     color: white;
     text-decoration: none;
-    /* UPDATED: Made font noticeably larger and bolder like real site */
-    font-size: 15px; 
+    /* UPDATED: Larger font size to match real site */
+    font-size: 14px; 
     text-transform: uppercase;
     white-space: nowrap;
-    font-weight: 600; 
+    font-weight: 700; /* Bolder */
 }
 
-/* UPDATED: Yellow box made more prominent */
 .nav-item-active {
     background-color: var(--accent-yellow);
     color: #000 !important;
-    padding: 6px 12px;
+    padding: 6px 12px; /* Bigger yellow box */
     border-radius: 4px;
-    font-weight: bold;
 }
 
 .badge-new {
@@ -155,7 +150,7 @@ body {
     font-weight: bold;
     text-transform: none;
     position: relative;
-    top: -8px; /* Adjusted to fit larger text */
+    top: -8px; 
 }
 
 /* --- Action Bar (Dark BG, Gray Icons) --- */
@@ -387,7 +382,7 @@ body {
 
 .matches-table th {
     background-color: #f8f9fa;
-    color: var(--text-muted);
+    color: #888888;
     font-weight: normal;
 }
 
@@ -406,7 +401,7 @@ body {
 
 .league-tab {
      background-color: #e5e7eb;
-     color: var(--text-muted);
+     color: #888888;
      padding: 8px 15px;
      border-radius: 4px;
      text-decoration: none;
@@ -426,7 +421,7 @@ body {
 }
 
 .leagues-list li {
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid #eeeeee;
 }
 
 .leagues-list li a {
@@ -434,7 +429,7 @@ body {
     align-items: center;
     gap: 10px;
     padding: 12px 15px;
-    color: var(--text-main);
+    color: #333333;
     text-decoration: none;
     font-size: 12px;
 }
@@ -468,42 +463,52 @@ body {
 }
 
 /* ========================================== */
-/* SIDE DRAWERS                               */
+/* SIDE DRAWERS (TRANSPARENCY BUG FIXED)      */
 /* ========================================== */
 .side-drawer {
     display: none;
     position: fixed;
-    z-index: 1000;
+    /* UPDATED: Extremely high z-index to force it over the page */
+    z-index: 99999;
     top: 0;
-    width: 100%;
-    height: 100%;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(2px);
 }
 
 .drawer-content {
-    width: 280px;
+    position: absolute;
+    top: 0;
+    width: 85%;
+    max-width: 320px;
     height: 100%;
+    /* UPDATED: Hardcoded !important to permanently kill transparency bugs */
+    background-color: #ffffff !important; 
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
-.white-bg {
-    background-color: var(--drawer-white);
-    color: #000;
+.left-drawer .drawer-content {
+    left: 0;
 }
 
-.gray-bg {
-    background-color: var(--drawer-gray);
-    color: #333;
+.right-drawer .drawer-content {
+    right: 0;
 }
+
+/* Enforcing background colors for drawer sections */
+.white-bg { background-color: #ffffff !important; color: #000000 !important; }
+.gray-bg { background-color: #f4f4f6 !important; color: #333333 !important; }
 
 .drawer-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    border-bottom: 1px solid var(--drawer-border);
+    border-bottom: 1px solid #eeeeee;
 }
 
 .drawer-header h3 {
@@ -524,25 +529,13 @@ body {
      color: var(--accent-red);
 }
 
-.drawer-content.white-bg {
-    flex: 1;
-    overflow-y: auto;
-}
-
 /* Left Drawer (Choose a Sport) */
-.left-drawer .drawer-content {
-    left: 0;
-    position: absolute;
-    width: 100%;
-    max-width: 320px;
-}
-
 .sports-chooser-list {
     list-style: none;
 }
 
 .sports-chooser-list li {
-    border-bottom: 1px solid var(--drawer-border);
+    border-bottom: 1px solid #eeeeee;
 }
 
 .sports-chooser-list li a {
@@ -570,11 +563,6 @@ body {
 }
 
 /* Right Drawer (User Menu) */
-.right-drawer .drawer-content {
-    right: 0;
-    position: absolute;
-}
-
 .user-body {
      padding: 20px;
 }
@@ -590,7 +578,7 @@ body {
 
 .drawer-section {
      padding: 15px 20px;
-     border-bottom: 1px solid var(--drawer-border);
+     border-bottom: 1px solid #eeeeee;
 }
 
 .user-link {
@@ -632,9 +620,9 @@ body {
 
 .app-links-row a {
     flex: 1;
-    background-color: var(--drawer-white);
+    background-color: #ffffff;
     padding: 10px;
-    border: 1px solid var(--drawer-border);
+    border: 1px solid #eeeeee;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -660,13 +648,26 @@ body {
     text-decoration: none;
 }
 
+/* UPDATED: Guaranteed Red Buttons to prevent rendering bug */
+.btn-submit-red {
+    background-color: #CD122D !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 100%;
+    padding: 12px;
+}
+
+
 /* ========================================== */
 /* MODALS - Slimmer                           */
 /* ========================================== */
 .modal {
     display: none;
     position: fixed;
-    z-index: 1000;
+    z-index: 100000; /* Ensure over drawer */
     left: 0;
     top: 0;
     width: 100%;
@@ -731,15 +732,15 @@ body {
 
 .phone-input-group {
     display: flex;
-    background-color: var(--modal-input-bg);
+    background-color: #ffffff;
     overflow: hidden;
     border-radius: 4px;
 }
 
 .phone-prefix {
     padding: 10px; 
-    background-color: var(--modal-input-bg);
-    color: var(--modal-input-text);
+    background-color: #ffffff;
+    color: #000;
     border-right: 1px solid #ccc;
     font-weight: 500;
     display: flex;
@@ -751,8 +752,8 @@ body {
     width: 100%;
     padding: 10px; 
     border: none;
-    background-color: var(--modal-input-bg);
-    color: var(--modal-input-text);
+    background-color: #ffffff;
+    color: #000;
     font-size: 13px;
     outline: none;
     border-radius: 4px;
