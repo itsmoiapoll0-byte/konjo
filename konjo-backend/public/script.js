@@ -4,14 +4,16 @@
 const homeView = document.getElementById('homeView');
 const paymentsView = document.getElementById('paymentsView');
 const homeLogoBtn = document.getElementById('homeLogoBtn');
+const actionBar = document.getElementById('actionBar'); // The second menu
 
 const loggedOutActions = document.getElementById('loggedOutActions');
 const loggedInActions = document.getElementById('loggedInActions');
 
-const authMenuModal = document.getElementById('authMenuModal');
 const loginModal = document.getElementById('loginModal');
 const registerModal = document.getElementById('registerModal');
+
 const sideDrawerLeft = document.getElementById('leftSidebar');
+const loggedOutDrawer = document.getElementById('loggedOutDrawer');
 const loggedInDrawer = document.getElementById('loggedInDrawer');
 
 // ==========================================
@@ -35,8 +37,8 @@ function showLoggedInState(phone) {
     loggedInActions.style.display = 'flex';
     document.getElementById('displayUserId').innerText = phone;
     
-    // Close all auth modals
-    authMenuModal.style.display = "none";
+    // Close all auth modals/drawers
+    loggedOutDrawer.style.display = "none";
     loginModal.style.display = "none";
     registerModal.style.display = "none";
 }
@@ -122,8 +124,12 @@ document.getElementById('logoutBtn').onclick = () => {
     loggedInActions.style.display = 'none';
     loggedOutActions.style.display = 'flex';
     loggedInDrawer.style.display = 'none';
+    
+    // Return to home view
     homeView.style.display = 'block';
     paymentsView.style.display = 'none';
+    if(actionBar) actionBar.style.display = 'flex';
+
     alert("Logged out securely.");
 };
 
@@ -131,21 +137,30 @@ document.getElementById('logoutBtn').onclick = () => {
 // MENU & MODAL TOGGLING
 // ==========================================
 
-// 1. Open Auth Menu (Logged out state)
-document.getElementById('openAuthMenuBtn').onclick = () => {
-    authMenuModal.style.display = 'block';
-};
-document.getElementById('closeAuthMenuBtn').onclick = () => {
-    authMenuModal.style.display = 'none';
+// 1. Right Side Drawer Trigger (Checks login state)
+const openRightMenu = () => {
+    const savedUser = localStorage.getItem('konjo_user');
+    if (savedUser) {
+        loggedInDrawer.style.display = 'block';
+    } else {
+        loggedOutDrawer.style.display = 'block';
+    }
 };
 
-// Open Specific Modals from Auth Menu
+document.getElementById('dotsMenuBtn').onclick = openRightMenu;
+document.getElementById('loggedInDotsBtn').onclick = openRightMenu;
+
+// Close Right Drawers
+document.getElementById('closeLoggedOutBtn').onclick = () => loggedOutDrawer.style.display = 'none';
+document.getElementById('closeUserDrawerBtn').onclick = () => loggedInDrawer.style.display = 'none';
+
+// 2. Open Modals from Logged Out Drawer
 document.getElementById('openLoginModalBtn').onclick = () => {
-    authMenuModal.style.display = "none";
+    loggedOutDrawer.style.display = "none";
     loginModal.style.display = "block";
 };
 document.getElementById('openRegisterModalBtn').onclick = () => {
-    authMenuModal.style.display = "none";
+    loggedOutDrawer.style.display = "none";
     registerModal.style.display = "block";
 };
 
@@ -161,14 +176,6 @@ document.getElementById('switchToLogin').onclick = (e) => {
     loginModal.style.display = "block";
 };
 
-// 2. Open User Menu (Logged in state)
-document.getElementById('openUserDrawerBtn').onclick = () => {
-    loggedInDrawer.style.display = 'block';
-};
-document.getElementById('closeUserDrawerBtn').onclick = () => {
-    loggedInDrawer.style.display = 'none';
-};
-
 // 3. Open Left Sport Menu
 document.getElementById('openDrawerBtn').onclick = () => {
     sideDrawerLeft.style.display = "block";
@@ -177,19 +184,19 @@ document.getElementById('closeLeftBtn').onclick = () => {
     sideDrawerLeft.style.display = "none";
 };
 
-// Close modals generic
+// Close modals generically
 document.querySelectorAll('.close-modal-btn').forEach(btn => {
     btn.onclick = function() {
         document.getElementById(this.getAttribute('data-modal')).style.display = "none";
     }
 });
 
-// Click outside to close
+// Click outside to close any drawer or modal
 window.onclick = function(event) {
     if (event.target === loginModal) loginModal.style.display = "none";
     if (event.target === registerModal) registerModal.style.display = "none";
-    if (event.target === authMenuModal) authMenuModal.style.display = "none";
     if (event.target === sideDrawerLeft) sideDrawerLeft.style.display = "none";
+    if (event.target === loggedOutDrawer) loggedOutDrawer.style.display = "none";
     if (event.target === loggedInDrawer) loggedInDrawer.style.display = "none";
 }
 
@@ -216,13 +223,19 @@ document.querySelectorAll('.eye-icon i').forEach(icon => {
 homeLogoBtn.onclick = () => {
     paymentsView.style.display = 'none';
     homeView.style.display = 'block';
+    // RESTORE THE ACTION BAR
+    if(actionBar) actionBar.style.display = 'flex';
 };
 
-function openPaymentsTab(tabName) {
+// Expose to global scope for HTML onclick attributes
+window.openPaymentsTab = function(tabName) {
     // Hide home, show payments
     homeView.style.display = 'none';
     paymentsView.style.display = 'block';
     loggedInDrawer.style.display = 'none'; // Close drawer if open
+    
+    // HIDE THE SECOND HEADER (ACTION BAR)
+    if(actionBar) actionBar.style.display = 'none';
     
     // Logic for internal tabs
     const depositContent = document.getElementById('depositContent');
@@ -250,11 +263,10 @@ function openPaymentsTab(tabName) {
     }
 }
 
-// Bind Payment tab clicks
+// Bind Payment tab clicks explicitly
 document.getElementById('tabDepositBtn').onclick = () => openPaymentsTab('Deposit');
 document.getElementById('tabWithdrawBtn').onclick = () => openPaymentsTab('Withdraw');
 document.getElementById('tabWithdrawReqBtn').onclick = () => openPaymentsTab('Withdrawal Request');
-
 
 // ==========================================
 // IMAGE SLIDER LOGIC

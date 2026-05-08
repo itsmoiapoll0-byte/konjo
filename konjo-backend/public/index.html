@@ -6,10 +6,10 @@
     <title>KonjoBet Replica - Sport & Live Betting</title>
     <link rel="stylesheet" href="style.css">
     
-    <!-- Real Site Typography Stack -->
+    <!-- Real Site Typography Stack (Stronger, bolder look) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
 
     <!-- Font Awesome Kit -->
     <script src="https://kit.fontawesome.com/5d2ece54cc.js" crossorigin="anonymous"></script>
@@ -27,7 +27,7 @@
         
         <!-- Logged OUT Actions -->
         <div class="top-actions" id="loggedOutActions">
-            <div class="profile-dots-container" id="openAuthMenuBtn">
+            <div class="profile-dots-container" id="dotsMenuBtn">
                 <span class="user-icon"><i class="fa-solid fa-user-circle"></i></span>
                 <span class="profile-initial">A</span>
                 <span class="dots-icon-vertical"><i class="fa-solid fa-ellipsis-vertical"></i></span>
@@ -37,7 +37,10 @@
         <!-- Logged IN Actions (Hidden by default) -->
         <div class="top-actions" id="loggedInActions" style="display: none; gap: 15px; align-items: center;">
             <button class="icon-btn"><i class="fa-solid fa-gift" style="font-size: 20px;"></i></button>
-            <button class="icon-btn" id="openUserDrawerBtn"><i class="fa-solid fa-user" style="font-size: 20px;"></i></button>
+            <button class="icon-btn" id="loggedInDotsBtn">
+                <i class="fa-solid fa-user" style="font-size: 20px;"></i>
+                <i class="fa-solid fa-ellipsis-vertical" style="font-size: 20px; margin-left: 8px;"></i>
+            </button>
         </div>
     </header>
     
@@ -58,8 +61,8 @@
         </ul>
     </nav>
     
-    <!-- Action Bar -->
-    <div class="action-bar">
+    <!-- Action Bar (Hides on Payment View) -->
+    <div class="action-bar" id="actionBar">
         <button class="action-btn">
             <span class="icon"><i class="fa-solid fa-ticket"></i></span>
             <span>Check Bet</span>
@@ -166,6 +169,30 @@
                             <button class="white-odd-btn"><span class="odd-label">2</span><span class="odd-val">1.55</span></button>
                         </div>
                     </div>
+
+                    <div class="white-match-card">
+                        <div class="match-meta">
+                            <span class="league-name">England - Premier League</span>
+                            <span class="match-time">Tomorrow 15:00</span>
+                        </div>
+                        <div class="match-teams-row">
+                            <div class="team-col team-left">
+                                <img src="Aston villa.png" alt="Aston Villa" class="club-logo"> 
+                                <span class="team-name">Aston Villa</span>
+                            </div>
+                            <div class="match-vs-col"><div class="vs-text">vs</div></div>
+                            <div class="team-col team-right">
+                                <img src="Tottenham.png" alt="Tottenham" class="club-logo">
+                                <span class="team-name">Tottenham</span>
+                            </div>
+                        </div>
+                        <div class="match-result-label">Match Result</div>
+                        <div class="match-odds-row">
+                            <button class="white-odd-btn"><span class="odd-label">1</span><span class="odd-val">2.75</span></button>
+                            <button class="white-odd-btn"><span class="odd-label">X</span><span class="odd-val">3.60</span></button>
+                            <button class="white-odd-btn"><span class="odd-label">2</span><span class="odd-val">2.40</span></button>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="game-category-header" style="margin-top: 30px;">
@@ -198,7 +225,7 @@
         </div>
 
         <!-- ========================================== -->
-        <!-- PAYMENTS VIEW (Hidden by default)          -->
+        <!-- PAYMENTS VIEW                              -->
         <!-- ========================================== -->
         <div id="paymentsView" style="display: none;">
             <div class="payments-title-bar">PAYMENTS</div>
@@ -210,11 +237,8 @@
 
             <!-- Deposit Methods Content -->
             <div id="depositContent" class="pay-content-area">
-                
-                <!-- Telebirr -->
                 <div class="payment-card">
                     <div class="pay-logo-area">
-                        <!-- Simulated logo grouping for Telebirr based on image -->
                         <span style="font-size: 24px; color: #007bff; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px;">
                             <i class="fa-solid fa-mobile-screen"></i> telebirr
                         </span>
@@ -225,8 +249,6 @@
                     <div class="pay-detail-row"><b>5-10 minutes</b></div>
                     <button class="btn-deposit-action">Deposit</button>
                 </div>
-
-                <!-- USDT TON -->
                 <div class="payment-card">
                     <div class="pay-logo-area">
                         <span style="font-size: 24px; color: #0088cc; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px;">
@@ -239,8 +261,6 @@
                     <div class="pay-detail-row"><b>5-10 minutes</b></div>
                     <button class="btn-deposit-action">Deposit</button>
                 </div>
-
-                <!-- Tether TRC20 -->
                 <div class="payment-card">
                     <div class="pay-logo-area">
                         <span style="font-size: 24px; color: #26a17b; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px;">
@@ -253,8 +273,6 @@
                     <div class="pay-detail-row"><b>Instant</b></div>
                     <button class="btn-deposit-action">Deposit</button>
                 </div>
-
-                <!-- Voucher -->
                 <div class="payment-card">
                     <div class="pay-logo-area">
                         <span style="font-size: 24px; color: #0ea5e9; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px;">
@@ -269,7 +287,7 @@
                 </div>
             </div>
 
-            <!-- Withdrawal Requests Content (Hidden by default) -->
+            <!-- Withdrawal Requests Content -->
             <div id="withdrawalReqContent" class="pay-content-area" style="display: none;">
                 <div class="filter-group">
                     <select class="filter-select"><option>Date Filter</option></select>
@@ -287,7 +305,6 @@
                     </tbody>
                 </table>
             </div>
-
         </div>
 
     </main>
@@ -302,8 +319,8 @@
     <!-- ========================================== -->
     <aside id="leftSidebar" class="side-drawer left-drawer">
         <div class="drawer-header white-bg">
-            <h3>Choose a sport</h3>
             <button class="close-drawer-btn" id="closeLeftBtn">✕</button>
+            <h3>Choose a sport</h3>
         </div>
         <div class="drawer-content white-bg">
             <ul class="sports-chooser-list">
@@ -312,17 +329,70 @@
                 <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-baseball"></i></span> Tennis <span class="chevron">&#10095;</span></a></li>
                 <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-hockey-puck"></i></span> Ice Hockey <span class="chevron">&#10095;</span></a></li>
                 <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-volleyball"></i></span> Volleyball <span class="chevron">&#10095;</span></a></li>
+                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-football"></i></span> Rugby Union <span class="chevron">&#10095;</span></a></li>
+                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-table-tennis-paddle-ball"></i></span> Table Tennis <span class="chevron">&#10095;</span></a></li>
+                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-football"></i></span> Rugby League <span class="chevron">&#10095;</span></a></li>
+                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-football"></i></span> American Football <span class="chevron">&#10095;</span></a></li>
+                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-handshake"></i></span> Handball <span class="chevron">&#10095;</span></a></li>
+                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-hand-fist"></i></span> Boxing <span class="chevron">&#10095;</span></a></li>
+                <li><a href="#"><span class="sport-icon"><i class="fa-regular fa-futbol"></i></span> Futsal <span class="chevron">&#10095;</span></a></li>
+                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-bowling-ball"></i></span> Snooker <span class="chevron">&#10095;</span></a></li>
             </ul>
         </div>
     </aside>
 
     <!-- ========================================== -->
-    <!-- RIGHT SIDEBAR - LOGGED IN MENU (Image 4)   -->
+    <!-- RIGHT SIDEBAR - LOGGED OUT (Auth Menu)     -->
+    <!-- ========================================== -->
+    <aside id="loggedOutDrawer" class="side-drawer right-drawer">
+        <div class="drawer-content white-bg" style="width: 100%; max-width: 350px;">
+            <div class="drawer-header white-bg" style="justify-content: center; position: relative; padding: 20px;">
+                <button class="close-drawer-btn" id="closeLoggedOutBtn" style="position: absolute; left: 15px; top: 15px; color: #CD122D;">✕</button>
+                <h3 style="color: #333; text-transform: none; font-weight: normal; font-size: 14px;">Account already existing?</h3>
+            </div>
+            
+            <div class="drawer-body user-body" style="padding-top: 10px;">
+                <button id="openLoginModalBtn" class="btn-submit btn-submit-red full-width">LOGIN</button>
+                <h3 class="user-sub-title" style="margin: 15px 0;">New user?</h3>
+                <button id="openRegisterModalBtn" class="btn-submit btn-submit-red full-width">REGISTER</button>
+            </div>
+            
+            <div class="drawer-section gray-bg text-center" style="background-color: white !important;">
+                <a href="#" class="user-link" style="justify-content: center;"><i class="fa-solid fa-comments"></i> LIVE CHAT</a>
+            </div>
+            
+            <div class="drawer-section white-bg text-center">
+                <a href="#" class="language-dropdown">
+                    <span style="font-size: 16px; margin-right: 6px;">🇬🇧</span> English ⌄
+                </a>
+            </div>
+            
+            <div class="drawer-section gray-bg app-links-section" style="padding: 15px;">
+                <div class="app-links-row">
+                    <a href="#" style="background: white;"><i class="fa-brands fa-android fa-2x" style="color: #a4c639;"></i>Application<br><b>Android</b></a>
+                    <a href="#" style="background: white;"><i class="fa-brands fa-apple fa-2x" style="color: #999999;"></i>Application<br><b>IOS</b></a>
+                </div>
+            </div>
+            
+            <div class="drawer-section white-bg text-center social-links-section">
+                <h3 style="color: #CD122D; font-size: 12px; margin-bottom: 15px;">Follow Our Social Media!</h3>
+                <div class="social-links-row">
+                    <a href="#"><i class="fa-brands fa-telegram fa-2x"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook fa-2x"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube fa-2x"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok fa-2x"></i></a>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ========================================== -->
+    <!-- RIGHT SIDEBAR - LOGGED IN MENU             -->
     <!-- ========================================== -->
     <aside id="loggedInDrawer" class="side-drawer right-drawer">
         <div class="drawer-content white-bg" style="width: 100%; max-width: 350px;">
             <div class="logged-in-header">
-                <button class="close-drawer-btn white-btn" id="closeUserDrawerBtn">✕</button>
+                <button class="close-drawer-btn white-btn" id="closeUserDrawerBtn" style="color: white; font-size: 20px; font-weight: normal; margin-right: 15px;">✕</button>
                 <div class="user-id-display"><i class="fa-solid fa-user"></i> <span id="displayUserId">918173078</span></div>
             </div>
             
@@ -366,62 +436,21 @@
                 </a>
             </div>
 
-            <button class="btn-logout" id="logoutBtn"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
+            <button class="btn-logout" id="logoutBtn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+            </button>
 
-            <div class="drawer-section gray-bg app-links-section" style="padding: 10px;">
+            <div class="drawer-section gray-bg app-links-section" style="padding: 15px;">
                 <div class="app-links-row">
                     <a href="#"><i class="fa-brands fa-android fa-2x" style="color: #a4c639;"></i>Application<br><b>Android</b></a>
                     <a href="#"><i class="fa-brands fa-apple fa-2x" style="color: #999999;"></i>Application<br><b>IOS</b></a>
                 </div>
-                <div style="text-align: center; margin-top: 10px;">
-                    <a href="#" style="color: #000; font-weight: bold; text-decoration: none;"><i class="fa-solid fa-comments"></i> LIVE CHAT</a>
+                <div style="text-align: center; margin-top: 15px;">
+                    <a href="#" style="color: #000; font-weight: bold; text-decoration: none; font-family: 'Roboto Condensed', sans-serif;"><i class="fa-solid fa-comments"></i> LIVE CHAT</a>
                 </div>
             </div>
         </div>
     </aside>
-
-
-    <!-- ========================================== -->
-    <!-- AUTH MENU POPUP (Image 1 Replica)          -->
-    <!-- ========================================== -->
-    <div id="authMenuModal" class="modal">
-        <div class="auth-menu-content">
-            <button class="close-auth-btn" id="closeAuthMenuBtn">✕</button>
-            
-            <div class="auth-menu-body">
-                <button id="openLoginModalBtn" class="btn-submit btn-submit-red full-width">LOGIN</button>
-                <div class="auth-subtitle">New user?</div>
-                <button id="openRegisterModalBtn" class="btn-submit btn-submit-red full-width">REGISTER</button>
-            </div>
-            
-            <div class="auth-menu-section" style="padding: 15px; border-bottom: 1px solid #eee;">
-                <a href="#" style="color: black; text-decoration: none; font-weight: bold; font-size: 14px;"><i class="fa-solid fa-comments"></i> LIVE CHAT</a>
-            </div>
-            
-            <div class="auth-menu-section text-center" style="padding: 15px; border-bottom: 1px solid #eee;">
-                <a href="#" class="language-dropdown" style="justify-content: center;">
-                    <span style="font-size: 16px; margin-right: 6px;">🇬🇧</span> English ⌄
-                </a>
-            </div>
-            
-            <div class="auth-menu-section" style="padding: 20px; background-color: #f9f9f9;">
-                <div class="app-links-row">
-                    <a href="#" style="background: white;"><i class="fa-brands fa-android fa-2x" style="color: #a4c639;"></i>Application<br><b>Android</b></a>
-                    <a href="#" style="background: white;"><i class="fa-brands fa-apple fa-2x" style="color: #999999;"></i>Application<br><b>IOS</b></a>
-                </div>
-            </div>
-            
-            <div class="auth-menu-section text-center" style="padding: 20px;">
-                <h3 style="color: #CD122D; font-size: 13px; margin-bottom: 15px;">Follow Our Social Media!</h3>
-                <div class="social-links-row">
-                    <a href="#"><i class="fa-brands fa-telegram fa-2x"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook fa-2x"></i></a>
-                    <a href="#"><i class="fa-brands fa-youtube fa-2x"></i></a>
-                    <a href="#"><i class="fa-brands fa-tiktok fa-2x"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- MODALS (Login & Register Input Forms) -->
     <div id="loginModal" class="modal" style="z-index: 100002;">
