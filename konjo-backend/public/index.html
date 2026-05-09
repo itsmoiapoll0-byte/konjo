@@ -91,7 +91,7 @@
         </button>
     </div>
 
-    <!-- MAIN WRAPPER (Toggles between Home and Payments) -->
+    <!-- MAIN WRAPPER -->
     <main class="mobile-main">
         
         <!-- ========================================== -->
@@ -169,30 +169,6 @@
                             <button class="white-odd-btn"><span class="odd-label">2</span><span class="odd-val">1.55</span></button>
                         </div>
                     </div>
-
-                    <div class="white-match-card">
-                        <div class="match-meta">
-                            <span class="league-name">England - Premier League</span>
-                            <span class="match-time">Tomorrow 15:00</span>
-                        </div>
-                        <div class="match-teams-row">
-                            <div class="team-col team-left">
-                                <img src="Aston villa.png" alt="Aston Villa" class="club-logo"> 
-                                <span class="team-name">Aston Villa</span>
-                            </div>
-                            <div class="match-vs-col"><div class="vs-text">vs</div></div>
-                            <div class="team-col team-right">
-                                <img src="Tottenham.png" alt="Tottenham" class="club-logo">
-                                <span class="team-name">Tottenham</span>
-                            </div>
-                        </div>
-                        <div class="match-result-label">Match Result</div>
-                        <div class="match-odds-row">
-                            <button class="white-odd-btn"><span class="odd-label">1</span><span class="odd-val">2.75</span></button>
-                            <button class="white-odd-btn"><span class="odd-label">X</span><span class="odd-val">3.60</span></button>
-                            <button class="white-odd-btn"><span class="odd-label">2</span><span class="odd-val">2.40</span></button>
-                        </div>
-                    </div>
                 </div>
                 
                 <div class="game-category-header" style="margin-top: 30px;">
@@ -235,23 +211,24 @@
                 <button class="pay-tab" id="tabWithdrawReqBtn">Withdrawal Request</button>
             </div>
 
-            <!-- Deposit Methods Content -->
+            <!-- 1. DEPOSIT METHODS CONTENT -->
             <div id="depositContent" class="pay-content-area">
-                <!-- Telebirr -->
+                <!-- Telebirr (Upload fix) -->
                 <div class="payment-card">
                     <div class="pay-logo-area">
-                        <img src="1.telebirr.png" alt="Telebirr" style="height: 35px; object-fit: contain;">
+                        <img src="1.telebirr.png" alt="Telebirr" style="height: 35px; width: 100%; object-fit: contain;">
                     </div>
                     <div class="pay-detail-row"><span>Service Fee</span></div>
                     <div class="pay-detail-row"><b>Free</b></div>
                     <div class="pay-detail-row"><span>Process Time</span></div>
                     <div class="pay-detail-row"><b>5-10 minutes</b></div>
-                    <button class="btn-deposit-action">Deposit</button>
+                    <!-- Trigger new page -->
+                    <button class="btn-deposit-action" onclick="openDepositAction('telebirr')">Deposit</button>
                 </div>
                 <!-- USDT-TON -->
                 <div class="payment-card">
                     <div class="pay-logo-area">
-                        <img src="usdt.png" alt="USDT-TON" style="height: 35px; object-fit: contain;">
+                        <img src="usdt.png" alt="USDT-TON" style="height: 35px; width: 100%; object-fit: contain;">
                     </div>
                     <div class="pay-detail-row"><span>Service Fee</span></div>
                     <div class="pay-detail-row"><b>Free</b></div>
@@ -262,7 +239,7 @@
                 <!-- TETHER USDT TRC20 -->
                 <div class="payment-card">
                     <div class="pay-logo-area">
-                        <img src="usdtt.png" alt="Tether USDT TRC20" style="height: 35px; object-fit: contain;">
+                        <img src="usdtt.png" alt="Tether USDT TRC20" style="height: 35px; width: 100%; object-fit: contain;">
                     </div>
                     <div class="pay-detail-row"><span>Service Fee</span></div>
                     <div class="pay-detail-row"><b>Free</b></div>
@@ -273,7 +250,7 @@
                 <!-- Voucher -->
                 <div class="payment-card">
                     <div class="pay-logo-area">
-                        <img src="voucher.png" alt="Voucher" style="height: 35px; object-fit: contain;">
+                        <img src="voucher.png" alt="Voucher" style="height: 35px; width: 100%; object-fit: contain;">
                     </div>
                     <div class="pay-detail-row"><span>Service Fee</span></div>
                     <div class="pay-detail-row"><b>Free</b></div>
@@ -283,7 +260,69 @@
                 </div>
             </div>
 
-            <!-- Withdrawal Requests Content -->
+            <!-- 2. DEPOSIT ACTION PAGE (TELEBIRR REPLICA) -->
+            <div id="depositActionTelebirr" style="display: none; background: white; padding-bottom: 20px;">
+                <div class="pay-logo-area" style="padding: 15px; border-bottom: 1px solid #eee; display: flex; justify-content: center;">
+                    <img src="1.telebirr.png" alt="Telebirr" style="height: 40px; object-fit: contain;">
+                </div>
+                <div style="display:flex; flex-direction:column; align-items:center; padding: 12px; border-bottom: 1px solid #eee;">
+                    <span style="color:#666; font-size:13px; margin-bottom:5px;">Service Fee</span>
+                    <b style="font-size:14px; color: #333;">Free</b>
+                </div>
+                <div style="display:flex; flex-direction:column; align-items:center; padding: 12px; border-bottom: 1px solid #eee;">
+                    <span style="color:#666; font-size:13px; margin-bottom:5px;">Process Time</span>
+                    <b style="font-size:14px; color: #333;">5-10 minutes</b>
+                </div>
+                <!-- MIN DEPOSIT SET TO 500 -->
+                <div style="display:flex; flex-direction:column; align-items:center; padding: 12px; border-bottom: 1px solid #eee;">
+                    <span style="color:#666; font-size:13px; margin-bottom:5px; font-weight: bold;">Min. Amount</span>
+                    <b style="font-size:14px; color: #333;">500 ETB</b>
+                </div>
+                <div style="display:flex; flex-direction:column; align-items:center; padding: 12px; border-bottom: 1px solid #eee;">
+                    <span style="color:#666; font-size:13px; margin-bottom:5px; font-weight: bold;">Max. Amount</span>
+                    <b style="font-size:14px; color: #333;">75000 ETB</b>
+                </div>
+                
+                <div class="deposit-instructions" style="padding: 20px; text-align: left; background: #fff;">
+                    <p style="color: #666; font-size: 13px; line-height: 1.5; margin-bottom: 10px;">1. Copy Mobile number from the Mobile number field</p>
+                    
+                    <label style="font-weight: bold; font-size: 13px; color: #555; display:block; margin-bottom:5px;">Receiver Mobile Number</label>
+                    <div style="display: flex; margin-bottom: 15px;">
+                        <input type="text" value="930099568" readonly style="flex: 1; padding: 12px; background: #f0f0f0; border: 1px solid #ccc; color: #555; font-size: 14px; border-radius: 2px 0 0 2px; outline: none;">
+                        <button style="padding: 0 15px; background: #f9f9f9; border: 1px solid #ccc; border-left: none; border-radius: 0 2px 2px 0; cursor: pointer; color: #555;"><i class="fa-regular fa-copy"></i></button>
+                    </div>
+
+                    <p style="color: #666; font-size: 13px; line-height: 1.5; margin-bottom: 10px;">2. Go to the Telebir app, choose "Send Money to Individual" paste the Mobile number and make the transfer</p>
+                    <p style="color: #666; font-size: 13px; line-height: 1.5; margin-bottom: 15px;">3. Next. copy the transaction number and paste it into the Transaction Reference field</p>
+                    
+                    <label style="font-weight: bold; font-size: 13px; color: #555; display:block; margin-bottom:5px;">Transaction ID</label>
+                    <input type="text" placeholder="ABCD123456" style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 2px; margin-bottom: 20px; font-size: 14px; outline: none;">
+
+                    <p style="font-weight: bold; font-size: 14px; color: #555; margin-bottom: 10px;">Select or type in the amount to be deposited.</p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 15px;">
+                        <button class="amount-btn">100</button>
+                        <button class="amount-btn">200</button>
+                        <button class="amount-btn">500</button>
+                        <button class="amount-btn">700</button>
+                        <button class="amount-btn">1000</button>
+                        <button class="amount-btn">2000</button>
+                    </div>
+                    
+                    <div style="position: relative; margin-bottom: 20px;">
+                        <!-- Right-aligned placeholder hack via spacing/span -->
+                        <input type="number" placeholder="Amount" style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 2px; font-size: 14px; outline: none; text-align: right;">
+                    </div>
+                    
+                    <button class="btn-submit-red" style="background-color: #cd5c5c !important; color: white !important; margin-bottom: 20px;" onclick="alert('Deposit Request Submitted!')">DEPOSIT</button>
+                </div>
+                
+                <div style="padding: 0 20px;">
+                    <button onclick="backToDepositMethods()" style="width: 100%; padding: 15px; background: #fff; border: 1px solid #ddd; color: #555; font-weight: bold; font-family: var(--font-condensed); font-size: 13px; cursor: pointer; border-radius: 2px; text-transform: uppercase;">CHOOSE ANOTHER DEPOSIT METHOD</button>
+                </div>
+            </div>
+
+            <!-- 3. WITHDRAWAL REQUESTS CONTENT -->
             <div id="withdrawalReqContent" class="pay-content-area" style="display: none;">
                 <div class="filter-group">
                     <select class="filter-select"><option>Date Filter</option></select>
@@ -325,26 +364,18 @@
                 <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-baseball"></i></span> Tennis <span class="chevron">&#10095;</span></a></li>
                 <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-hockey-puck"></i></span> Ice Hockey <span class="chevron">&#10095;</span></a></li>
                 <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-volleyball"></i></span> Volleyball <span class="chevron">&#10095;</span></a></li>
-                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-football"></i></span> Rugby Union <span class="chevron">&#10095;</span></a></li>
-                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-table-tennis-paddle-ball"></i></span> Table Tennis <span class="chevron">&#10095;</span></a></li>
-                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-football"></i></span> Rugby League <span class="chevron">&#10095;</span></a></li>
-                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-football"></i></span> American Football <span class="chevron">&#10095;</span></a></li>
-                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-handshake"></i></span> Handball <span class="chevron">&#10095;</span></a></li>
-                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-hand-fist"></i></span> Boxing <span class="chevron">&#10095;</span></a></li>
-                <li><a href="#"><span class="sport-icon"><i class="fa-regular fa-futbol"></i></span> Futsal <span class="chevron">&#10095;</span></a></li>
-                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-bowling-ball"></i></span> Snooker <span class="chevron">&#10095;</span></a></li>
             </ul>
         </div>
     </aside>
 
     <!-- ========================================== -->
-    <!-- RIGHT SIDEBAR - LOGGED OUT (Auth Menu)     -->
+    <!-- RIGHT SIDEBAR - LOGGED OUT                 -->
     <!-- ========================================== -->
     <aside id="loggedOutDrawer" class="side-drawer right-drawer">
         <div class="drawer-content white-bg" style="width: 100%; max-width: 350px;">
             <div class="drawer-header white-bg" style="justify-content: center; position: relative; padding: 20px;">
                 <button class="close-drawer-btn" id="closeLoggedOutBtn" style="position: absolute; left: 15px; top: 15px; color: #CD122D;">✕</button>
-                <h3 style="color: #333; text-transform: none; font-weight: normal; font-size: 14px;">Account already existing?</h3>
+                <h3 style="color: #666; text-transform: uppercase; font-weight: bold; font-size: 12px; font-family: var(--font-condensed);">ACCOUNT ALREADY EXISTING?</h3>
             </div>
             
             <div class="drawer-body user-body" style="padding-top: 10px;">
@@ -359,7 +390,7 @@
             
             <div class="drawer-section white-bg text-center">
                 <a href="#" class="language-dropdown">
-                    <img src="flag.png" alt="English" class="flag-icon"> English ⌄
+                    <span style="font-size: 16px; margin-right: 6px;">🇬🇧</span> English ⌄
                 </a>
             </div>
             
@@ -387,7 +418,8 @@
     <!-- ========================================== -->
     <aside id="loggedInDrawer" class="side-drawer right-drawer">
         <div class="drawer-content white-bg" style="width: 100%; max-width: 350px;">
-            <!-- FIXED: Dark Burgundy Header matching Real Site -->
+            
+            <!-- FIXED: Solid White Header to match original -->
             <div class="logged-in-header">
                 <button class="close-drawer-btn" id="closeUserDrawerBtn">✕</button>
                 <div class="user-id-display"><i class="fa-solid fa-user"></i> <span id="displayUserId">918173078</span></div>
@@ -429,7 +461,7 @@
 
             <div class="drawer-section white-bg text-center">
                 <a href="#" class="language-dropdown">
-                    <img src="flag.png" alt="English" class="flag-icon"> English ⌄
+                    <span style="font-size: 16px; margin-right: 6px;">🇬🇧</span> English ⌄
                 </a>
             </div>
 
@@ -449,7 +481,7 @@
         </div>
     </aside>
 
-    <!-- MODALS (Login & Register Input Forms) -->
+    <!-- MODALS (Login & Register - Stronger Visuals) -->
     <div id="loginModal" class="modal" style="z-index: 100002;">
         <div class="modal-content">
             <button class="close-modal-btn" data-modal="loginModal">✕</button>

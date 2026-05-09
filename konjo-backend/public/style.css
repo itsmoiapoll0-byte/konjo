@@ -12,7 +12,6 @@
     --accent-green: #4ade80; 
     --modal-bg: #cd122d;
     
-    /* ENFORCED ROBUST FONTS */
     --font-condensed: "Roboto Condensed", -apple-system, sans-serif;
     --font-regular: "Roboto", -apple-system, sans-serif;
 }
@@ -30,7 +29,7 @@ body { font-family: var(--font-regular); background-color: var(--bg-main-content
 .profile-initial { width: 24px; height: 24px; background-color: #f7931e; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 13px; }
 .dots-icon-vertical { color: white; font-size: 20px; }
 
-/* --- Red Top Navigation (BOLDER FONTS) --- */
+/* --- Red Top Navigation --- */
 .main-nav { background-color: var(--bg-nav); padding: 15px 15px; }
 .main-nav ul { list-style: none; display: flex; align-items: center; gap: 20px; overflow-x: auto; scrollbar-width: none; }
 .main-nav ul::-webkit-scrollbar { display: none; }
@@ -100,49 +99,30 @@ body { font-family: var(--font-regular); background-color: var(--bg-main-content
 /* SIDE DRAWERS                               */
 /* ========================================== */
 .side-drawer { display: none; position: fixed; z-index: 99999; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.7); }
-.drawer-content { position: absolute; top: 0; width: 85%; max-width: 320px; height: 100%; background-color: #ffffff; display: flex; flex-direction: column; overflow-y: auto; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+.drawer-content { position: absolute; top: 0; width: 85%; max-width: 320px; height: 100%; background-color: #ffffff !important; display: flex; flex-direction: column; overflow-y: auto; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
 .left-drawer .drawer-content { left: 0; }
 .right-drawer .drawer-content { right: 0; max-width: 350px;}
 
-.white-bg { background-color: #ffffff !important; }
-.gray-bg { background-color: #f4f4f6 !important; }
+.white-bg { background-color: #ffffff !important; color: #000000 !important; }
+.gray-bg { background-color: #f4f4f6 !important; color: #333333 !important; }
 
 .drawer-header { display: flex; align-items: center; padding: 15px 20px; border-bottom: 1px solid #eeeeee; }
 .drawer-header h3 { font-size: 14px; font-weight: 500; font-family: var(--font-regular); margin-left: 15px;}
 .close-drawer-btn { background: none; border: none; color: #000; font-size: 22px; cursor: pointer; }
 .white-btn { color: #ffffff; }
 
-/* Left Drawer Specifics */
+/* Left Drawer */
 .sports-chooser-list { list-style: none; }
 .sports-chooser-list li { border-bottom: 1px solid #eeeeee; }
 .sports-chooser-list li a { display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; color: #222; text-decoration: none; font-size: 14px; font-weight: 500; }
 .sport-icon { margin-right: 15px; color: var(--accent-red); font-size: 18px; width: 20px; text-align: center; }
 .chevron { color: #aaa; font-size: 14px; }
 
-/* --- LOGGED IN DRAWER (FIXED DARK BURGUNDY HEADER) --- */
-.logged-in-header { 
-    background-color: #8a0c1f !important; 
-    display: flex; 
-    align-items: center; 
-    padding: 15px 20px; 
-}
-.logged-in-header .close-drawer-btn {
-    color: #ffffff !important;
-    font-size: 20px;
-    font-weight: normal;
-    margin-right: 15px;
-    padding: 0;
-}
-.user-id-display { 
-    display: flex; 
-    align-items: center; 
-    gap: 10px; 
-    font-family: var(--font-condensed); 
-    font-weight: 700; 
-    font-size: 18px; 
-    color: #ffffff !important;
-}
-.user-id-display i { color: #ffffff !important; }
+/* --- LOGGED IN DRAWER (PERFECT WHITE HEADER FIX) --- */
+.logged-in-header { background-color: #ffffff !important; display: flex; align-items: center; padding: 15px 20px; border-bottom: 1px solid #eee; }
+.logged-in-header .close-drawer-btn { color: #333 !important; font-size: 20px; font-weight: normal; margin-right: 15px; padding: 0; }
+.user-id-display { display: flex; align-items: center; gap: 10px; font-family: var(--font-condensed); font-weight: 700; font-size: 18px; color: #333 !important;}
+.user-id-display i { color: #333 !important; }
 
 .balance-container { background-color: #f9f9f9; padding: 15px 20px; border-bottom: 1px solid #ddd; }
 .balance-top-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
@@ -157,25 +137,23 @@ body { font-family: var(--font-regular); background-color: var(--bg-main-content
 .red-text { color: var(--accent-red); }
 
 .user-menu-list { list-style: none; background: white; }
-.user-menu-list li { border-bottom: 1px solid #eeeeee; }
+.user-menu-list li { border-bottom: 1px solid #eee; }
 .user-menu-list li a { display: flex; align-items: center; gap: 15px; padding: 16px 20px; color: #222; text-decoration: none; font-size: 15px; font-weight: 700; font-family: var(--font-condensed); }
 .user-menu-list li a i { color: #444; font-size: 18px; width: 20px; text-align: center; }
 
 .btn-logout { background-color: var(--accent-red); color: white; width: 100%; border: none; padding: 16px; font-size: 15px; font-weight: bold; font-family: var(--font-condensed); display: flex; align-items: center; gap: 10px; cursor: pointer; border-radius: 0; }
 
-/* General Auth Buttons (Blocky, Strong) */
+/* General Auth Buttons */
 .btn-submit-red { background-color: #CD122D !important; color: #ffffff !important; border: none !important; border-radius: 2px; font-weight: 700; font-family: var(--font-condensed); width: 100%; padding: 14px; font-size: 16px; }
 
-/* Misc Shared Drawer Links */
+/* Misc Links */
 .app-links-row { display: flex; gap: 15px; justify-content: center; }
 .app-links-row a { flex: 1; background-color: #ffffff; padding: 12px; border: 1px solid #eeeeee; display: flex; flex-direction: column; align-items: center; gap: 5px; color: #111; text-decoration: none; font-size: 11px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
 .social-links-row { display: flex; justify-content: center; gap: 20px; margin-top: 10px; }
 .social-links-row a { color: #ccc; text-decoration: none; }
 .text-center { text-align: center; }
-.language-dropdown { color: #111; text-decoration: none; font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 8px; }
-.flag-icon { width: 24px; height: 16px; object-fit: cover; border-radius: 2px; display: inline-block; }
 
-/* --- Input Modals --- */
+/* --- Input Modals (Strong look) --- */
 .modal { display: none; position: fixed; z-index: 100000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); }
 .modal-content { background-color: var(--modal-bg); margin: 15vh auto; width: 90%; max-width: 340px; border-radius: 4px; position: relative; box-shadow: 0 15px 35px rgba(0,0,0,0.5); }
 .close-modal-btn { position: absolute; top: 10px; right: 12px; color: white; font-size: 20px; cursor: pointer; background: none; border: none; }
@@ -216,7 +194,10 @@ body { font-family: var(--font-regular); background-color: var(--bg-main-content
 .pay-detail-row { padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333; }
 .btn-deposit-action { width: 90%; margin: 20px auto; background: white; color: #15803d; border: 2px solid #15803d; padding: 12px; font-size: 15px; font-weight: bold; font-family: var(--font-condensed); border-radius: 2px; cursor: pointer; text-transform: uppercase; }
 
-/* Withdrawal Request Tab specifics */
+/* New Telebirr Amount Buttons */
+.amount-btn { background-color: #1ea0d9; color: white; border: none; padding: 12px 0; font-size: 14px; border-radius: 2px; cursor: pointer; font-family: var(--font-regular); }
+
+/* Withdrawal Request Tab */
 .filter-group { display: flex; flex-direction: column; gap: 12px; margin-bottom: 15px; }
 .filter-select { padding: 14px; border: 1px solid #ccc; background: #f9f9f9; font-family: var(--font-regular); color: #333; font-size: 14px; border-radius: 2px; font-weight: bold;}
 .filter-actions { display: flex; gap: 10px; margin-bottom: 20px; }

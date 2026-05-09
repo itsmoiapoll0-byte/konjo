@@ -32,12 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
 const API_URL = '/api'; 
 
 function showLoggedInState(phone) {
-    // Update UI elements
     loggedOutActions.style.display = 'none';
     loggedInActions.style.display = 'flex';
     document.getElementById('displayUserId').innerText = phone;
-    
-    // Close all auth modals/drawers
     loggedOutDrawer.style.display = "none";
     loginModal.style.display = "none";
     registerModal.style.display = "none";
@@ -55,7 +52,6 @@ document.getElementById('registerForm').onsubmit = async function(e) {
         return;
     }
 
-    // BYPASS RULE: 9 Digits + Match
     if (/^\d{9}$/.test(phone)) {
         localStorage.setItem('konjo_user', phone);
         alert("Registration Success! Account saved.");
@@ -63,7 +59,6 @@ document.getElementById('registerForm').onsubmit = async function(e) {
         return;
     }
 
-    // Standard Backend Fallback
     try {
         const response = await fetch(`${API_URL}/register`, {
             method: 'POST',
@@ -90,7 +85,6 @@ document.getElementById('loginForm').onsubmit = async function(e) {
     const phone = document.getElementById('loginPhone').value;
     const password = document.getElementById('loginPassword').value;
 
-    // BYPASS RULE: 9 Digits instantly logs in
     if (/^\d{9}$/.test(phone)) {
         localStorage.setItem('konjo_user', phone);
         alert("Quick Access: Logged in successfully!");
@@ -98,7 +92,6 @@ document.getElementById('loginForm').onsubmit = async function(e) {
         return; 
     }
 
-    // Standard Backend Fallback
     try {
         const response = await fetch(`${API_URL}/login`, {
             method: 'POST',
@@ -125,7 +118,6 @@ document.getElementById('logoutBtn').onclick = () => {
     loggedOutActions.style.display = 'flex';
     loggedInDrawer.style.display = 'none';
     
-    // Return to home view
     homeView.style.display = 'block';
     paymentsView.style.display = 'none';
     if(actionBar) actionBar.style.display = 'flex';
@@ -137,7 +129,6 @@ document.getElementById('logoutBtn').onclick = () => {
 // MENU & MODAL TOGGLING
 // ==========================================
 
-// 1. Right Side Drawer Trigger (Checks login state)
 const openRightMenu = () => {
     const savedUser = localStorage.getItem('konjo_user');
     if (savedUser) {
@@ -150,11 +141,9 @@ const openRightMenu = () => {
 document.getElementById('dotsMenuBtn').onclick = openRightMenu;
 document.getElementById('loggedInDotsBtn').onclick = openRightMenu;
 
-// Close Right Drawers
 document.getElementById('closeLoggedOutBtn').onclick = () => loggedOutDrawer.style.display = 'none';
 document.getElementById('closeUserDrawerBtn').onclick = () => loggedInDrawer.style.display = 'none';
 
-// 2. Open Modals from Logged Out Drawer
 document.getElementById('openLoginModalBtn').onclick = () => {
     loggedOutDrawer.style.display = "none";
     loginModal.style.display = "block";
@@ -164,7 +153,6 @@ document.getElementById('openRegisterModalBtn').onclick = () => {
     registerModal.style.display = "block";
 };
 
-// Switch between Login/Register
 document.getElementById('switchToRegister').onclick = (e) => {
     e.preventDefault();
     loginModal.style.display = "none";
@@ -176,7 +164,6 @@ document.getElementById('switchToLogin').onclick = (e) => {
     loginModal.style.display = "block";
 };
 
-// 3. Open Left Sport Menu
 document.getElementById('openDrawerBtn').onclick = () => {
     sideDrawerLeft.style.display = "block";
 };
@@ -184,14 +171,12 @@ document.getElementById('closeLeftBtn').onclick = () => {
     sideDrawerLeft.style.display = "none";
 };
 
-// Close modals generically
 document.querySelectorAll('.close-modal-btn').forEach(btn => {
     btn.onclick = function() {
         document.getElementById(this.getAttribute('data-modal')).style.display = "none";
     }
 });
 
-// Click outside to close any drawer or modal
 window.onclick = function(event) {
     if (event.target === loginModal) loginModal.style.display = "none";
     if (event.target === registerModal) registerModal.style.display = "none";
@@ -200,7 +185,6 @@ window.onclick = function(event) {
     if (event.target === loggedInDrawer) loggedInDrawer.style.display = "none";
 }
 
-// Password eye toggle logic
 document.querySelectorAll('.eye-icon i').forEach(icon => {
     icon.parentElement.onclick = function() {
         const input = this.previousElementSibling;
@@ -223,37 +207,34 @@ document.querySelectorAll('.eye-icon i').forEach(icon => {
 homeLogoBtn.onclick = () => {
     paymentsView.style.display = 'none';
     homeView.style.display = 'block';
-    // RESTORE THE ACTION BAR
     if(actionBar) actionBar.style.display = 'flex';
 };
 
-// Expose to global scope for HTML onclick attributes
 window.openPaymentsTab = function(tabName) {
-    // Hide home, show payments
     homeView.style.display = 'none';
     paymentsView.style.display = 'block';
-    loggedInDrawer.style.display = 'none'; // Close drawer if open
+    loggedInDrawer.style.display = 'none'; 
     
-    // HIDE THE SECOND HEADER (ACTION BAR)
     if(actionBar) actionBar.style.display = 'none';
     
-    // Logic for internal tabs
     const depositContent = document.getElementById('depositContent');
+    const depositActionTelebirr = document.getElementById('depositActionTelebirr');
     const withdrawalReqContent = document.getElementById('withdrawalReqContent');
     const tabDepositBtn = document.getElementById('tabDepositBtn');
     const tabWithdrawBtn = document.getElementById('tabWithdrawBtn');
     const tabWithdrawReqBtn = document.getElementById('tabWithdrawReqBtn');
 
-    // Reset
     tabDepositBtn.classList.remove('active');
     tabWithdrawBtn.classList.remove('active');
     tabWithdrawReqBtn.classList.remove('active');
+    
     depositContent.style.display = 'none';
+    depositActionTelebirr.style.display = 'none';
     withdrawalReqContent.style.display = 'none';
 
     if (tabName === 'Deposit') {
         tabDepositBtn.classList.add('active');
-        depositContent.style.display = 'block'; // Currently shares layout with withdraw for mock
+        depositContent.style.display = 'block'; 
     } else if (tabName === 'Withdraw') {
         tabWithdrawBtn.classList.add('active');
         depositContent.style.display = 'block'; 
@@ -263,7 +244,19 @@ window.openPaymentsTab = function(tabName) {
     }
 }
 
-// Bind Payment tab clicks explicitly
+// Telebirr Detailed Action Binding
+window.openDepositAction = function(method) {
+    document.getElementById('depositContent').style.display = 'none';
+    if(method === 'telebirr') {
+        document.getElementById('depositActionTelebirr').style.display = 'block';
+    }
+}
+
+window.backToDepositMethods = function() {
+    document.getElementById('depositActionTelebirr').style.display = 'none';
+    document.getElementById('depositContent').style.display = 'block';
+}
+
 document.getElementById('tabDepositBtn').onclick = () => openPaymentsTab('Deposit');
 document.getElementById('tabWithdrawBtn').onclick = () => openPaymentsTab('Withdraw');
 document.getElementById('tabWithdrawReqBtn').onclick = () => openPaymentsTab('Withdrawal Request');
