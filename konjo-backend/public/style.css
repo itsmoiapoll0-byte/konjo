@@ -47,9 +47,8 @@ body { font-family: var(--font-regular); background-color: var(--bg-main-content
 
 /* --- Main Layout --- */
 .mobile-main { padding: 0; max-width: 600px; margin: 0 auto; }
-#homeView { padding: 10px; }
-.promo-slider-container { width: 100%; margin-bottom: 15px; position: relative;}
-.slider-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; scroll-behavior: smooth; border-radius: 4px; }
+.promo-slider-container { width: 100%; margin-bottom: 0px; position: relative;}
+.slider-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; scroll-behavior: smooth; border-radius: 0px; }
 .slider-track::-webkit-scrollbar { display: none; }
 .slide { flex: 0 0 100%; scroll-snap-align: start; aspect-ratio: 21/9; }
 .slide img { width: 100%; height: 100%; object-fit: cover; }
@@ -57,12 +56,26 @@ body { font-family: var(--font-regular); background-color: var(--bg-main-content
 .dot { width: 6px; height: 6px; background-color: rgba(255,255,255,0.5); border-radius: 50%; }
 .dot.active { background-color: white; }
 
-/* --- Match Cards --- */
+/* ========================================== */
+/* NEW: VIRTUAL GAMES GRID SYSTEM             */
+/* ========================================== */
+.virtual-content { padding-top: 15px; }
+.virtual-category-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 15px; color: white; }
+.virtual-category-header h2 { font-size: 18px; font-weight: 700; font-family: var(--font-condensed); margin: 0; }
+.btn-circle-red { background-color: var(--accent-red); color: white; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: none; font-size: 14px; cursor: pointer; }
+
+.games-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 0 15px; margin-bottom: 25px; }
+.game-card { background-color: #2b2b36; border-radius: 8px; overflow: hidden; position: relative; cursor: pointer; display: flex; flex-direction: column; }
+.game-card img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+.game-info-bar { background-color: var(--accent-red); color: white; padding: 8px 10px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: 700; font-family: var(--font-condensed); }
+.game-badge { position: absolute; top: 6px; left: 6px; background-color: var(--accent-green); color: #000; font-size: 10px; padding: 2px 6px; border-radius: 4px; font-weight: bold; z-index: 2; }
+.race-ribbon { position: absolute; bottom: 38px; right: -15px; background-color: var(--accent-red); color: white; font-size: 10px; font-weight: bold; padding: 2px 15px; transform: rotate(-45deg); z-index: 2; }
+
+/* Keep old match card css as backup/preserved */
 .game-category-header { background-color: var(--bg-header); color: white; padding: 12px 15px; display: flex; align-items: center; border-radius: 4px; margin-bottom: 10px; }
 .category-title { display: flex; align-items: center; gap: 10px; }
 .category-title h2 { font-size: 14px; font-weight: 500; font-family: var(--font-regular); }
 .dots-icon-horiz { font-weight: bold; letter-spacing: 2px; font-size: 14px; }
-
 .matches-list { display: flex; flex-direction: column; gap: 15px; }
 .white-match-card { background-color: #ffffff; border-radius: 4px; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border: 1px solid #e5e5e5; }
 .match-meta { display: flex; justify-content: space-between; font-size: 12px; color: #666; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
@@ -77,13 +90,10 @@ body { font-family: var(--font-regular); background-color: var(--bg-main-content
 .white-odd-btn.active { background-color: #e0e0e0; }
 .odd-label { color: #555; }
 .odd-val { font-weight: 700; color: #000; }
-
-/* --- Tables & Leagues --- */
 .matches-table { width: 100%; border-collapse: collapse; background-color: white; border-radius: 4px; overflow: hidden; font-size: 12px; margin-bottom: 20px; border: 1px solid #e5e5e5;}
 .matches-table th, .matches-table td { padding: 12px 10px; text-align: left; border-bottom: 1px solid #eeeeee; }
 .matches-table th { background-color: #f8f9fa; color: #666; font-weight: normal; }
 .odds-cell { color: #000; font-weight: 700; font-size: 13px; font-family: var(--font-condensed); }
-
 .leagues-nav { display: flex; gap: 10px; margin-bottom: 10px; }
 .league-tab { background-color: #e5e7eb; color: #555; padding: 10px 15px; border-radius: 2px; text-decoration: none; font-size: 12px; font-weight: bold; font-family: var(--font-condensed);}
 .league-tab.active { background-color: var(--accent-red); color: white; }
@@ -111,19 +121,18 @@ body { font-family: var(--font-regular); background-color: var(--bg-main-content
 .close-drawer-btn { background: none; border: none; color: #000; font-size: 22px; cursor: pointer; }
 .white-btn { color: #ffffff; }
 
-/* Left Drawer */
+/* Left Drawer Specifics */
 .sports-chooser-list { list-style: none; }
 .sports-chooser-list li { border-bottom: 1px solid #eeeeee; }
 .sports-chooser-list li a { display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; color: #222; text-decoration: none; font-size: 14px; font-weight: 500; }
 .sport-icon { margin-right: 15px; color: var(--accent-red); font-size: 18px; width: 20px; text-align: center; }
 .chevron { color: #aaa; font-size: 14px; }
 
-/* --- LOGGED IN DRAWER (PERFECT WHITE HEADER FIX) --- */
+/* --- LOGGED IN DRAWER  --- */
 .logged-in-header { background-color: #ffffff !important; display: flex; align-items: center; padding: 15px 20px; border-bottom: 1px solid #eee; }
 .logged-in-header .close-drawer-btn { color: #333 !important; font-size: 20px; font-weight: normal; margin-right: 15px; padding: 0; }
 .user-id-display { display: flex; align-items: center; gap: 10px; font-family: var(--font-condensed); font-weight: 700; font-size: 18px; color: #333 !important;}
 .user-id-display i { color: #333 !important; }
-
 .balance-container { background-color: #f9f9f9; padding: 15px 20px; border-bottom: 1px solid #ddd; }
 .balance-top-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
 .real-balance { display: flex; flex-direction: column; }
@@ -140,7 +149,6 @@ body { font-family: var(--font-regular); background-color: var(--bg-main-content
 .user-menu-list li { border-bottom: 1px solid #eee; }
 .user-menu-list li a { display: flex; align-items: center; gap: 15px; padding: 16px 20px; color: #222; text-decoration: none; font-size: 15px; font-weight: 700; font-family: var(--font-condensed); }
 .user-menu-list li a i { color: #444; font-size: 18px; width: 20px; text-align: center; }
-
 .btn-logout { background-color: var(--accent-red); color: white; width: 100%; border: none; padding: 16px; font-size: 15px; font-weight: bold; font-family: var(--font-condensed); display: flex; align-items: center; gap: 10px; cursor: pointer; border-radius: 0; }
 
 /* General Auth Buttons */
@@ -182,7 +190,7 @@ body { font-family: var(--font-regular); background-color: var(--bg-main-content
 /* ========================================== */
 /* PAYMENTS SECTION                           */
 /* ========================================== */
-#paymentsView { background-color: var(--bg-main-content); min-height: 100vh; padding-bottom: 50px;}
+#paymentsView { background-color: #f4f4f4; min-height: 100vh; padding-bottom: 50px;}
 .payments-title-bar { background-color: var(--bg-header); color: white; text-align: center; padding: 15px; font-size: 15px; font-weight: 700; font-family: var(--font-condensed); }
 .payments-tabs-nav { display: flex; background: var(--bg-header); border-top: 1px solid rgba(255,255,255,0.1); }
 .pay-tab { flex: 1; background: none; border: none; color: white; padding: 15px 5px; font-size: 14px; font-weight: 500; font-family: var(--font-condensed); cursor: pointer; border-bottom: 3px solid transparent; }
@@ -194,10 +202,10 @@ body { font-family: var(--font-regular); background-color: var(--bg-main-content
 .pay-detail-row { padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333; }
 .btn-deposit-action { width: 90%; margin: 20px auto; background: white; color: #15803d; border: 2px solid #15803d; padding: 12px; font-size: 15px; font-weight: bold; font-family: var(--font-condensed); border-radius: 2px; cursor: pointer; text-transform: uppercase; }
 
-/* New Telebirr Amount Buttons */
+/* Telebirr Amount Buttons */
 .amount-btn { background-color: #1ea0d9; color: white; border: none; padding: 12px 0; font-size: 14px; border-radius: 2px; cursor: pointer; font-family: var(--font-regular); }
 
-/* Withdrawal Request Tab */
+/* Withdrawal Request Tab specifics */
 .filter-group { display: flex; flex-direction: column; gap: 12px; margin-bottom: 15px; }
 .filter-select { padding: 14px; border: 1px solid #ccc; background: #f9f9f9; font-family: var(--font-regular); color: #333; font-size: 14px; border-radius: 2px; font-weight: bold;}
 .filter-actions { display: flex; gap: 10px; margin-bottom: 20px; }

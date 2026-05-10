@@ -3,20 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>KonjoBet Replica - Sport & Live Betting</title>
+    <title>KonjoBet Replica - Virtual Games</title>
     <link rel="stylesheet" href="style.css">
     
-    <!-- Real Site Typography Stack (Stronger, bolder look) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome Kit -->
     <script src="https://kit.fontawesome.com/5d2ece54cc.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-    <!-- Mobile Header -->
     <header class="mobile-header">
         <button class="icon-btn hamburger-btn" id="openDrawerBtn">
             <i class="fa-solid fa-bars" style="font-size: 24px; color: white;"></i>
@@ -25,7 +22,6 @@
             <img src="logo.png" alt="KonjoBet">
         </div>
         
-        <!-- Logged OUT Actions -->
         <div class="top-actions" id="loggedOutActions">
             <div class="profile-dots-container" id="dotsMenuBtn">
                 <span class="user-icon"><i class="fa-solid fa-user-circle"></i></span>
@@ -34,7 +30,6 @@
             </div>
         </div>
 
-        <!-- Logged IN Actions (Hidden by default) -->
         <div class="top-actions" id="loggedInActions" style="display: none; gap: 15px; align-items: center;">
             <button class="icon-btn"><i class="fa-solid fa-gift" style="font-size: 20px;"></i></button>
             <button class="icon-btn" id="loggedInDotsBtn">
@@ -44,10 +39,10 @@
         </div>
     </header>
     
-    <!-- Red Top Navigation -->
     <nav class="main-nav">
         <ul>
-            <li><a href="#" class="nav-item-active">SPORT</a></li>
+            <li><a href="#" class="nav-item-active">VIRTUAL</a></li>
+            <li><a href="#">SPORT</a></li>
             <li><a href="#">UPCOMING <span class="badge-new">New</span></a></li>
             <li><a href="#">LIVE</a></li>
             <li><a href="#">RACE</a></li>
@@ -55,13 +50,11 @@
             <li><a href="#">MULTIHOT 5 <span class="badge-new">New</span></a></li>
             <li><a href="#">LION SPIN <span class="badge-new">New</span></a></li>
             <li><a href="#">SIZZLING BLAZE <span class="badge-new">New</span></a></li>
-            <li><a href="#">VIRTUAL</a></li>
             <li><a href="#">SPECIAL GAMES</a></li>
             <li><a href="#">PROMO</a></li>
         </ul>
     </nav>
     
-    <!-- Action Bar (Hides on Payment View) -->
     <div class="action-bar" id="actionBar">
         <button class="action-btn">
             <span class="icon"><i class="fa-solid fa-ticket"></i></span>
@@ -91,14 +84,9 @@
         </button>
     </div>
 
-    <!-- MAIN WRAPPER -->
     <main class="mobile-main">
         
-        <!-- ========================================== -->
-        <!-- HOME VIEW (Matches, Sliders)               -->
-        <!-- ========================================== -->
-        <div id="homeView">
-            <div class="promo-slider-container" id="promoSlider">
+        <div id="homeView" style="background-color: #2b2b36; min-height: 100vh;"> <div class="promo-slider-container" id="promoSlider">
                 <div class="slider-track">
                     <div class="slide"><img src="slide1.png" alt="Promo 1"></div>
                     <div class="slide"><img src="slide2.png" alt="Promo 2"></div>
@@ -113,96 +101,111 @@
                 </div>
             </div>
 
-            <section class="center-content">
-                <div class="game-category-header">
-                    <div class="category-title">
-                        <span class="dots-icon-horiz">•••</span>
-                        <h2>Top Matches</h2>
-                    </div>
-                </div>
+            <section class="virtual-content">
                 
-                <div class="matches-list">
-                    <div class="white-match-card">
-                        <div class="match-meta">
-                            <span class="league-name">England - Premier League</span>
-                            <span class="match-time">2 May 19:30</span>
-                        </div>
-                        <div class="match-teams-row">
-                            <div class="team-col team-left">
-                                <img src="arsenal.png" alt="Arsenal" class="club-logo"> 
-                                <span class="team-name">Arsenal</span>
-                            </div>
-                            <div class="match-vs-col"><div class="vs-text">vs</div></div>
-                            <div class="team-col team-right">
-                                <img src="fulham.png" alt="Fulham" class="club-logo">
-                                <span class="team-name">Fulham</span>
-                            </div>
-                        </div>
-                        <div class="match-result-label">Match Result</div>
-                        <div class="match-odds-row">
-                            <button class="white-odd-btn"><span class="odd-label">1</span><span class="odd-val">1.45</span></button>
-                            <button class="white-odd-btn active"><span class="odd-label">X</span><span class="odd-val">4.45</span></button>
-                            <button class="white-odd-btn"><span class="odd-label">2</span><span class="odd-val">7.35</span></button>
-                        </div>
+                <div class="virtual-category-header">
+                    <h2>Crash Games</h2>
+                    <button class="btn-circle-red"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="games-grid">
+                    <div class="game-card">
+                        <span class="game-badge">New</span>
+                        <img src="aviator.png" onerror="this.src='slide1.png'" alt="Aviator"> <div class="game-info-bar"><span>Aviator</span><i class="fa-solid fa-heart" style="color:white;"></i></div>
                     </div>
-
-                    <div class="white-match-card">
-                        <div class="match-meta">
-                            <span class="league-name">Spain - La Liga</span>
-                            <span class="match-time">2 May 21:00</span>
-                        </div>
-                        <div class="match-teams-row">
-                            <div class="team-col team-left">
-                                <img src="osasuna.png" alt="Osasuna" class="club-logo"> 
-                                <span class="team-name">Osasuna</span>
-                            </div>
-                            <div class="match-vs-col"><div class="vs-text">vs</div></div>
-                            <div class="team-col team-right">
-                                <img src="barcelona.png" alt="Barcelona" class="club-logo">
-                                <span class="team-name">Barcelona</span>
-                            </div>
-                        </div>
-                        <div class="match-result-label">Match Result</div>
-                        <div class="match-odds-row">
-                            <button class="white-odd-btn"><span class="odd-label">1</span><span class="odd-val">5.80</span></button>
-                            <button class="white-odd-btn"><span class="odd-label">X</span><span class="odd-val">4.10</span></button>
-                            <button class="white-odd-btn"><span class="odd-label">2</span><span class="odd-val">1.55</span></button>
-                        </div>
+                    <div class="game-card">
+                        <span class="game-badge">New</span>
+                        <span class="race-ribbon">Race</span>
+                        <img src="furyflight.png" onerror="this.src='slide2.png'" alt="Fury Flight">
+                        <div class="game-info-bar"><span>Fury Flight</span><i class="fa-solid fa-heart" style="color:white;"></i></div>
+                    </div>
+                    <div class="game-card">
+                        <span class="game-badge">New</span>
+                        <span class="race-ribbon">Race</span>
+                        <img src="nomad.png" onerror="this.src='slide3.png'" alt="Nomad">
+                        <div class="game-info-bar"><span>Nomad</span><i class="fa-solid fa-heart" style="color:white;"></i></div>
+                    </div>
+                    <div class="game-card">
+                        <span class="game-badge">New</span>
+                        <span class="race-ribbon">Race</span>
+                        <img src="orizon.png" onerror="this.src='slide4.png'" alt="Orizon">
+                        <div class="game-info-bar"><span>Orizon</span><i class="fa-solid fa-heart" style="color:white;"></i></div>
                     </div>
                 </div>
-                
-                <div class="game-category-header" style="margin-top: 30px;">
-                    <div class="category-title"><span class="dots-icon-horiz">•••</span><h2>Popular Matches</h2></div>
-                </div>
-                <table class="matches-table">
-                    <thead><tr><th>Time</th><th>Event</th><th>1</th><th>X</th><th>2</th></tr></thead>
-                    <tbody>
-                        <tr><td>12:00</td><td>PSG - B Munich</td><td class="odds-cell">2.33</td><td class="odds-cell">3.84</td><td class="odds-cell">2.77</td></tr>
-                        <tr><td>14:30</td><td>Atl Madrid - Arsenal</td><td class="odds-cell">2.87</td><td class="odds-cell">3.21</td><td class="odds-cell">2.56</td></tr>
-                        <tr><td>18:00</td><td>Juventus - Napoli</td><td class="odds-cell">2.10</td><td class="odds-cell">3.10</td><td class="odds-cell">3.50</td></tr>
-                    </tbody>
-                </table>
 
-                <div class="game-category-header" style="margin-top: 30px;">
-                    <div class="category-title"><span class="dots-icon-horiz">•••</span><h2>Top Leagues</h2></div>
+                <div class="virtual-category-header">
+                    <h2>Special Konjo</h2>
+                    <button class="btn-circle-red"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
-                <nav class="leagues-nav">
-                    <a href="#" class="league-tab active"><i class="fa-regular fa-futbol"></i> Football</a>
-                    <a href="#" class="league-tab"><i class="fa-solid fa-basketball"></i> Basketball</a>
-                    <a href="#" class="league-tab"><i class="fa-solid fa-hockey-puck"></i> Handball</a>
-                </nav>
-                <ul class="leagues-list">
-                    <li><a href="#"><img src="logo.png" alt="" class="league-logo placeholder-icon"> Premier League</a></li>
-                    <li><a href="#"><img src="logo.png" alt="" class="league-logo placeholder-icon"> Bundesliga</a></li>
-                    <li><a href="#"><img src="logo.png" alt="" class="league-logo placeholder-icon"> Serie A</a></li>
-                    <li><a href="#"><img src="logo.png" alt="" class="league-logo placeholder-icon"> La Liga</a></li>
-                </ul>
+                <div class="games-grid">
+                    <div class="game-card">
+                        <span class="game-badge">New</span>
+                        <span class="race-ribbon">Race</span>
+                        <img src="furyflight.png" onerror="this.src='slide2.png'" alt="Fury Flight">
+                        <div class="game-info-bar"><span>Fury Flight</span><i class="fa-solid fa-heart" style="color:white;"></i></div>
+                    </div>
+                    <div class="game-card">
+                        <span class="game-badge">New</span>
+                        <span class="race-ribbon">Race</span>
+                        <img src="nomad.png" onerror="this.src='slide3.png'" alt="Nomad">
+                        <div class="game-info-bar"><span>Nomad</span><i class="fa-solid fa-heart" style="color:white;"></i></div>
+                    </div>
+                </div>
+
+                <div class="virtual-category-header">
+                    <h2>All Slots</h2>
+                    <button class="btn-circle-red"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="games-grid">
+                    <div class="game-card">
+                        <span class="game-badge">New</span>
+                        <img src="100bracelets.png" onerror="this.src='slide4.png'" alt="100 Bracelets">
+                        <div class="game-info-bar"><span>100 Bracelets</span><i class="fa-solid fa-heart" style="color:white;"></i></div>
+                    </div>
+                    <div class="game-card">
+                        <span class="game-badge">New</span>
+                        <img src="100duckinghot.png" onerror="this.src='slide1.png'" alt="100 Ducking Hot">
+                        <div class="game-info-bar"><span>100 Ducking Hot</span><i class="fa-solid fa-heart" style="color:white;"></i></div>
+                    </div>
+                </div>
+
+                <div class="virtual-category-header">
+                    <h2>Spribe</h2>
+                    <button class="btn-circle-red"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="games-grid">
+                    <div class="game-card">
+                        <span class="game-badge">New</span>
+                        <img src="dice.png" onerror="this.src='slide2.png'" alt="Dice">
+                        <div class="game-info-bar"><span>Dice</span><i class="fa-solid fa-heart" style="color:white;"></i></div>
+                    </div>
+                    <div class="game-card">
+                        <span class="game-badge">New</span>
+                        <img src="goal.png" onerror="this.src='slide3.png'" alt="Goal">
+                        <div class="game-info-bar"><span>Goal</span><i class="fa-solid fa-heart" style="color:white;"></i></div>
+                    </div>
+                </div>
+
+                <div class="virtual-category-header">
+                    <h2>B gaming</h2>
+                    <button class="btn-circle-red"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="games-grid">
+                    <div class="game-card">
+                        <span class="game-badge">New</span>
+                        <img src="clovers100.png" onerror="this.src='slide4.png'" alt="Clovers 100">
+                        <div class="game-info-bar"><span>All Lucky Clovers 100</span><i class="fa-solid fa-heart" style="color:white;"></i></div>
+                    </div>
+                    <div class="game-card">
+                        <span class="game-badge">New</span>
+                        <img src="clovers20.png" onerror="this.src='slide1.png'" alt="Clovers 20">
+                        <div class="game-info-bar"><span>All Lucky Clovers 20</span><i class="fa-solid fa-heart" style="color:white;"></i></div>
+                    </div>
+                </div>
+
+                <div style="padding-bottom: 50px;"></div>
             </section>
         </div>
 
-        <!-- ========================================== -->
-        <!-- PAYMENTS VIEW                              -->
-        <!-- ========================================== -->
         <div id="paymentsView" style="display: none;">
             <div class="payments-title-bar">PAYMENTS</div>
             <div class="payments-tabs-nav">
@@ -211,21 +214,17 @@
                 <button class="pay-tab" id="tabWithdrawReqBtn">Withdrawal Request</button>
             </div>
 
-            <!-- 1. DEPOSIT METHODS CONTENT -->
             <div id="depositContent" class="pay-content-area">
-                <!-- Telebirr (Upload fix) -->
                 <div class="payment-card">
                     <div class="pay-logo-area">
-                        <img src="1.telebirr.png" alt="Telebirr" style="height: 35px; width: 100%; object-fit: contain;">
+                        <img src="1.png" alt="Telebirr" style="height: 35px; width: 100%; object-fit: contain;">
                     </div>
                     <div class="pay-detail-row"><span>Service Fee</span></div>
                     <div class="pay-detail-row"><b>Free</b></div>
                     <div class="pay-detail-row"><span>Process Time</span></div>
                     <div class="pay-detail-row"><b>5-10 minutes</b></div>
-                    <!-- Trigger new page -->
                     <button class="btn-deposit-action" onclick="openDepositAction('telebirr')">Deposit</button>
                 </div>
-                <!-- USDT-TON -->
                 <div class="payment-card">
                     <div class="pay-logo-area">
                         <img src="usdt.png" alt="USDT-TON" style="height: 35px; width: 100%; object-fit: contain;">
@@ -236,7 +235,6 @@
                     <div class="pay-detail-row"><b>5-10 minutes</b></div>
                     <button class="btn-deposit-action">Deposit</button>
                 </div>
-                <!-- TETHER USDT TRC20 -->
                 <div class="payment-card">
                     <div class="pay-logo-area">
                         <img src="usdtt.png" alt="Tether USDT TRC20" style="height: 35px; width: 100%; object-fit: contain;">
@@ -247,7 +245,6 @@
                     <div class="pay-detail-row"><b>Instant</b></div>
                     <button class="btn-deposit-action">Deposit</button>
                 </div>
-                <!-- Voucher -->
                 <div class="payment-card">
                     <div class="pay-logo-area">
                         <img src="voucher.png" alt="Voucher" style="height: 35px; width: 100%; object-fit: contain;">
@@ -260,10 +257,9 @@
                 </div>
             </div>
 
-            <!-- 2. DEPOSIT ACTION PAGE (TELEBIRR REPLICA) -->
             <div id="depositActionTelebirr" style="display: none; background: white; padding-bottom: 20px;">
                 <div class="pay-logo-area" style="padding: 15px; border-bottom: 1px solid #eee; display: flex; justify-content: center;">
-                    <img src="1.telebirr.png" alt="Telebirr" style="height: 40px; object-fit: contain;">
+                    <img src="1.png" alt="Telebirr" style="height: 40px; object-fit: contain;">
                 </div>
                 <div style="display:flex; flex-direction:column; align-items:center; padding: 12px; border-bottom: 1px solid #eee;">
                     <span style="color:#666; font-size:13px; margin-bottom:5px;">Service Fee</span>
@@ -273,7 +269,6 @@
                     <span style="color:#666; font-size:13px; margin-bottom:5px;">Process Time</span>
                     <b style="font-size:14px; color: #333;">5-10 minutes</b>
                 </div>
-                <!-- MIN DEPOSIT SET TO 500 -->
                 <div style="display:flex; flex-direction:column; align-items:center; padding: 12px; border-bottom: 1px solid #eee;">
                     <span style="color:#666; font-size:13px; margin-bottom:5px; font-weight: bold;">Min. Amount</span>
                     <b style="font-size:14px; color: #333;">500 ETB</b>
@@ -310,7 +305,6 @@
                     </div>
                     
                     <div style="position: relative; margin-bottom: 20px;">
-                        <!-- Right-aligned placeholder hack via spacing/span -->
                         <input type="number" placeholder="Amount" style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 2px; font-size: 14px; outline: none; text-align: right;">
                     </div>
                     
@@ -322,7 +316,6 @@
                 </div>
             </div>
 
-            <!-- 3. WITHDRAWAL REQUESTS CONTENT -->
             <div id="withdrawalReqContent" class="pay-content-area" style="display: none;">
                 <div class="filter-group">
                     <select class="filter-select"><option>Date Filter</option></select>
@@ -344,14 +337,10 @@
 
     </main>
 
-    <!-- Chat Bubble -->
     <div class="floating-chat-bubble">
         <span class="chat-icon"><i class="fa-solid fa-comments"></i></span>
     </div>
 
-    <!-- ========================================== -->
-    <!-- LEFT SIDEBAR - CHOOSE A SPORT              -->
-    <!-- ========================================== -->
     <aside id="leftSidebar" class="side-drawer left-drawer">
         <div class="drawer-header white-bg">
             <button class="close-drawer-btn" id="closeLeftBtn">✕</button>
@@ -368,14 +357,11 @@
         </div>
     </aside>
 
-    <!-- ========================================== -->
-    <!-- RIGHT SIDEBAR - LOGGED OUT                 -->
-    <!-- ========================================== -->
     <aside id="loggedOutDrawer" class="side-drawer right-drawer">
         <div class="drawer-content white-bg" style="width: 100%; max-width: 350px;">
             <div class="drawer-header white-bg" style="justify-content: center; position: relative; padding: 20px;">
                 <button class="close-drawer-btn" id="closeLoggedOutBtn" style="position: absolute; left: 15px; top: 15px; color: #CD122D;">✕</button>
-                <h3 style="color: #666; text-transform: uppercase; font-weight: bold; font-size: 12px; font-family: var(--font-condensed);">ACCOUNT ALREADY EXISTING?</h3>
+                <h3 style="color: #333; text-transform: uppercase; font-weight: bold; font-size: 12px; font-family: var(--font-condensed);">ACCOUNT ALREADY EXISTING?</h3>
             </div>
             
             <div class="drawer-body user-body" style="padding-top: 10px;">
@@ -413,15 +399,10 @@
         </div>
     </aside>
 
-    <!-- ========================================== -->
-    <!-- RIGHT SIDEBAR - LOGGED IN MENU             -->
-    <!-- ========================================== -->
     <aside id="loggedInDrawer" class="side-drawer right-drawer">
         <div class="drawer-content white-bg" style="width: 100%; max-width: 350px;">
-            
-            <!-- FIXED: Solid White Header to match original -->
             <div class="logged-in-header">
-                <button class="close-drawer-btn" id="closeUserDrawerBtn">✕</button>
+                <button class="close-drawer-btn white-btn" id="closeUserDrawerBtn" style="color: white; font-size: 20px; font-weight: normal; margin-right: 15px;">✕</button>
                 <div class="user-id-display"><i class="fa-solid fa-user"></i> <span id="displayUserId">918173078</span></div>
             </div>
             
@@ -481,7 +462,6 @@
         </div>
     </aside>
 
-    <!-- MODALS (Login & Register - Stronger Visuals) -->
     <div id="loginModal" class="modal" style="z-index: 100002;">
         <div class="modal-content">
             <button class="close-modal-btn" data-modal="loginModal">✕</button>

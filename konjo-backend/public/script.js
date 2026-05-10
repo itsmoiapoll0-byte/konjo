@@ -17,13 +17,18 @@ const loggedOutDrawer = document.getElementById('loggedOutDrawer');
 const loggedInDrawer = document.getElementById('loggedInDrawer');
 
 // ==========================================
-// INITIALIZATION (Check login state on load)
+// INITIALIZATION
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
     const savedUser = localStorage.getItem('konjo_user');
     if (savedUser) {
         showLoggedInState(savedUser);
     }
+});
+
+// Make Virtual Games Clickable
+document.querySelectorAll('.game-card').forEach(card => {
+    card.onclick = () => alert("Launching virtual game...");
 });
 
 // ==========================================
@@ -35,6 +40,7 @@ function showLoggedInState(phone) {
     loggedOutActions.style.display = 'none';
     loggedInActions.style.display = 'flex';
     document.getElementById('displayUserId').innerText = phone;
+    
     loggedOutDrawer.style.display = "none";
     loginModal.style.display = "none";
     registerModal.style.display = "none";
@@ -244,7 +250,6 @@ window.openPaymentsTab = function(tabName) {
     }
 }
 
-// Telebirr Detailed Action Binding
 window.openDepositAction = function(method) {
     document.getElementById('depositContent').style.display = 'none';
     if(method === 'telebirr') {
