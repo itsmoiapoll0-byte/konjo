@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>KonjoBet Replica - Virtual Games</title>
+    <title>KonjoBet Replica - Sport & Virtuals</title>
     <link rel="stylesheet" href="style.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,8 +41,8 @@
     
     <nav class="main-nav">
         <ul>
-            <li><a href="#" class="nav-item-active">VIRTUAL</a></li>
-            <li><a href="#">SPORT</a></li>
+            <li><a href="#" class="nav-item-active">SPORT</a></li>
+            <li><a href="#">VIRTUAL</a></li>
             <li><a href="#">UPCOMING <span class="badge-new">New</span></a></li>
             <li><a href="#">LIVE</a></li>
             <li><a href="#">RACE</a></li>
@@ -86,7 +86,9 @@
 
     <main class="mobile-main">
         
-        <div id="homeView" style="background-color: #2b2b36; min-height: 100vh;"> <div class="promo-slider-container" id="promoSlider">
+        <div id="homeView" style="background-color: #f4f4f4; min-height: 100vh;">
+            
+            <div class="promo-slider-container" id="promoSlider">
                 <div class="slider-track">
                     <div class="slide"><img src="slide1.png" alt="Promo 1"></div>
                     <div class="slide"><img src="slide2.png" alt="Promo 2"></div>
@@ -101,35 +103,90 @@
                 </div>
             </div>
 
-            <section class="virtual-content">
+            <section class="center-content">
+                <div class="game-category-header">
+                    <div class="category-title"><span class="dots-icon-horiz">•••</span><h2>Top Matches</h2></div>
+                </div>
+                
+                <div class="matches-list">
+                    <div class="white-match-card">
+                        <div class="match-meta"><span class="league-name">England - Premier League</span><span class="match-time">2 May 19:30</span></div>
+                        <div class="match-teams-row">
+                            <div class="team-col team-left"><img src="arsenal.png" alt="Arsenal" class="club-logo"><span class="team-name">Arsenal</span></div>
+                            <div class="match-vs-col"><div class="vs-text">vs</div></div>
+                            <div class="team-col team-right"><img src="fulham.png" alt="Fulham" class="club-logo"><span class="team-name">Fulham</span></div>
+                        </div>
+                        <div class="match-result-label">Match Result</div>
+                        <div class="match-odds-row">
+                            <button class="white-odd-btn"><span class="odd-label">1</span><span class="odd-val">1.45</span></button>
+                            <button class="white-odd-btn active"><span class="odd-label">X</span><span class="odd-val">4.45</span></button>
+                            <button class="white-odd-btn"><span class="odd-label">2</span><span class="odd-val">7.35</span></button>
+                        </div>
+                    </div>
+
+                    <div class="white-match-card">
+                        <div class="match-meta"><span class="league-name">Spain - La Liga</span><span class="match-time">2 May 21:00</span></div>
+                        <div class="match-teams-row">
+                            <div class="team-col team-left"><img src="osasuna.png" alt="Osasuna" class="club-logo"><span class="team-name">Osasuna</span></div>
+                            <div class="match-vs-col"><div class="vs-text">vs</div></div>
+                            <div class="team-col team-right"><img src="barcelona.png" alt="Barcelona" class="club-logo"><span class="team-name">Barcelona</span></div>
+                        </div>
+                        <div class="match-result-label">Match Result</div>
+                        <div class="match-odds-row">
+                            <button class="white-odd-btn"><span class="odd-label">1</span><span class="odd-val">5.80</span></button>
+                            <button class="white-odd-btn"><span class="odd-label">X</span><span class="odd-val">4.10</span></button>
+                            <button class="white-odd-btn"><span class="odd-label">2</span><span class="odd-val">1.55</span></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="game-category-header" style="margin-top: 30px;">
+                    <div class="category-title"><span class="dots-icon-horiz">•••</span><h2>Popular Matches</h2></div>
+                </div>
+                <table class="matches-table">
+                    <thead><tr><th>Time</th><th>Event</th><th>1</th><th>X</th><th>2</th></tr></thead>
+                    <tbody>
+                        <tr><td>12:00</td><td>PSG - B Munich</td><td class="odds-cell">2.33</td><td class="odds-cell">3.84</td><td class="odds-cell">2.77</td></tr>
+                        <tr><td>14:30</td><td>Atl Madrid - Arsenal</td><td class="odds-cell">2.87</td><td class="odds-cell">3.21</td><td class="odds-cell">2.56</td></tr>
+                        <tr><td>18:00</td><td>Juventus - Napoli</td><td class="odds-cell">2.10</td><td class="odds-cell">3.10</td><td class="odds-cell">3.50</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="game-category-header" style="margin-top: 30px;">
+                    <div class="category-title"><span class="dots-icon-horiz">•••</span><h2>Top Leagues</h2></div>
+                </div>
+                <nav class="leagues-nav">
+                    <a href="#" class="league-tab active"><i class="fa-regular fa-futbol"></i> Football</a>
+                    <a href="#" class="league-tab"><i class="fa-solid fa-basketball"></i> Basketball</a>
+                    <a href="#" class="league-tab"><i class="fa-solid fa-hockey-puck"></i> Handball</a>
+                </nav>
+                <ul class="leagues-list" style="margin-bottom: 40px;">
+                    <li><a href="#"><img src="logo.png" alt="" class="league-logo placeholder-icon"> Premier League</a></li>
+                    <li><a href="#"><img src="logo.png" alt="" class="league-logo placeholder-icon"> Bundesliga</a></li>
+                    <li><a href="#"><img src="logo.png" alt="" class="league-logo placeholder-icon"> Serie A</a></li>
+                    <li><a href="#"><img src="logo.png" alt="" class="league-logo placeholder-icon"> La Liga</a></li>
+                </ul>
+            </section>
+
+            <section class="virtual-content" style="background-color: #2b2b36; padding: 15px 0 50px 0;">
                 
                 <div class="virtual-category-header">
                     <h2>Crash Games</h2>
                     <button class="btn-circle-red"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
                 <div class="games-grid">
-                    <div class="game-card">
-                        <span class="game-badge">New</span>
-                        <img src="aviator.png" onerror="this.src='slide1.png'" alt="Aviator"> <div class="game-info-bar"><span>Aviator</span><i class="fa-solid fa-heart" style="color:white;"></i></div>
-                    </div>
-                    <div class="game-card">
-                        <span class="game-badge">New</span>
-                        <span class="race-ribbon">Race</span>
-                        <img src="furyflight.png" onerror="this.src='slide2.png'" alt="Fury Flight">
-                        <div class="game-info-bar"><span>Fury Flight</span><i class="fa-solid fa-heart" style="color:white;"></i></div>
-                    </div>
-                    <div class="game-card">
-                        <span class="game-badge">New</span>
-                        <span class="race-ribbon">Race</span>
-                        <img src="nomad.png" onerror="this.src='slide3.png'" alt="Nomad">
-                        <div class="game-info-bar"><span>Nomad</span><i class="fa-solid fa-heart" style="color:white;"></i></div>
-                    </div>
-                    <div class="game-card">
-                        <span class="game-badge">New</span>
-                        <span class="race-ribbon">Race</span>
-                        <img src="orizon.png" onerror="this.src='slide4.png'" alt="Orizon">
-                        <div class="game-info-bar"><span>Orizon</span><i class="fa-solid fa-heart" style="color:white;"></i></div>
-                    </div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Aero.webp" onerror="this.src='slide1.png'" alt="Aero"><div class="game-info-bar"><span>Aero</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Avia Rush.webp" onerror="this.src='slide1.png'" alt="Avia Rush"><div class="game-info-bar"><span>Avia Rush</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/AviaMasters.webp" onerror="this.src='slide1.png'" alt="AviaMasters"><div class="game-info-bar"><span>AviaMasters</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Aviator.webp" onerror="this.src='slide1.png'" alt="Aviator"><div class="game-info-bar"><span>Aviator</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Aviatrix.webp" onerror="this.src='slide1.png'" alt="Aviatrix"><div class="game-info-bar"><span>Aviatrix</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Chicken Route.webp" onerror="this.src='slide1.png'" alt="Chicken Route"><div class="game-info-bar"><span>Chicken Route</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Fury Flight.webp" onerror="this.src='slide1.png'" alt="Fury Flight"><div class="game-info-bar"><span>Fury Flight</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/HydroPlane.webp" onerror="this.src='slide1.png'" alt="HydroPlane"><div class="game-info-bar"><span>HydroPlane</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Limbo.webp" onerror="this.src='slide1.png'" alt="Limbo"><div class="game-info-bar"><span>Limbo</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Money Booster.webp" onerror="this.src='slide1.png'" alt="Money Booster"><div class="game-info-bar"><span>Money Booster</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Nomad.webp" onerror="this.src='slide1.png'" alt="Nomad"><div class="game-info-bar"><span>Nomad</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Orizon.webp" onerror="this.src='slide1.png'" alt="Orizon"><div class="game-info-bar"><span>Orizon</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
                 </div>
 
                 <div class="virtual-category-header">
@@ -137,18 +194,22 @@
                     <button class="btn-circle-red"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
                 <div class="games-grid">
-                    <div class="game-card">
-                        <span class="game-badge">New</span>
-                        <span class="race-ribbon">Race</span>
-                        <img src="furyflight.png" onerror="this.src='slide2.png'" alt="Fury Flight">
-                        <div class="game-info-bar"><span>Fury Flight</span><i class="fa-solid fa-heart" style="color:white;"></i></div>
-                    </div>
-                    <div class="game-card">
-                        <span class="game-badge">New</span>
-                        <span class="race-ribbon">Race</span>
-                        <img src="nomad.png" onerror="this.src='slide3.png'" alt="Nomad">
-                        <div class="game-info-bar"><span>Nomad</span><i class="fa-solid fa-heart" style="color:white;"></i></div>
-                    </div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Aero.webp" onerror="this.src='slide2.png'" alt="Aero"><div class="game-info-bar"><span>Aero</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Aztec Bonanza.webp" onerror="this.src='slide2.png'" alt="Aztec Bonanza"><div class="game-info-bar"><span>Aztec Bonanza</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Big Bass Bonaza.webp" onerror="this.src='slide2.png'" alt="Big Bass Bonaza"><div class="game-info-bar"><span>Big Bass Bonaza</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Chicken Route.webp" onerror="this.src='slide2.png'" alt="Chicken Route"><div class="game-info-bar"><span>Chicken Route</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/coin Craze Jackpot.webp" onerror="this.src='slide2.png'" alt="coin Craze Jackpot"><div class="game-info-bar"><span>coin Craze Jackpot</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Fury Flight.webp" onerror="this.src='slide2.png'" alt="Fury Flight"><div class="game-info-bar"><span>Fury Flight</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Money Booster.webp" onerror="this.src='slide2.png'" alt="Money Booster"><div class="game-info-bar"><span>Money Booster</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Nomad.webp" onerror="this.src='slide2.png'" alt="Nomad"><div class="game-info-bar"><span>Nomad</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Orizon.webp" onerror="this.src='slide2.png'" alt="Orizon"><div class="game-info-bar"><span>Orizon</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Redy.webp" onerror="this.src='slide2.png'" alt="Redy"><div class="game-info-bar"><span>Redy</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Skydot.webp" onerror="this.src='slide2.png'" alt="Skydot"><div class="game-info-bar"><span>Skydot</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Pilot Chicken.webp" onerror="this.src='slide2.png'" alt="Pilot Chicken"><div class="game-info-bar"><span>Pilot Chicken</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Plinko.webp" onerror="this.src='slide2.png'" alt="Plinko"><div class="game-info-bar"><span>Plinko</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Rocket Dice.webp" onerror="this.src='slide2.png'" alt="Rocket Dice"><div class="game-info-bar"><span>Rocket Dice</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Scratch Dice.webp" onerror="this.src='slide2.png'" alt="Scratch Dice"><div class="game-info-bar"><span>Scratch Dice</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Turboplan.webp" onerror="this.src='slide2.png'" alt="Turboplan"><div class="game-info-bar"><span>Turboplan</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
                 </div>
 
                 <div class="virtual-category-header">
@@ -156,16 +217,22 @@
                     <button class="btn-circle-red"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
                 <div class="games-grid">
-                    <div class="game-card">
-                        <span class="game-badge">New</span>
-                        <img src="100bracelets.png" onerror="this.src='slide4.png'" alt="100 Bracelets">
-                        <div class="game-info-bar"><span>100 Bracelets</span><i class="fa-solid fa-heart" style="color:white;"></i></div>
-                    </div>
-                    <div class="game-card">
-                        <span class="game-badge">New</span>
-                        <img src="100duckinghot.png" onerror="this.src='slide1.png'" alt="100 Ducking Hot">
-                        <div class="game-info-bar"><span>100 Ducking Hot</span><i class="fa-solid fa-heart" style="color:white;"></i></div>
-                    </div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/1Tap Spins.webp" onerror="this.src='slide3.png'" alt="1Tap Spins"><div class="game-info-bar"><span>1Tap Spins</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/3 Apex Treasures 93.webp" onerror="this.src='slide3.png'" alt="3 Apex Treasures 93"><div class="game-info-bar"><span>3 Apex Treasures 93</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/3 Hells Pots.webp" onerror="this.src='slide3.png'" alt="3 Hells Pots"><div class="game-info-bar"><span>3 Hells Pots</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/3 Kings Scratch.webp" onerror="this.src='slide3.png'" alt="3 Kings Scratch"><div class="game-info-bar"><span>3 Kings Scratch</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/3 Lucky Bao.webp" onerror="this.src='slide3.png'" alt="3 Lucky Bao"><div class="game-info-bar"><span>3 Lucky Bao</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/3 Magic Eggs.webp" onerror="this.src='slide3.png'" alt="3 Magic Eggs"><div class="game-info-bar"><span>3 Magic Eggs</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/12 Deadly Spins.webp" onerror="this.src='slide3.png'" alt="12 Deadly Spins"><div class="game-info-bar"><span>12 Deadly Spins</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/20 Ducking Hot.webp" onerror="this.src='slide3.png'" alt="20 Ducking Hot"><div class="game-info-bar"><span>20 Ducking Hot</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/20 Hot Bar.webp" onerror="this.src='slide3.png'" alt="20 Hot Bar"><div class="game-info-bar"><span>20 Hot Bar</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/20 Royal Hot Lucky Coin.webp" onerror="this.src='slide3.png'" alt="20 Royal Hot Lucky Coin"><div class="game-info-bar"><span>20 Royal Hot Lucky Coin</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/100 Bracelets.webp" onerror="this.src='slide3.png'" alt="100 Bracelets"><div class="game-info-bar"><span>100 Bracelets</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/100 Dunking Hot.webp" onerror="this.src='slide3.png'" alt="100 Dunking Hot"><div class="game-info-bar"><span>100 Dunking Hot</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/777 Rush.webp" onerror="this.src='slide3.png'" alt="777 Rush"><div class="game-info-bar"><span>777 Rush</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/777 Triple Sevens.webp" onerror="this.src='slide3.png'" alt="777 Triple Sevens"><div class="game-info-bar"><span>777 Triple Sevens</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/888 Gold.webp" onerror="this.src='slide3.png'" alt="888 Gold"><div class="game-info-bar"><span>888 Gold</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/Agent 7.webp" onerror="this.src='slide3.png'" alt="Agent 7"><div class="game-info-bar"><span>Agent 7</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
                 </div>
 
                 <div class="virtual-category-header">
@@ -173,16 +240,17 @@
                     <button class="btn-circle-red"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
                 <div class="games-grid">
-                    <div class="game-card">
-                        <span class="game-badge">New</span>
-                        <img src="dice.png" onerror="this.src='slide2.png'" alt="Dice">
-                        <div class="game-info-bar"><span>Dice</span><i class="fa-solid fa-heart" style="color:white;"></i></div>
-                    </div>
-                    <div class="game-card">
-                        <span class="game-badge">New</span>
-                        <img src="goal.png" onerror="this.src='slide3.png'" alt="Goal">
-                        <div class="game-info-bar"><span>Goal</span><i class="fa-solid fa-heart" style="color:white;"></i></div>
-                    </div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Balloon.webp" onerror="this.src='slide4.png'" alt="Balloon"><div class="game-info-bar"><span>Balloon</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Dice.webp" onerror="this.src='slide4.png'" alt="Dice"><div class="game-info-bar"><span>Dice</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Goal.webp" onerror="this.src='slide4.png'" alt="Goal"><div class="game-info-bar"><span>Goal</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Hi lo.webp" onerror="this.src='slide4.png'" alt="Hi lo"><div class="game-info-bar"><span>Hi lo</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Hotline.webp" onerror="this.src='slide4.png'" alt="Hotline"><div class="game-info-bar"><span>Hotline</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Keno 80.webp" onerror="this.src='slide4.png'" alt="Keno 80"><div class="game-info-bar"><span>Keno 80</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Keno.webp" onerror="this.src='slide4.png'" alt="Keno"><div class="game-info-bar"><span>Keno</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Mines.webp" onerror="this.src='slide4.png'" alt="Mines"><div class="game-info-bar"><span>Mines</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Mini Roulette.webp" onerror="this.src='slide4.png'" alt="Mini Roulette"><div class="game-info-bar"><span>Mini Roulette</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Plinko.webp" onerror="this.src='slide4.png'" alt="Plinko"><div class="game-info-bar"><span>Plinko</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Trader.webp" onerror="this.src='slide4.png'" alt="Trader"><div class="game-info-bar"><span>Trader</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
                 </div>
 
                 <div class="virtual-category-header">
@@ -190,19 +258,20 @@
                     <button class="btn-circle-red"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
                 <div class="games-grid">
-                    <div class="game-card">
-                        <span class="game-badge">New</span>
-                        <img src="clovers100.png" onerror="this.src='slide4.png'" alt="Clovers 100">
-                        <div class="game-info-bar"><span>All Lucky Clovers 100</span><i class="fa-solid fa-heart" style="color:white;"></i></div>
-                    </div>
-                    <div class="game-card">
-                        <span class="game-badge">New</span>
-                        <img src="clovers20.png" onerror="this.src='slide1.png'" alt="Clovers 20">
-                        <div class="game-info-bar"><span>All Lucky Clovers 20</span><i class="fa-solid fa-heart" style="color:white;"></i></div>
-                    </div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/All Lucky Clovers 5.webp" onerror="this.src='slide1.png'" alt="All Lucky Clovers 5"><div class="game-info-bar"><span>All Lucky Clovers 5</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/All Lucky Clovers 20.webp" onerror="this.src='slide1.png'" alt="All Lucky Clovers 20"><div class="game-info-bar"><span>All Lucky Clovers 20</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/All Lucky Clovers 40.webp" onerror="this.src='slide1.png'" alt="All Lucky Clovers 40"><div class="game-info-bar"><span>All Lucky Clovers 40</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/All Lucky Clovers 100.webp" onerror="this.src='slide1.png'" alt="All Lucky Clovers 100"><div class="game-info-bar"><span>All Lucky Clovers 100</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/Avalon.webp" onerror="this.src='slide1.png'" alt="Avalon"><div class="game-info-bar"><span>Avalon</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/Aztec Magic Bonanza.webp" onerror="this.src='slide1.png'" alt="Aztec Magic Bonanza"><div class="game-info-bar"><span>Aztec Magic Bonanza</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/Aztec Magic Deluxe.webp" onerror="this.src='slide1.png'" alt="Aztec Magic Deluxe"><div class="game-info-bar"><span>Aztec Magic Deluxe</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/Beer Bonanza.webp" onerror="this.src='slide1.png'" alt="Beer Bonanza"><div class="game-info-bar"><span>Beer Bonanza</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/Bonanza Billion.webp" onerror="this.src='slide1.png'" alt="Bonanza Billion"><div class="game-info-bar"><span>Bonanza Billion</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/Book of Cats Megaways.webp" onerror="this.src='slide1.png'" alt="Book of Cats Megaways"><div class="game-info-bar"><span>Book of Cats Megaways</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/Book of cats.webp" onerror="this.src='slide1.png'" alt="Book of cats"><div class="game-info-bar"><span>Book of cats</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/Book of Pyramids.webp" onerror="this.src='slide1.png'" alt="Book of Pyramids"><div class="game-info-bar"><span>Book of Pyramids</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
                 </div>
 
-                <div style="padding-bottom: 50px;"></div>
             </section>
         </div>
 
@@ -353,6 +422,14 @@
                 <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-baseball"></i></span> Tennis <span class="chevron">&#10095;</span></a></li>
                 <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-hockey-puck"></i></span> Ice Hockey <span class="chevron">&#10095;</span></a></li>
                 <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-volleyball"></i></span> Volleyball <span class="chevron">&#10095;</span></a></li>
+                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-football"></i></span> Rugby Union <span class="chevron">&#10095;</span></a></li>
+                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-table-tennis-paddle-ball"></i></span> Table Tennis <span class="chevron">&#10095;</span></a></li>
+                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-football"></i></span> Rugby League <span class="chevron">&#10095;</span></a></li>
+                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-football"></i></span> American Football <span class="chevron">&#10095;</span></a></li>
+                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-handshake"></i></span> Handball <span class="chevron">&#10095;</span></a></li>
+                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-hand-fist"></i></span> Boxing <span class="chevron">&#10095;</span></a></li>
+                <li><a href="#"><span class="sport-icon"><i class="fa-regular fa-futbol"></i></span> Futsal <span class="chevron">&#10095;</span></a></li>
+                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-bowling-ball"></i></span> Snooker <span class="chevron">&#10095;</span></a></li>
             </ul>
         </div>
     </aside>

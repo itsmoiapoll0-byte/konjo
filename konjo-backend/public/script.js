@@ -4,7 +4,7 @@
 const homeView = document.getElementById('homeView');
 const paymentsView = document.getElementById('paymentsView');
 const homeLogoBtn = document.getElementById('homeLogoBtn');
-const actionBar = document.getElementById('actionBar'); // The second menu
+const actionBar = document.getElementById('actionBar');
 
 const loggedOutActions = document.getElementById('loggedOutActions');
 const loggedInActions = document.getElementById('loggedInActions');
