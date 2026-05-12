@@ -6,6 +6,11 @@ const paymentsView = document.getElementById('paymentsView');
 const homeLogoBtn = document.getElementById('homeLogoBtn');
 const actionBar = document.getElementById('actionBar');
 
+const sportsSection = document.getElementById('sportsSection');
+const virtualSection = document.getElementById('virtualSection');
+const navSportBtn = document.getElementById('navSportBtn');
+const navVirtualBtn = document.getElementById('navVirtualBtn');
+
 const loggedOutActions = document.getElementById('loggedOutActions');
 const loggedInActions = document.getElementById('loggedInActions');
 
@@ -26,10 +31,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// ==========================================
+// TOP NAVIGATION (Sports vs Virtuals)
+// ==========================================
+navSportBtn.onclick = (e) => {
+    e.preventDefault();
+    navSportBtn.classList.add('nav-item-active');
+    navVirtualBtn.classList.remove('nav-item-active');
+    sportsSection.style.display = 'block';
+    virtualSection.style.display = 'none';
+    
+    homeView.style.display = 'block';
+    paymentsView.style.display = 'none';
+    if(actionBar) actionBar.style.display = 'flex';
+};
+
+navVirtualBtn.onclick = (e) => {
+    e.preventDefault();
+    navVirtualBtn.classList.add('nav-item-active');
+    navSportBtn.classList.remove('nav-item-active');
+    sportsSection.style.display = 'none';
+    virtualSection.style.display = 'block';
+    
+    homeView.style.display = 'block';
+    paymentsView.style.display = 'none';
+    if(actionBar) actionBar.style.display = 'flex';
+};
+
 // Make Virtual Games Clickable
 document.querySelectorAll('.game-card').forEach(card => {
     card.onclick = () => alert("Launching virtual game...");
 });
+
 
 // ==========================================
 // AUTHENTICATION LOGIC (Gasha-style bypass)
@@ -208,12 +241,13 @@ document.querySelectorAll('.eye-icon i').forEach(icon => {
 });
 
 // ==========================================
-// VIEWS TOGGLING (Home vs Payments)
+// VIEWS TOGGLING (Payments Logic)
 // ==========================================
 homeLogoBtn.onclick = () => {
     paymentsView.style.display = 'none';
     homeView.style.display = 'block';
     if(actionBar) actionBar.style.display = 'flex';
+    navSportBtn.click(); // Reset to sport view
 };
 
 window.openPaymentsTab = function(tabName) {
@@ -225,6 +259,7 @@ window.openPaymentsTab = function(tabName) {
     
     const depositContent = document.getElementById('depositContent');
     const depositActionTelebirr = document.getElementById('depositActionTelebirr');
+    const withdrawContent = document.getElementById('withdrawContent');
     const withdrawalReqContent = document.getElementById('withdrawalReqContent');
     const tabDepositBtn = document.getElementById('tabDepositBtn');
     const tabWithdrawBtn = document.getElementById('tabWithdrawBtn');
@@ -236,6 +271,7 @@ window.openPaymentsTab = function(tabName) {
     
     depositContent.style.display = 'none';
     depositActionTelebirr.style.display = 'none';
+    withdrawContent.style.display = 'none';
     withdrawalReqContent.style.display = 'none';
 
     if (tabName === 'Deposit') {
@@ -243,7 +279,7 @@ window.openPaymentsTab = function(tabName) {
         depositContent.style.display = 'block'; 
     } else if (tabName === 'Withdraw') {
         tabWithdrawBtn.classList.add('active');
-        depositContent.style.display = 'block'; 
+        withdrawContent.style.display = 'block'; 
     } else if (tabName === 'Withdrawal Request') {
         tabWithdrawReqBtn.classList.add('active');
         withdrawalReqContent.style.display = 'block';

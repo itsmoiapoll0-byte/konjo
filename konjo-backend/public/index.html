@@ -6,14 +6,17 @@
     <title>KonjoBet Replica - Sport & Virtuals</title>
     <link rel="stylesheet" href="style.css">
     
+    <!-- Real Site Typography Stack -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
 
+    <!-- Font Awesome Kit -->
     <script src="https://kit.fontawesome.com/5d2ece54cc.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
+    <!-- Mobile Header -->
     <header class="mobile-header">
         <button class="icon-btn hamburger-btn" id="openDrawerBtn">
             <i class="fa-solid fa-bars" style="font-size: 24px; color: white;"></i>
@@ -22,6 +25,7 @@
             <img src="logo.png" alt="KonjoBet">
         </div>
         
+        <!-- Logged OUT Actions -->
         <div class="top-actions" id="loggedOutActions">
             <div class="profile-dots-container" id="dotsMenuBtn">
                 <span class="user-icon"><i class="fa-solid fa-user-circle"></i></span>
@@ -30,6 +34,7 @@
             </div>
         </div>
 
+        <!-- Logged IN Actions (Hidden by default) -->
         <div class="top-actions" id="loggedInActions" style="display: none; gap: 15px; align-items: center;">
             <button class="icon-btn"><i class="fa-solid fa-gift" style="font-size: 20px;"></i></button>
             <button class="icon-btn" id="loggedInDotsBtn">
@@ -39,10 +44,11 @@
         </div>
     </header>
     
+    <!-- Red Top Navigation (SPORT & VIRTUAL are now toggles) -->
     <nav class="main-nav">
         <ul>
-            <li><a href="#" class="nav-item-active">SPORT</a></li>
-            <li><a href="#">VIRTUAL</a></li>
+            <li><a href="#" id="navSportBtn" class="nav-item-active">SPORT</a></li>
+            <li><a href="#" id="navVirtualBtn">VIRTUAL</a></li>
             <li><a href="#">UPCOMING <span class="badge-new">New</span></a></li>
             <li><a href="#">LIVE</a></li>
             <li><a href="#">RACE</a></li>
@@ -55,37 +61,22 @@
         </ul>
     </nav>
     
+    <!-- Action Bar -->
     <div class="action-bar" id="actionBar">
-        <button class="action-btn">
-            <span class="icon"><i class="fa-solid fa-ticket"></i></span>
-            <span>Check Bet</span>
-        </button>
-        <button class="action-btn">
-            <span class="icon"><i class="fa-solid fa-magnifying-glass"></i></span>
-            <span>Search Event</span>
-        </button>
-        <button class="action-btn active">
-            <span class="icon"><i class="fa-solid fa-stopwatch"></i></span>
-            <span>IN-PLAY</span>
-        </button>
-        <button class="action-btn">
-            <span class="count-badge">845</span>
-            <span class="icon"><i class="fa-regular fa-futbol"></i></span>
-            <span>Football</span>
-        </button>
-        <button class="action-btn">
-            <span class="count-badge">85</span>
-            <span class="icon"><i class="fa-solid fa-basketball"></i></span>
-            <span>Basketball</span>
-        </button>
-        <button class="action-btn">
-            <span class="icon"><i class="fa-solid fa-baseball"></i></span>
-            <span>Tennis</span>
-        </button>
+        <button class="action-btn"><span class="icon"><i class="fa-solid fa-ticket"></i></span><span>Check Bet</span></button>
+        <button class="action-btn"><span class="icon"><i class="fa-solid fa-magnifying-glass"></i></span><span>Search Event</span></button>
+        <button class="action-btn active"><span class="icon"><i class="fa-solid fa-stopwatch"></i></span><span>IN-PLAY</span></button>
+        <button class="action-btn"><span class="count-badge">845</span><span class="icon"><i class="fa-regular fa-futbol"></i></span><span>Football</span></button>
+        <button class="action-btn"><span class="count-badge">85</span><span class="icon"><i class="fa-solid fa-basketball"></i></span><span>Basketball</span></button>
+        <button class="action-btn"><span class="icon"><i class="fa-solid fa-baseball"></i></span><span>Tennis</span></button>
     </div>
 
+    <!-- MAIN WRAPPER -->
     <main class="mobile-main">
         
+        <!-- ========================================== -->
+        <!-- HOME VIEW (Toggles Sport vs Virtual)       -->
+        <!-- ========================================== -->
         <div id="homeView" style="background-color: #f4f4f4; min-height: 100vh;">
             
             <div class="promo-slider-container" id="promoSlider">
@@ -103,11 +94,9 @@
                 </div>
             </div>
 
-            <section class="center-content">
-                <div class="game-category-header">
-                    <div class="category-title"><span class="dots-icon-horiz">•••</span><h2>Top Matches</h2></div>
-                </div>
-                
+            <!-- SPORTS SECTION (Visible by default) -->
+            <section id="sportsSection" class="center-content">
+                <div class="game-category-header"><div class="category-title"><span class="dots-icon-horiz">•••</span><h2>Top Matches</h2></div></div>
                 <div class="matches-list">
                     <div class="white-match-card">
                         <div class="match-meta"><span class="league-name">England - Premier League</span><span class="match-time">2 May 19:30</span></div>
@@ -123,7 +112,6 @@
                             <button class="white-odd-btn"><span class="odd-label">2</span><span class="odd-val">7.35</span></button>
                         </div>
                     </div>
-
                     <div class="white-match-card">
                         <div class="match-meta"><span class="league-name">Spain - La Liga</span><span class="match-time">2 May 21:00</span></div>
                         <div class="match-teams-row">
@@ -140,40 +128,32 @@
                     </div>
                 </div>
                 
-                <div class="game-category-header" style="margin-top: 30px;">
-                    <div class="category-title"><span class="dots-icon-horiz">•••</span><h2>Popular Matches</h2></div>
-                </div>
+                <div class="game-category-header" style="margin-top: 30px;"><div class="category-title"><span class="dots-icon-horiz">•••</span><h2>Popular Matches</h2></div></div>
                 <table class="matches-table">
                     <thead><tr><th>Time</th><th>Event</th><th>1</th><th>X</th><th>2</th></tr></thead>
                     <tbody>
                         <tr><td>12:00</td><td>PSG - B Munich</td><td class="odds-cell">2.33</td><td class="odds-cell">3.84</td><td class="odds-cell">2.77</td></tr>
                         <tr><td>14:30</td><td>Atl Madrid - Arsenal</td><td class="odds-cell">2.87</td><td class="odds-cell">3.21</td><td class="odds-cell">2.56</td></tr>
-                        <tr><td>18:00</td><td>Juventus - Napoli</td><td class="odds-cell">2.10</td><td class="odds-cell">3.10</td><td class="odds-cell">3.50</td></tr>
                     </tbody>
                 </table>
-
-                <div class="game-category-header" style="margin-top: 30px;">
-                    <div class="category-title"><span class="dots-icon-horiz">•••</span><h2>Top Leagues</h2></div>
-                </div>
+                
+                <div class="game-category-header" style="margin-top: 30px;"><div class="category-title"><span class="dots-icon-horiz">•••</span><h2>Top Leagues</h2></div></div>
                 <nav class="leagues-nav">
                     <a href="#" class="league-tab active"><i class="fa-regular fa-futbol"></i> Football</a>
                     <a href="#" class="league-tab"><i class="fa-solid fa-basketball"></i> Basketball</a>
-                    <a href="#" class="league-tab"><i class="fa-solid fa-hockey-puck"></i> Handball</a>
                 </nav>
                 <ul class="leagues-list" style="margin-bottom: 40px;">
                     <li><a href="#"><img src="logo.png" alt="" class="league-logo placeholder-icon"> Premier League</a></li>
                     <li><a href="#"><img src="logo.png" alt="" class="league-logo placeholder-icon"> Bundesliga</a></li>
-                    <li><a href="#"><img src="logo.png" alt="" class="league-logo placeholder-icon"> Serie A</a></li>
                     <li><a href="#"><img src="logo.png" alt="" class="league-logo placeholder-icon"> La Liga</a></li>
                 </ul>
             </section>
 
-            <section class="virtual-content" style="background-color: #2b2b36; padding: 15px 0 50px 0;">
+            <!-- VIRTUAL GAMES SECTION (Hidden by default, triggered by Nav) -->
+            <section id="virtualSection" class="virtual-content" style="display: none; background-color: #2b2b36; padding: 15px 0 50px 0;">
                 
-                <div class="virtual-category-header">
-                    <h2>Crash Games</h2>
-                    <button class="btn-circle-red"><i class="fa-solid fa-chevron-right"></i></button>
-                </div>
+                <!-- Crash Games -->
+                <div class="virtual-category-header"><h2>Crash Games</h2><button class="btn-circle-red"><i class="fa-solid fa-chevron-right"></i></button></div>
                 <div class="games-grid">
                     <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Aero.webp" onerror="this.src='slide1.png'" alt="Aero"><div class="game-info-bar"><span>Aero</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
                     <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Avia Rush.webp" onerror="this.src='slide1.png'" alt="Avia Rush"><div class="game-info-bar"><span>Avia Rush</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
@@ -181,28 +161,26 @@
                     <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Aviator.webp" onerror="this.src='slide1.png'" alt="Aviator"><div class="game-info-bar"><span>Aviator</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
                     <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Aviatrix.webp" onerror="this.src='slide1.png'" alt="Aviatrix"><div class="game-info-bar"><span>Aviatrix</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
                     <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Chicken Route.webp" onerror="this.src='slide1.png'" alt="Chicken Route"><div class="game-info-bar"><span>Chicken Route</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Fury Flight.webp" onerror="this.src='slide1.png'" alt="Fury Flight"><div class="game-info-bar"><span>Fury Flight</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><span class="race-ribbon">Race</span><img src="Crash Games/Fury Flight.webp" onerror="this.src='slide1.png'" alt="Fury Flight"><div class="game-info-bar"><span>Fury Flight</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
                     <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/HydroPlane.webp" onerror="this.src='slide1.png'" alt="HydroPlane"><div class="game-info-bar"><span>HydroPlane</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
                     <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Limbo.webp" onerror="this.src='slide1.png'" alt="Limbo"><div class="game-info-bar"><span>Limbo</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
                     <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Money Booster.webp" onerror="this.src='slide1.png'" alt="Money Booster"><div class="game-info-bar"><span>Money Booster</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Nomad.webp" onerror="this.src='slide1.png'" alt="Nomad"><div class="game-info-bar"><span>Nomad</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Orizon.webp" onerror="this.src='slide1.png'" alt="Orizon"><div class="game-info-bar"><span>Orizon</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><span class="race-ribbon">Race</span><img src="Crash Games/Nomad.webp" onerror="this.src='slide1.png'" alt="Nomad"><div class="game-info-bar"><span>Nomad</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><span class="race-ribbon">Race</span><img src="Crash Games/Orizon.webp" onerror="this.src='slide1.png'" alt="Orizon"><div class="game-info-bar"><span>Orizon</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
                 </div>
 
-                <div class="virtual-category-header">
-                    <h2>Special Konjo</h2>
-                    <button class="btn-circle-red"><i class="fa-solid fa-chevron-right"></i></button>
-                </div>
+                <!-- Special Konjo -->
+                <div class="virtual-category-header"><h2>Special Konjo</h2><button class="btn-circle-red"><i class="fa-solid fa-chevron-right"></i></button></div>
                 <div class="games-grid">
                     <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Aero.webp" onerror="this.src='slide2.png'" alt="Aero"><div class="game-info-bar"><span>Aero</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
                     <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Aztec Bonanza.webp" onerror="this.src='slide2.png'" alt="Aztec Bonanza"><div class="game-info-bar"><span>Aztec Bonanza</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
                     <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Big Bass Bonaza.webp" onerror="this.src='slide2.png'" alt="Big Bass Bonaza"><div class="game-info-bar"><span>Big Bass Bonaza</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
                     <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Chicken Route.webp" onerror="this.src='slide2.png'" alt="Chicken Route"><div class="game-info-bar"><span>Chicken Route</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
                     <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/coin Craze Jackpot.webp" onerror="this.src='slide2.png'" alt="coin Craze Jackpot"><div class="game-info-bar"><span>coin Craze Jackpot</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Fury Flight.webp" onerror="this.src='slide2.png'" alt="Fury Flight"><div class="game-info-bar"><span>Fury Flight</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><span class="race-ribbon">Race</span><img src="Special Konjo/Fury Flight.webp" onerror="this.src='slide2.png'" alt="Fury Flight"><div class="game-info-bar"><span>Fury Flight</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
                     <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Money Booster.webp" onerror="this.src='slide2.png'" alt="Money Booster"><div class="game-info-bar"><span>Money Booster</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Nomad.webp" onerror="this.src='slide2.png'" alt="Nomad"><div class="game-info-bar"><span>Nomad</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Orizon.webp" onerror="this.src='slide2.png'" alt="Orizon"><div class="game-info-bar"><span>Orizon</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><span class="race-ribbon">Race</span><img src="Special Konjo/Nomad.webp" onerror="this.src='slide2.png'" alt="Nomad"><div class="game-info-bar"><span>Nomad</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><span class="race-ribbon">Race</span><img src="Special Konjo/Orizon.webp" onerror="this.src='slide2.png'" alt="Orizon"><div class="game-info-bar"><span>Orizon</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
                     <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Redy.webp" onerror="this.src='slide2.png'" alt="Redy"><div class="game-info-bar"><span>Redy</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
                     <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Skydot.webp" onerror="this.src='slide2.png'" alt="Skydot"><div class="game-info-bar"><span>Skydot</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
                     <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Pilot Chicken.webp" onerror="this.src='slide2.png'" alt="Pilot Chicken"><div class="game-info-bar"><span>Pilot Chicken</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
@@ -212,10 +190,8 @@
                     <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Turboplan.webp" onerror="this.src='slide2.png'" alt="Turboplan"><div class="game-info-bar"><span>Turboplan</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
                 </div>
 
-                <div class="virtual-category-header">
-                    <h2>All Slots</h2>
-                    <button class="btn-circle-red"><i class="fa-solid fa-chevron-right"></i></button>
-                </div>
+                <!-- All Slots -->
+                <div class="virtual-category-header"><h2>All Slots</h2><button class="btn-circle-red"><i class="fa-solid fa-chevron-right"></i></button></div>
                 <div class="games-grid">
                     <div class="game-card"><span class="game-badge">New</span><img src="All Slots/1Tap Spins.webp" onerror="this.src='slide3.png'" alt="1Tap Spins"><div class="game-info-bar"><span>1Tap Spins</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
                     <div class="game-card"><span class="game-badge">New</span><img src="All Slots/3 Apex Treasures 93.webp" onerror="this.src='slide3.png'" alt="3 Apex Treasures 93"><div class="game-info-bar"><span>3 Apex Treasures 93</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
@@ -235,10 +211,8 @@
                     <div class="game-card"><span class="game-badge">New</span><img src="All Slots/Agent 7.webp" onerror="this.src='slide3.png'" alt="Agent 7"><div class="game-info-bar"><span>Agent 7</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
                 </div>
 
-                <div class="virtual-category-header">
-                    <h2>Spribe</h2>
-                    <button class="btn-circle-red"><i class="fa-solid fa-chevron-right"></i></button>
-                </div>
+                <!-- Spribe -->
+                <div class="virtual-category-header"><h2>Spribe</h2><button class="btn-circle-red"><i class="fa-solid fa-chevron-right"></i></button></div>
                 <div class="games-grid">
                     <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Balloon.webp" onerror="this.src='slide4.png'" alt="Balloon"><div class="game-info-bar"><span>Balloon</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
                     <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Dice.webp" onerror="this.src='slide4.png'" alt="Dice"><div class="game-info-bar"><span>Dice</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
@@ -253,10 +227,8 @@
                     <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Trader.webp" onerror="this.src='slide4.png'" alt="Trader"><div class="game-info-bar"><span>Trader</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
                 </div>
 
-                <div class="virtual-category-header">
-                    <h2>B gaming</h2>
-                    <button class="btn-circle-red"><i class="fa-solid fa-chevron-right"></i></button>
-                </div>
+                <!-- B gaming -->
+                <div class="virtual-category-header"><h2>B gaming</h2><button class="btn-circle-red"><i class="fa-solid fa-chevron-right"></i></button></div>
                 <div class="games-grid">
                     <div class="game-card"><span class="game-badge">New</span><img src="B gaming/All Lucky Clovers 5.webp" onerror="this.src='slide1.png'" alt="All Lucky Clovers 5"><div class="game-info-bar"><span>All Lucky Clovers 5</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
                     <div class="game-card"><span class="game-badge">New</span><img src="B gaming/All Lucky Clovers 20.webp" onerror="this.src='slide1.png'" alt="All Lucky Clovers 20"><div class="game-info-bar"><span>All Lucky Clovers 20</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
@@ -271,85 +243,66 @@
                     <div class="game-card"><span class="game-badge">New</span><img src="B gaming/Book of cats.webp" onerror="this.src='slide1.png'" alt="Book of cats"><div class="game-info-bar"><span>Book of cats</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
                     <div class="game-card"><span class="game-badge">New</span><img src="B gaming/Book of Pyramids.webp" onerror="this.src='slide1.png'" alt="Book of Pyramids"><div class="game-info-bar"><span>Book of Pyramids</span><i class="fa-solid fa-heart" style="color:white;"></i></div></div>
                 </div>
-
             </section>
         </div>
 
-        <div id="paymentsView" style="display: none;">
-            <div class="payments-title-bar">PAYMENTS</div>
-            <div class="payments-tabs-nav">
-                <button class="pay-tab active" id="tabDepositBtn">Deposit</button>
-                <button class="pay-tab" id="tabWithdrawBtn">Withdraw</button>
-                <button class="pay-tab" id="tabWithdrawReqBtn">Withdrawal Request</button>
+        <!-- ========================================== -->
+        <!-- PAYMENTS VIEW                              -->
+        <!-- ========================================== -->
+        <div id="paymentsView" style="display: none; background-color: #f4f4f4; min-height: 100vh; padding-bottom: 50px;">
+            <div class="payments-title-bar" style="background-color: var(--bg-header); color: white; text-align: center; padding: 15px; font-size: 15px; font-weight: 700; font-family: var(--font-condensed);">PAYMENTS</div>
+            <div class="payments-tabs-nav" style="display: flex; background: var(--bg-header); border-top: 1px solid rgba(255,255,255,0.1);">
+                <button class="pay-tab active" id="tabDepositBtn" style="flex: 1; background: none; border: none; color: white; padding: 15px 5px; font-size: 14px; font-weight: 500; font-family: var(--font-condensed); cursor: pointer; border-bottom: 3px solid transparent;">Deposit</button>
+                <button class="pay-tab" id="tabWithdrawBtn" style="flex: 1; background: none; border: none; color: white; padding: 15px 5px; font-size: 14px; font-weight: 500; font-family: var(--font-condensed); cursor: pointer; border-bottom: 3px solid transparent;">Withdraw</button>
+                <button class="pay-tab" id="tabWithdrawReqBtn" style="flex: 1; background: none; border: none; color: white; padding: 15px 5px; font-size: 14px; font-weight: 500; font-family: var(--font-condensed); cursor: pointer; border-bottom: 3px solid transparent;">Withdrawal Request</button>
             </div>
 
-            <div id="depositContent" class="pay-content-area">
-                <div class="payment-card">
-                    <div class="pay-logo-area">
+            <!-- 1. DEPOSIT METHODS -->
+            <div id="depositContent" class="pay-content-area" style="padding: 15px;">
+                <div class="payment-card" style="background: white; border: 1px solid #ddd; margin-bottom: 15px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-radius: 2px;">
+                    <div class="pay-logo-area" style="padding: 25px; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: center;">
                         <img src="1.png" alt="Telebirr" style="height: 35px; width: 100%; object-fit: contain;">
                     </div>
-                    <div class="pay-detail-row"><span>Service Fee</span></div>
-                    <div class="pay-detail-row"><b>Free</b></div>
-                    <div class="pay-detail-row"><span>Process Time</span></div>
-                    <div class="pay-detail-row"><b>5-10 minutes</b></div>
-                    <button class="btn-deposit-action" onclick="openDepositAction('telebirr')">Deposit</button>
+                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><span>Service Fee</span></div>
+                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><b>Free</b></div>
+                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><span>Process Time</span></div>
+                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><b>5-10 minutes</b></div>
+                    <button class="btn-deposit-action" style="width: 90%; margin: 20px auto; background: white; color: #15803d; border: 2px solid #15803d; padding: 12px; font-size: 15px; font-weight: bold; font-family: var(--font-condensed); border-radius: 2px; cursor: pointer; text-transform: uppercase;" onclick="openDepositAction('telebirr')">Deposit</button>
                 </div>
-                <div class="payment-card">
-                    <div class="pay-logo-area">
+                <div class="payment-card" style="background: white; border: 1px solid #ddd; margin-bottom: 15px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-radius: 2px;">
+                    <div class="pay-logo-area" style="padding: 25px; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: center;">
                         <img src="usdt.png" alt="USDT-TON" style="height: 35px; width: 100%; object-fit: contain;">
                     </div>
-                    <div class="pay-detail-row"><span>Service Fee</span></div>
-                    <div class="pay-detail-row"><b>Free</b></div>
-                    <div class="pay-detail-row"><span>Process Time</span></div>
-                    <div class="pay-detail-row"><b>5-10 minutes</b></div>
-                    <button class="btn-deposit-action">Deposit</button>
+                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><span>Service Fee</span></div>
+                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><b>Free</b></div>
+                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><span>Process Time</span></div>
+                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><b>5-10 minutes</b></div>
+                    <button class="btn-deposit-action" style="width: 90%; margin: 20px auto; background: white; color: #15803d; border: 2px solid #15803d; padding: 12px; font-size: 15px; font-weight: bold; font-family: var(--font-condensed); border-radius: 2px; cursor: pointer; text-transform: uppercase;">Deposit</button>
                 </div>
-                <div class="payment-card">
-                    <div class="pay-logo-area">
+                <div class="payment-card" style="background: white; border: 1px solid #ddd; margin-bottom: 15px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-radius: 2px;">
+                    <div class="pay-logo-area" style="padding: 25px; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: center;">
                         <img src="usdtt.png" alt="Tether USDT TRC20" style="height: 35px; width: 100%; object-fit: contain;">
                     </div>
-                    <div class="pay-detail-row"><span>Service Fee</span></div>
-                    <div class="pay-detail-row"><b>Free</b></div>
-                    <div class="pay-detail-row"><span>Process Time</span></div>
-                    <div class="pay-detail-row"><b>Instant</b></div>
-                    <button class="btn-deposit-action">Deposit</button>
-                </div>
-                <div class="payment-card">
-                    <div class="pay-logo-area">
-                        <img src="voucher.png" alt="Voucher" style="height: 35px; width: 100%; object-fit: contain;">
-                    </div>
-                    <div class="pay-detail-row"><span>Service Fee</span></div>
-                    <div class="pay-detail-row"><b>Free</b></div>
-                    <div class="pay-detail-row"><span>Process Time</span></div>
-                    <div class="pay-detail-row"><b>Instant</b></div>
-                    <button class="btn-deposit-action">Deposit</button>
+                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><span>Service Fee</span></div>
+                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><b>Free</b></div>
+                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><span>Process Time</span></div>
+                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><b>Instant</b></div>
+                    <button class="btn-deposit-action" style="width: 90%; margin: 20px auto; background: white; color: #15803d; border: 2px solid #15803d; padding: 12px; font-size: 15px; font-weight: bold; font-family: var(--font-condensed); border-radius: 2px; cursor: pointer; text-transform: uppercase;">Deposit</button>
                 </div>
             </div>
 
+            <!-- 2. DEPOSIT ACTION (TELEBIRR REPLICA) -->
             <div id="depositActionTelebirr" style="display: none; background: white; padding-bottom: 20px;">
                 <div class="pay-logo-area" style="padding: 15px; border-bottom: 1px solid #eee; display: flex; justify-content: center;">
                     <img src="1.png" alt="Telebirr" style="height: 40px; object-fit: contain;">
                 </div>
-                <div style="display:flex; flex-direction:column; align-items:center; padding: 12px; border-bottom: 1px solid #eee;">
-                    <span style="color:#666; font-size:13px; margin-bottom:5px;">Service Fee</span>
-                    <b style="font-size:14px; color: #333;">Free</b>
-                </div>
-                <div style="display:flex; flex-direction:column; align-items:center; padding: 12px; border-bottom: 1px solid #eee;">
-                    <span style="color:#666; font-size:13px; margin-bottom:5px;">Process Time</span>
-                    <b style="font-size:14px; color: #333;">5-10 minutes</b>
-                </div>
-                <div style="display:flex; flex-direction:column; align-items:center; padding: 12px; border-bottom: 1px solid #eee;">
-                    <span style="color:#666; font-size:13px; margin-bottom:5px; font-weight: bold;">Min. Amount</span>
-                    <b style="font-size:14px; color: #333;">500 ETB</b>
-                </div>
-                <div style="display:flex; flex-direction:column; align-items:center; padding: 12px; border-bottom: 1px solid #eee;">
-                    <span style="color:#666; font-size:13px; margin-bottom:5px; font-weight: bold;">Max. Amount</span>
-                    <b style="font-size:14px; color: #333;">75000 ETB</b>
-                </div>
+                <div style="display:flex; flex-direction:column; align-items:center; padding: 12px; border-bottom: 1px solid #eee;"><span style="color:#666; font-size:13px; margin-bottom:5px;">Service Fee</span><b style="font-size:14px; color: #333;">Free</b></div>
+                <div style="display:flex; flex-direction:column; align-items:center; padding: 12px; border-bottom: 1px solid #eee;"><span style="color:#666; font-size:13px; margin-bottom:5px;">Process Time</span><b style="font-size:14px; color: #333;">5-10 minutes</b></div>
+                <div style="display:flex; flex-direction:column; align-items:center; padding: 12px; border-bottom: 1px solid #eee;"><span style="color:#666; font-size:13px; margin-bottom:5px; font-weight: bold;">Min. Amount</span><b style="font-size:14px; color: #333;">500 ETB</b></div>
+                <div style="display:flex; flex-direction:column; align-items:center; padding: 12px; border-bottom: 1px solid #eee;"><span style="color:#666; font-size:13px; margin-bottom:5px; font-weight: bold;">Max. Amount</span><b style="font-size:14px; color: #333;">75000 ETB</b></div>
                 
                 <div class="deposit-instructions" style="padding: 20px; text-align: left; background: #fff;">
                     <p style="color: #666; font-size: 13px; line-height: 1.5; margin-bottom: 10px;">1. Copy Mobile number from the Mobile number field</p>
-                    
                     <label style="font-weight: bold; font-size: 13px; color: #555; display:block; margin-bottom:5px;">Receiver Mobile Number</label>
                     <div style="display: flex; margin-bottom: 15px;">
                         <input type="text" value="930099568" readonly style="flex: 1; padding: 12px; background: #f0f0f0; border: 1px solid #ccc; color: #555; font-size: 14px; border-radius: 2px 0 0 2px; outline: none;">
@@ -365,51 +318,67 @@
                     <p style="font-weight: bold; font-size: 14px; color: #555; margin-bottom: 10px;">Select or type in the amount to be deposited.</p>
                     
                     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 15px;">
-                        <button class="amount-btn">100</button>
-                        <button class="amount-btn">200</button>
-                        <button class="amount-btn">500</button>
-                        <button class="amount-btn">700</button>
-                        <button class="amount-btn">1000</button>
-                        <button class="amount-btn">2000</button>
+                        <button class="amount-btn" style="background-color: #1ea0d9; color: white; border: none; padding: 12px 0; font-size: 14px; border-radius: 2px; cursor: pointer; font-family: var(--font-regular);">100</button>
+                        <button class="amount-btn" style="background-color: #1ea0d9; color: white; border: none; padding: 12px 0; font-size: 14px; border-radius: 2px; cursor: pointer; font-family: var(--font-regular);">200</button>
+                        <button class="amount-btn" style="background-color: #1ea0d9; color: white; border: none; padding: 12px 0; font-size: 14px; border-radius: 2px; cursor: pointer; font-family: var(--font-regular);">500</button>
+                        <button class="amount-btn" style="background-color: #1ea0d9; color: white; border: none; padding: 12px 0; font-size: 14px; border-radius: 2px; cursor: pointer; font-family: var(--font-regular);">700</button>
+                        <button class="amount-btn" style="background-color: #1ea0d9; color: white; border: none; padding: 12px 0; font-size: 14px; border-radius: 2px; cursor: pointer; font-family: var(--font-regular);">1000</button>
+                        <button class="amount-btn" style="background-color: #1ea0d9; color: white; border: none; padding: 12px 0; font-size: 14px; border-radius: 2px; cursor: pointer; font-family: var(--font-regular);">2000</button>
                     </div>
                     
                     <div style="position: relative; margin-bottom: 20px;">
                         <input type="number" placeholder="Amount" style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 2px; font-size: 14px; outline: none; text-align: right;">
                     </div>
-                    
-                    <button class="btn-submit-red" style="background-color: #cd5c5c !important; color: white !important; margin-bottom: 20px;" onclick="alert('Deposit Request Submitted!')">DEPOSIT</button>
+                    <button class="btn-submit-red" style="background-color: #cd5c5c !important; color: white !important; margin-bottom: 20px; border: none; border-radius: 2px; font-weight: 700; font-family: var(--font-condensed); width: 100%; padding: 14px; font-size: 16px; cursor: pointer;" onclick="alert('Deposit Request Submitted!')">DEPOSIT</button>
                 </div>
-                
                 <div style="padding: 0 20px;">
                     <button onclick="backToDepositMethods()" style="width: 100%; padding: 15px; background: #fff; border: 1px solid #ddd; color: #555; font-weight: bold; font-family: var(--font-condensed); font-size: 13px; cursor: pointer; border-radius: 2px; text-transform: uppercase;">CHOOSE ANOTHER DEPOSIT METHOD</button>
                 </div>
             </div>
 
-            <div id="withdrawalReqContent" class="pay-content-area" style="display: none;">
-                <div class="filter-group">
-                    <select class="filter-select"><option>Date Filter</option></select>
-                    <select class="filter-select"><option>Status Filter</option></select>
-                    <select class="filter-select"><option>Payment Filter</option></select>
+            <!-- 3. WITHDRAWAL METHODS CONTENT -->
+            <div id="withdrawContent" class="pay-content-area" style="display: none; padding: 15px;">
+                <div class="payment-card" style="background: white; border: 1px solid #ddd; margin-bottom: 15px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-radius: 2px;">
+                    <div class="pay-logo-area" style="padding: 25px; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: center;">
+                        <img src="1.png" alt="Telebirr" style="height: 35px; width: 100%; object-fit: contain;">
+                    </div>
+                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><span>Service Fee</span></div>
+                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><b>Free</b></div>
+                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><span>Process Time</span></div>
+                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><b>5-10 minutes</b></div>
+                    <button class="btn-deposit-action" style="width: 90%; margin: 20px auto; background: white; color: #cd122d; border: 2px solid #cd122d; padding: 12px; font-size: 15px; font-weight: bold; font-family: var(--font-condensed); border-radius: 2px; cursor: pointer; text-transform: uppercase;" onclick="alert('Withdraw process started.')">Withdraw</button>
                 </div>
-                <div class="filter-actions">
-                    <button class="btn-filter-search">Search</button>
-                    <button class="btn-filter-clear">Clear</button>
+            </div>
+
+            <!-- 4. WITHDRAWAL REQUESTS -->
+            <div id="withdrawalReqContent" class="pay-content-area" style="display: none; padding: 15px;">
+                <div class="filter-group" style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 15px;">
+                    <select class="filter-select" style="padding: 14px; border: 1px solid #ccc; background: #f9f9f9; font-family: var(--font-regular); color: #333; font-size: 14px; border-radius: 2px; font-weight: bold;"><option>Date Filter</option></select>
+                    <select class="filter-select" style="padding: 14px; border: 1px solid #ccc; background: #f9f9f9; font-family: var(--font-regular); color: #333; font-size: 14px; border-radius: 2px; font-weight: bold;"><option>Status Filter</option></select>
+                    <select class="filter-select" style="padding: 14px; border: 1px solid #ccc; background: #f9f9f9; font-family: var(--font-regular); color: #333; font-size: 14px; border-radius: 2px; font-weight: bold;"><option>Payment Filter</option></select>
                 </div>
-                <table class="withdrawal-table">
-                    <thead><tr><th>Request Date</th><th>Amount</th><th>Status</th><th>Payment ID</th><th>Actions</th></tr></thead>
+                <div class="filter-actions" style="display: flex; gap: 10px; margin-bottom: 20px;">
+                    <button class="btn-filter-search" style="flex: 1; background: var(--accent-red); color: white; border: none; padding: 14px; font-weight: bold; font-family: var(--font-condensed); font-size: 15px; border-radius: 2px; cursor: pointer;">Search</button>
+                    <button class="btn-filter-clear" style="flex: 1; background: #a30e23; color: white; border: none; padding: 14px; font-weight: bold; font-family: var(--font-condensed); font-size: 15px; border-radius: 2px; cursor: pointer;">Clear</button>
+                </div>
+                <table class="withdrawal-table" style="width: 100%; border-collapse: collapse; background: white; border: 1px solid #ddd; font-size: 12px; text-align: center;">
+                    <thead><tr><th style="background: var(--accent-red); color: white; padding: 12px; border-right: 1px solid #a30e23; font-weight: bold; font-family: var(--font-condensed);">Request Date</th><th style="background: var(--accent-red); color: white; padding: 12px; border-right: 1px solid #a30e23; font-weight: bold; font-family: var(--font-condensed);">Amount</th><th style="background: var(--accent-red); color: white; padding: 12px; border-right: 1px solid #a30e23; font-weight: bold; font-family: var(--font-condensed);">Status</th><th style="background: var(--accent-red); color: white; padding: 12px; border-right: 1px solid #a30e23; font-weight: bold; font-family: var(--font-condensed);">Payment ID</th><th style="background: var(--accent-red); color: white; padding: 12px; border-right: 1px solid #a30e23; font-weight: bold; font-family: var(--font-condensed);">Actions</th></tr></thead>
                     <tbody>
-                        <tr><td colspan="5" class="empty-state-row">There are no Withdrawal Requests!</td></tr>
+                        <tr><td colspan="5" class="empty-state-row" style="background: #f9f9f9; color: #333; font-size: 14px; font-weight: bold; padding: 15px 10px; border-bottom: 1px solid #ddd;">There are no Withdrawal Requests!</td></tr>
                     </tbody>
                 </table>
             </div>
         </div>
-
     </main>
 
+    <!-- Chat Bubble -->
     <div class="floating-chat-bubble">
         <span class="chat-icon"><i class="fa-solid fa-comments"></i></span>
     </div>
 
+    <!-- ========================================== -->
+    <!-- LEFT SIDEBAR - CHOOSE A SPORT              -->
+    <!-- ========================================== -->
     <aside id="leftSidebar" class="side-drawer left-drawer">
         <div class="drawer-header white-bg">
             <button class="close-drawer-btn" id="closeLeftBtn">✕</button>
@@ -419,21 +388,13 @@
             <ul class="sports-chooser-list">
                 <li><a href="#"><span class="sport-icon"><i class="fa-regular fa-futbol"></i></span> Football <span class="chevron">&#10095;</span></a></li>
                 <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-basketball"></i></span> Basketball <span class="chevron">&#10095;</span></a></li>
-                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-baseball"></i></span> Tennis <span class="chevron">&#10095;</span></a></li>
-                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-hockey-puck"></i></span> Ice Hockey <span class="chevron">&#10095;</span></a></li>
-                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-volleyball"></i></span> Volleyball <span class="chevron">&#10095;</span></a></li>
-                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-football"></i></span> Rugby Union <span class="chevron">&#10095;</span></a></li>
-                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-table-tennis-paddle-ball"></i></span> Table Tennis <span class="chevron">&#10095;</span></a></li>
-                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-football"></i></span> Rugby League <span class="chevron">&#10095;</span></a></li>
-                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-football"></i></span> American Football <span class="chevron">&#10095;</span></a></li>
-                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-handshake"></i></span> Handball <span class="chevron">&#10095;</span></a></li>
-                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-hand-fist"></i></span> Boxing <span class="chevron">&#10095;</span></a></li>
-                <li><a href="#"><span class="sport-icon"><i class="fa-regular fa-futbol"></i></span> Futsal <span class="chevron">&#10095;</span></a></li>
-                <li><a href="#"><span class="sport-icon"><i class="fa-solid fa-bowling-ball"></i></span> Snooker <span class="chevron">&#10095;</span></a></li>
             </ul>
         </div>
     </aside>
 
+    <!-- ========================================== -->
+    <!-- RIGHT SIDEBAR - LOGGED OUT                 -->
+    <!-- ========================================== -->
     <aside id="loggedOutDrawer" class="side-drawer right-drawer">
         <div class="drawer-content white-bg" style="width: 100%; max-width: 350px;">
             <div class="drawer-header white-bg" style="justify-content: center; position: relative; padding: 20px;">
@@ -442,132 +403,154 @@
             </div>
             
             <div class="drawer-body user-body" style="padding-top: 10px;">
-                <button id="openLoginModalBtn" class="btn-submit btn-submit-red full-width">LOGIN</button>
-                <h3 class="user-sub-title" style="margin: 15px 0;">New user?</h3>
-                <button id="openRegisterModalBtn" class="btn-submit btn-submit-red full-width">REGISTER</button>
+                <button id="openLoginModalBtn" class="btn-submit btn-submit-red full-width" style="background-color: #CD122D !important; color: #ffffff !important; border: none !important; border-radius: 2px; font-weight: 700; font-family: var(--font-condensed); width: 100%; padding: 14px; font-size: 16px; cursor: pointer;">LOGIN</button>
+                <h3 class="user-sub-title" style="margin: 15px 0; font-size: 11px; color: #777; text-align: center; font-weight: normal;">New user?</h3>
+                <button id="openRegisterModalBtn" class="btn-submit btn-submit-red full-width" style="background-color: #CD122D !important; color: #ffffff !important; border: none !important; border-radius: 2px; font-weight: 700; font-family: var(--font-condensed); width: 100%; padding: 14px; font-size: 16px; cursor: pointer;">REGISTER</button>
             </div>
             
-            <div class="drawer-section gray-bg text-center" style="background-color: white !important;">
-                <a href="#" class="user-link" style="justify-content: center;"><i class="fa-solid fa-comments"></i> LIVE CHAT</a>
+            <div class="drawer-section gray-bg text-center" style="background-color: white !important; padding: 15px 20px; border-bottom: 1px solid #eeeeee;">
+                <a href="#" class="user-link" style="justify-content: center; color: #000; text-decoration: none; font-size: 13px; font-weight: bold; display: flex; align-items: center; gap: 10px;"><i class="fa-solid fa-comments"></i> LIVE CHAT</a>
             </div>
             
-            <div class="drawer-section white-bg text-center">
-                <a href="#" class="language-dropdown">
+            <div class="drawer-section white-bg text-center" style="padding: 15px 20px; border-bottom: 1px solid #eeeeee;">
+                <a href="#" class="language-dropdown" style="color: #111; text-decoration: none; font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 8px;">
                     <span style="font-size: 16px; margin-right: 6px;">🇬🇧</span> English ⌄
                 </a>
-            </div>
-            
-            <div class="drawer-section gray-bg app-links-section" style="padding: 15px;">
-                <div class="app-links-row">
-                    <a href="#" style="background: white;"><i class="fa-brands fa-android fa-2x" style="color: #a4c639;"></i>Application<br><b>Android</b></a>
-                    <a href="#" style="background: white;"><i class="fa-brands fa-apple fa-2x" style="color: #999999;"></i>Application<br><b>IOS</b></a>
-                </div>
-            </div>
-            
-            <div class="drawer-section white-bg text-center social-links-section">
-                <h3 style="color: #CD122D; font-size: 12px; margin-bottom: 15px;">Follow Our Social Media!</h3>
-                <div class="social-links-row">
-                    <a href="#"><i class="fa-brands fa-telegram fa-2x"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook fa-2x"></i></a>
-                    <a href="#"><i class="fa-brands fa-youtube fa-2x"></i></a>
-                    <a href="#"><i class="fa-brands fa-tiktok fa-2x"></i></a>
-                </div>
             </div>
         </div>
     </aside>
 
+    <!-- ========================================== -->
+    <!-- RIGHT SIDEBAR - LOGGED IN MENU             -->
+    <!-- ========================================== -->
     <aside id="loggedInDrawer" class="side-drawer right-drawer">
         <div class="drawer-content white-bg" style="width: 100%; max-width: 350px;">
-            <div class="logged-in-header">
-                <button class="close-drawer-btn white-btn" id="closeUserDrawerBtn" style="color: white; font-size: 20px; font-weight: normal; margin-right: 15px;">✕</button>
-                <div class="user-id-display"><i class="fa-solid fa-user"></i> <span id="displayUserId">918173078</span></div>
+            <div class="logged-in-header" style="background-color: #ffffff !important; display: flex; align-items: center; padding: 15px 20px; border-bottom: 1px solid #eee;">
+                <button class="close-drawer-btn white-btn" id="closeUserDrawerBtn" style="color: #333 !important; font-size: 20px; font-weight: normal; margin-right: 15px; padding: 0; background: none; border: none; cursor: pointer;">✕</button>
+                <div class="user-id-display" style="display: flex; align-items: center; gap: 10px; font-family: var(--font-condensed); font-weight: 700; font-size: 18px; color: #333 !important;"><i class="fa-solid fa-user" style="color: #333 !important;"></i> <span id="displayUserId">918173078</span></div>
             </div>
             
-            <div class="balance-container">
-                <div class="balance-top-row">
-                    <div class="real-balance">
-                        <span class="bal-label">Real Balance</span>
-                        <span class="bal-amount">0 ETB</span>
+            <div class="balance-container" style="background-color: #f9f9f9; padding: 15px 20px; border-bottom: 1px solid #ddd;">
+                <div class="balance-top-row" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                    <div class="real-balance" style="display: flex; flex-direction: column;">
+                        <span class="bal-label" style="font-weight: 700; font-size: 14px; color: #111; font-family: var(--font-condensed);">Real Balance</span>
+                        <span class="bal-amount" style="font-size: 13px; color: #555; margin-top: 2px;">0 ETB</span>
                     </div>
-                    <div class="bal-actions">
-                        <button class="btn-bal-action" onclick="openPaymentsTab('Deposit')">DEPOSIT</button>
-                        <button class="btn-bal-action" onclick="openPaymentsTab('Withdraw')">WITHDRAW</button>
+                    <div class="bal-actions" style="display: flex; gap: 5px;">
+                        <button class="btn-bal-action" onclick="openPaymentsTab('Deposit')" style="background-color: var(--accent-red); color: white; border: none; padding: 10px 14px; font-weight: 700; font-family: var(--font-condensed); border-radius: 2px; font-size: 13px; cursor: pointer; text-transform: uppercase;">DEPOSIT</button>
+                        <button class="btn-bal-action" onclick="openPaymentsTab('Withdraw')" style="background-color: var(--accent-red); color: white; border: none; padding: 10px 14px; font-weight: 700; font-family: var(--font-condensed); border-radius: 2px; font-size: 13px; cursor: pointer; text-transform: uppercase;">WITHDRAW</button>
                     </div>
                 </div>
-                <div class="bonus-balance">
-                    <span class="bal-label">Bonus Balance</span>
-                    <span class="bal-amount">0.00 ETB</span>
+                <div class="bonus-balance" style="display: flex; flex-direction: column; margin-bottom: 15px;">
+                    <span class="bal-label" style="font-weight: 700; font-size: 14px; color: #111; font-family: var(--font-condensed);">Bonus Balance</span>
+                    <span class="bal-amount" style="font-size: 13px; color: #555; margin-top: 2px;">0.00 ETB</span>
                 </div>
                 
-                <div class="balance-breakdown">
-                    <div class="breakdown-row red-text"><span>Total Balance</span><span>0.00 ETB</span></div>
-                    <div class="breakdown-row"><span>Balance Withdrawable</span><span>0 ETB</span></div>
-                    <div class="breakdown-row"><span>Balance Not Withdrawable</span><span>0.00 ETB</span></div>
-                    <div class="breakdown-row"><span>Bonus Balance</span><span>0.00 ETB</span></div>
+                <div class="balance-breakdown" style="border-top: 1px solid #eee; padding-top: 10px; display: flex; flex-direction: column; gap: 8px;">
+                    <div class="breakdown-row red-text" style="display: flex; justify-content: space-between; font-size: 13px; color: var(--accent-red);"><span>Total Balance</span><span>0.00 ETB</span></div>
+                    <div class="breakdown-row" style="display: flex; justify-content: space-between; font-size: 13px; color: #333;"><span>Balance Withdrawable</span><span>0 ETB</span></div>
+                    <div class="breakdown-row" style="display: flex; justify-content: space-between; font-size: 13px; color: #333;"><span>Balance Not Withdrawable</span><span>0.00 ETB</span></div>
+                    <div class="breakdown-row" style="display: flex; justify-content: space-between; font-size: 13px; color: #333;"><span>Bonus Balance</span><span>0.00 ETB</span></div>
                 </div>
             </div>
 
-            <ul class="user-menu-list">
-                <li><a href="#" onclick="openPaymentsTab('Deposit')"><i class="fa-solid fa-money-bill-1-wave"></i> Deposit</a></li>
-                <li><a href="#"><i class="fa-solid fa-file-invoice"></i> Account History</a></li>
-                <li><a href="#"><i class="fa-solid fa-user"></i> Profile</a></li>
-                <li><a href="#"><i class="fa-solid fa-list-ul"></i> Bet history</a></li>
-                <li><a href="#"><i class="fa-solid fa-trophy"></i> My Jackpots</a></li>
-                <li><a href="#"><i class="fa-solid fa-envelope"></i> Messages</a></li>
-                <li><a href="#"><i class="fa-solid fa-gift"></i> Bonus</a></li>
+            <ul class="user-menu-list" style="list-style: none; background: white;">
+                <li style="border-bottom: 1px solid #eee;"><a href="#" onclick="openPaymentsTab('Deposit')" style="display: flex; align-items: center; gap: 15px; padding: 16px 20px; color: #222; text-decoration: none; font-size: 15px; font-weight: 700; font-family: var(--font-condensed);"><i class="fa-solid fa-money-bill-1-wave" style="color: #444; font-size: 18px; width: 20px; text-align: center;"></i> Deposit</a></li>
+                <li style="border-bottom: 1px solid #eee;"><a href="#" style="display: flex; align-items: center; gap: 15px; padding: 16px 20px; color: #222; text-decoration: none; font-size: 15px; font-weight: 700; font-family: var(--font-condensed);"><i class="fa-solid fa-file-invoice" style="color: #444; font-size: 18px; width: 20px; text-align: center;"></i> Account History</a></li>
+                <li style="border-bottom: 1px solid #eee;"><a href="#" style="display: flex; align-items: center; gap: 15px; padding: 16px 20px; color: #222; text-decoration: none; font-size: 15px; font-weight: 700; font-family: var(--font-condensed);"><i class="fa-solid fa-user" style="color: #444; font-size: 18px; width: 20px; text-align: center;"></i> Profile</a></li>
+                <li style="border-bottom: 1px solid #eee;"><a href="#" style="display: flex; align-items: center; gap: 15px; padding: 16px 20px; color: #222; text-decoration: none; font-size: 15px; font-weight: 700; font-family: var(--font-condensed);"><i class="fa-solid fa-list-ul" style="color: #444; font-size: 18px; width: 20px; text-align: center;"></i> Bet history</a></li>
+                <li style="border-bottom: 1px solid #eee;"><a href="#" style="display: flex; align-items: center; gap: 15px; padding: 16px 20px; color: #222; text-decoration: none; font-size: 15px; font-weight: 700; font-family: var(--font-condensed);"><i class="fa-solid fa-trophy" style="color: #444; font-size: 18px; width: 20px; text-align: center;"></i> My Jackpots</a></li>
+                <li style="border-bottom: 1px solid #eee;"><a href="#" style="display: flex; align-items: center; gap: 15px; padding: 16px 20px; color: #222; text-decoration: none; font-size: 15px; font-weight: 700; font-family: var(--font-condensed);"><i class="fa-solid fa-envelope" style="color: #444; font-size: 18px; width: 20px; text-align: center;"></i> Messages</a></li>
+                <li style="border-bottom: 1px solid #eee;"><a href="#" style="display: flex; align-items: center; gap: 15px; padding: 16px 20px; color: #222; text-decoration: none; font-size: 15px; font-weight: 700; font-family: var(--font-condensed);"><i class="fa-solid fa-gift" style="color: #444; font-size: 18px; width: 20px; text-align: center;"></i> Bonus</a></li>
             </ul>
 
-            <div class="drawer-section white-bg text-center">
-                <a href="#" class="language-dropdown">
+            <div class="drawer-section white-bg text-center" style="padding: 15px 20px; border-bottom: 1px solid #eeeeee;">
+                <a href="#" class="language-dropdown" style="color: #111; text-decoration: none; font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 8px;">
                     <span style="font-size: 16px; margin-right: 6px;">🇬🇧</span> English ⌄
                 </a>
             </div>
 
-            <button class="btn-logout" id="logoutBtn">
+            <button class="btn-logout" id="logoutBtn" style="background-color: var(--accent-red); color: white; width: 100%; border: none; padding: 16px; font-size: 15px; font-weight: bold; font-family: var(--font-condensed); display: flex; align-items: center; gap: 10px; cursor: pointer; border-radius: 0;">
                 <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
             </button>
-
-            <div class="drawer-section gray-bg app-links-section" style="padding: 15px;">
-                <div class="app-links-row">
-                    <a href="#"><i class="fa-brands fa-android fa-2x" style="color: #a4c639;"></i>Application<br><b>Android</b></a>
-                    <a href="#"><i class="fa-brands fa-apple fa-2x" style="color: #999999;"></i>Application<br><b>IOS</b></a>
-                </div>
-                <div style="text-align: center; margin-top: 15px;">
-                    <a href="#" style="color: #000; font-weight: bold; text-decoration: none; font-family: 'Roboto Condensed', sans-serif;"><i class="fa-solid fa-comments"></i> LIVE CHAT</a>
-                </div>
-            </div>
         </div>
     </aside>
 
-    <div id="loginModal" class="modal" style="z-index: 100002;">
-        <div class="modal-content">
-            <button class="close-modal-btn" data-modal="loginModal">✕</button>
-            <div class="modal-header-area"><img src="logo.png" alt="KonjoBet" class="modal-logo"></div>
-            <div class="modal-body">
+    <!-- MODALS (Login & Register Input Forms) -->
+    <div id="loginModal" class="modal" style="z-index: 100002; display: none; position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8);">
+        <div class="modal-content" style="background-color: var(--modal-bg); margin: 15vh auto; width: 90%; max-width: 340px; border-radius: 4px; position: relative; box-shadow: 0 15px 35px rgba(0,0,0,0.5);">
+            <button class="close-modal-btn" data-modal="loginModal" style="position: absolute; top: 10px; right: 12px; color: white; font-size: 20px; cursor: pointer; background: none; border: none;">✕</button>
+            <div class="modal-header-area" style="text-align: center; padding: 25px 15px 10px 15px;"><img src="logo.png" alt="KonjoBet" style="height: 35px; margin-bottom: 5px;"></div>
+            <div class="modal-body" style="padding: 20px;">
                 <form id="loginForm">
-                    <div class="form-group"><div class="phone-input-group"><span class="phone-prefix">ET +251 ⌄</span><input type="text" id="loginPhone" class="modal-input" placeholder="Number" required></div></div>
-                    <div class="form-group"><div class="password-input-group"><input type="password" id="loginPassword" class="modal-input" placeholder="Password" required><span class="eye-icon"><i class="fa-solid fa-eye-slash"></i></span></div></div>
-                    <button type="submit" class="btn-submit btn-submit-white">LOGIN</button>
+                    <div class="form-group" style="margin-bottom: 14px;">
+                        <div class="phone-input-group" style="display: flex; background-color: #ffffff; overflow: hidden; border-radius: 2px;">
+                            <span class="phone-prefix" style="padding: 12px; background-color: #ffffff; color: #000; border-right: 1px solid #ccc; font-weight: 700; display: flex; align-items: center; font-size: 14px; font-family: var(--font-condensed);">ET +251 ⌄</span>
+                            <input type="text" id="loginPhone" class="modal-input" placeholder="Number" required style="width: 100%; padding: 12px; border: none; background-color: #ffffff; color: #000; font-size: 14px; outline: none; border-radius: 2px; font-family: var(--font-regular); font-weight: bold;">
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 14px;">
+                        <div class="password-input-group" style="position: relative; display: flex; align-items: center;">
+                            <input type="password" id="loginPassword" class="modal-input" placeholder="Password" required style="width: 100%; padding: 12px; border: none; background-color: #ffffff; color: #000; font-size: 14px; outline: none; border-radius: 2px; font-family: var(--font-regular); font-weight: bold; padding-right: 35px;">
+                            <span class="eye-icon" style="position: absolute; right: 12px; color: #6b7280; cursor: pointer; font-size: 16px;"><i class="fa-solid fa-eye-slash"></i></span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-submit btn-submit-white" style="width: 100%; padding: 14px; border: none; font-weight: 700; font-family: var(--font-condensed); font-size: 15px; cursor: pointer; margin-top: 5px; border-radius: 2px; text-transform: uppercase; background-color: white; color: var(--modal-bg);">LOGIN</button>
                 </form>
-                <div class="modal-footer-links"><a href="#">Forgot Password</a><span>|</span><a href="#" id="switchToRegister">Create Account</a></div>
+                <div class="modal-footer-links" style="display: flex; justify-content: center; gap: 10px; margin-top: 15px; padding-bottom: 5px;">
+                    <a href="#" style="color: white; text-decoration: none; font-size: 12px; font-weight: 500;">Forgot Password</a>
+                    <span style="color: rgba(255,255,255,0.5); font-size: 12px;">|</span>
+                    <a href="#" id="switchToRegister" style="color: white; text-decoration: none; font-size: 12px; font-weight: 500;">Create Account</a>
+                </div>
             </div>
         </div>
     </div>
 
-    <div id="registerModal" class="modal" style="z-index: 100002;">
-        <div class="modal-content">
-            <button class="close-modal-btn" data-modal="registerModal">✕</button>
-            <div class="modal-header-area"><img src="logo.png" alt="KonjoBet" class="modal-logo"><h2 class="modal-title">Register</h2></div>
-            <div class="modal-body">
+    <div id="registerModal" class="modal" style="z-index: 100002; display: none; position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8);">
+        <div class="modal-content" style="background-color: var(--modal-bg); margin: 15vh auto; width: 90%; max-width: 340px; border-radius: 4px; position: relative; box-shadow: 0 15px 35px rgba(0,0,0,0.5);">
+            <button class="close-modal-btn" data-modal="registerModal" style="position: absolute; top: 10px; right: 12px; color: white; font-size: 20px; cursor: pointer; background: none; border: none;">✕</button>
+            <div class="modal-header-area" style="text-align: center; padding: 25px 15px 10px 15px;">
+                <img src="logo.png" alt="KonjoBet" style="height: 35px; margin-bottom: 5px;">
+                <h2 class="modal-title" style="color: white; font-size: 18px; font-weight: 700; font-family: var(--font-condensed); margin: 0; text-transform: uppercase;">Register</h2>
+            </div>
+            <div class="modal-body" style="padding: 20px;">
                 <form id="registerForm">
-                    <div class="form-group"><label>Phone number *</label><div class="phone-input-group"><span class="phone-prefix">ET +251</span><input type="text" id="regPhone" class="modal-input" required></div></div>
-                    <div class="form-group"><label>Password</label><div class="password-input-group"><input type="password" id="regPassword" class="modal-input" required><span class="eye-icon"><i class="fa-solid fa-eye-slash"></i></span></div></div>
-                    <div class="form-group"><label>Confirm Password</label><div class="password-input-group"><input type="password" id="regConfirmPassword" class="modal-input" required><span class="eye-icon"><i class="fa-solid fa-eye-slash"></i></span></div></div>
-                    <div class="checkbox-group"><input type="checkbox" id="ageCheck" checked required><label for="ageCheck">I confirm that I am OVER 18 *</label></div>
-                    <div class="checkbox-group"><input type="checkbox" id="termsCheck" checked required><label for="termsCheck">If you continue, you'll confirm that you've read and agree with the terms of use and the privacy policy</label></div>
-                    <button type="submit" class="btn-submit btn-submit-dim">REGISTER</button>
+                    <div class="form-group" style="margin-bottom: 14px;">
+                        <label style="display: block; color: white; font-size: 12px; font-weight: bold; margin-bottom: 6px;">Phone number *</label>
+                        <div class="phone-input-group" style="display: flex; background-color: #ffffff; overflow: hidden; border-radius: 2px;">
+                            <span class="phone-prefix" style="padding: 12px; background-color: #ffffff; color: #000; border-right: 1px solid #ccc; font-weight: 700; display: flex; align-items: center; font-size: 14px; font-family: var(--font-condensed);">ET +251</span>
+                            <input type="text" id="regPhone" class="modal-input" required style="width: 100%; padding: 12px; border: none; background-color: #ffffff; color: #000; font-size: 14px; outline: none; border-radius: 2px; font-family: var(--font-regular); font-weight: bold;">
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 14px;">
+                        <label style="display: block; color: white; font-size: 12px; font-weight: bold; margin-bottom: 6px;">Password</label>
+                        <div class="password-input-group" style="position: relative; display: flex; align-items: center;">
+                            <input type="password" id="regPassword" class="modal-input" required style="width: 100%; padding: 12px; border: none; background-color: #ffffff; color: #000; font-size: 14px; outline: none; border-radius: 2px; font-family: var(--font-regular); font-weight: bold; padding-right: 35px;">
+                            <span class="eye-icon" style="position: absolute; right: 12px; color: #6b7280; cursor: pointer; font-size: 16px;"><i class="fa-solid fa-eye-slash"></i></span>
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 14px;">
+                        <label style="display: block; color: white; font-size: 12px; font-weight: bold; margin-bottom: 6px;">Confirm Password</label>
+                        <div class="password-input-group" style="position: relative; display: flex; align-items: center;">
+                            <input type="password" id="regConfirmPassword" class="modal-input" required style="width: 100%; padding: 12px; border: none; background-color: #ffffff; color: #000; font-size: 14px; outline: none; border-radius: 2px; font-family: var(--font-regular); font-weight: bold; padding-right: 35px;">
+                            <span class="eye-icon" style="position: absolute; right: 12px; color: #6b7280; cursor: pointer; font-size: 16px;"><i class="fa-solid fa-eye-slash"></i></span>
+                        </div>
+                    </div>
+                    <div class="checkbox-group" style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 12px;">
+                        <input type="checkbox" id="ageCheck" checked required style="margin-top: 3px; width: 16px; height: 16px;">
+                        <label for="ageCheck" style="color: white; font-size: 11px; line-height: 1.4;">I confirm that I am OVER 18 *</label>
+                    </div>
+                    <div class="checkbox-group" style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 12px;">
+                        <input type="checkbox" id="termsCheck" checked required style="margin-top: 3px; width: 16px; height: 16px;">
+                        <label for="termsCheck" style="color: white; font-size: 11px; line-height: 1.4;">If you continue, you'll confirm that you've read and agree with the terms of use and the privacy policy</label>
+                    </div>
+                    <button type="submit" class="btn-submit btn-submit-dim" style="width: 100%; padding: 14px; border: none; font-weight: 700; font-family: var(--font-condensed); font-size: 15px; cursor: pointer; margin-top: 5px; border-radius: 2px; text-transform: uppercase; background-color: rgba(255,255,255,0.2); color: white;">REGISTER</button>
                 </form>
-                <div class="modal-footer-links"><a href="#">Support</a><span>|</span><a href="#" id="switchToLogin">Enter</a></div>
+                <div class="modal-footer-links" style="display: flex; justify-content: center; gap: 10px; margin-top: 15px; padding-bottom: 5px;">
+                    <a href="#" style="color: white; text-decoration: none; font-size: 12px; font-weight: 500;">Support</a>
+                    <span style="color: rgba(255,255,255,0.5); font-size: 12px;">|</span>
+                    <a href="#" id="switchToLogin" style="color: white; text-decoration: none; font-size: 12px; font-weight: 500;">Enter</a>
+                </div>
             </div>
         </div>
     </div>
