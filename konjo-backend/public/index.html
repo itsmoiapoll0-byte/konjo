@@ -6,7 +6,6 @@
     <title>KonjoBet Replica - Sport & Virtuals</title>
     <link rel="stylesheet" href="style.css">
     
-    <!-- Real Site Typography Stack -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
@@ -18,12 +17,8 @@
 
     <!-- Mobile Header -->
     <header class="mobile-header">
-        <button class="icon-btn hamburger-btn" id="openDrawerBtn">
-            <i class="fa-solid fa-bars" style="font-size: 24px; color: white;"></i>
-        </button>
-        <div class="logo-area" id="homeLogoBtn" style="cursor: pointer;">
-            <img src="logo.png" alt="KonjoBet">
-        </div>
+        <button class="icon-btn hamburger-btn" id="openDrawerBtn"><i class="fa-solid fa-bars" style="font-size: 24px; color: white;"></i></button>
+        <div class="logo-area" id="homeLogoBtn" style="cursor: pointer;"><img src="logo.png" alt="KonjoBet"></div>
         
         <!-- Logged OUT Actions -->
         <div class="top-actions" id="loggedOutActions">
@@ -44,7 +39,7 @@
         </div>
     </header>
     
-    <!-- Red Top Navigation (SPORT & VIRTUAL are now toggles) -->
+    <!-- Red Top Navigation -->
     <nav class="main-nav">
         <ul>
             <li><a href="#" id="navSportBtn" class="nav-item-active">SPORT</a></li>
@@ -66,9 +61,10 @@
         <button class="action-btn"><span class="icon"><i class="fa-solid fa-ticket"></i></span><span>Check Bet</span></button>
         <button class="action-btn"><span class="icon"><i class="fa-solid fa-magnifying-glass"></i></span><span>Search Event</span></button>
         <button class="action-btn active"><span class="icon"><i class="fa-solid fa-stopwatch"></i></span><span>IN-PLAY</span></button>
-        <button class="action-btn"><span class="count-badge">845</span><span class="icon"><i class="fa-regular fa-futbol"></i></span><span>Football</span></button>
+        <!-- Added My Bets Icon based on image_d20b32.png -->
+        <button class="action-btn"><span class="icon"><i class="fa-solid fa-receipt"></i></span><span>My Bets</span></button>
+        <button class="action-btn"><span class="count-badge">783</span><span class="icon"><i class="fa-regular fa-futbol"></i></span><span>Football</span></button>
         <button class="action-btn"><span class="count-badge">85</span><span class="icon"><i class="fa-solid fa-basketball"></i></span><span>Basketball</span></button>
-        <button class="action-btn"><span class="icon"><i class="fa-solid fa-baseball"></i></span><span>Tennis</span></button>
     </div>
 
     <!-- MAIN WRAPPER -->
@@ -83,73 +79,87 @@
                 <div class="slider-track">
                     <div class="slide"><img src="slide1.png" alt="Promo 1"></div>
                     <div class="slide"><img src="slide2.png" alt="Promo 2"></div>
-                    <div class="slide"><img src="slide3.png" alt="Promo 3"></div>
-                    <div class="slide"><img src="slide4.png" alt="Promo 4"></div>
                 </div>
                 <div class="slider-dots">
                     <span class="dot active"></span>
                     <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
                 </div>
             </div>
 
-            <!-- SPORTS SECTION (Visible by default) -->
-            <section id="sportsSection" class="center-content">
-                <div class="game-category-header"><div class="category-title"><span class="dots-icon-horiz">•••</span><h2>Top Matches</h2></div></div>
-                <div class="matches-list">
-                    <div class="white-match-card">
-                        <div class="match-meta"><span class="league-name">England - Premier League</span><span class="match-time">2 May 19:30</span></div>
-                        <div class="match-teams-row">
-                            <div class="team-col team-left"><img src="arsenal.png" alt="Arsenal" class="club-logo"><span class="team-name">Arsenal</span></div>
-                            <div class="match-vs-col"><div class="vs-text">vs</div></div>
-                            <div class="team-col team-right"><img src="fulham.png" alt="Fulham" class="club-logo"><span class="team-name">Fulham</span></div>
-                        </div>
-                        <div class="match-result-label">Match Result</div>
-                        <div class="match-odds-row">
-                            <button class="white-odd-btn"><span class="odd-label">1</span><span class="odd-val">1.45</span></button>
-                            <button class="white-odd-btn active"><span class="odd-label">X</span><span class="odd-val">4.45</span></button>
-                            <button class="white-odd-btn"><span class="odd-label">2</span><span class="odd-val">7.35</span></button>
-                        </div>
+            <!-- SPORTS SECTION -->
+            <section id="sportsSection">
+                <!-- EXACT UPCOMING MATCHES LIST FROM SCREENSHOT -->
+                <div class="upcoming-matches-container">
+                    
+                    <!-- Date 1 -->
+                    <div class="date-header">15 May 2026</div>
+                    <div class="upcoming-match-row">
+                        <div class="um-time">22:00</div>
+                        <div class="um-teams"><span>Aston Villa</span><span>Liverpool</span></div>
+                        <div class="um-odds"><div class="um-odd-box">2.94</div><div class="um-odd-box">3.71</div><div class="um-odd-box">2.27</div></div>
                     </div>
-                    <div class="white-match-card">
-                        <div class="match-meta"><span class="league-name">Spain - La Liga</span><span class="match-time">2 May 21:00</span></div>
-                        <div class="match-teams-row">
-                            <div class="team-col team-left"><img src="osasuna.png" alt="Osasuna" class="club-logo"><span class="team-name">Osasuna</span></div>
-                            <div class="match-vs-col"><div class="vs-text">vs</div></div>
-                            <div class="team-col team-right"><img src="barcelona.png" alt="Barcelona" class="club-logo"><span class="team-name">Barcelona</span></div>
-                        </div>
-                        <div class="match-result-label">Match Result</div>
-                        <div class="match-odds-row">
-                            <button class="white-odd-btn"><span class="odd-label">1</span><span class="odd-val">5.80</span></button>
-                            <button class="white-odd-btn"><span class="odd-label">X</span><span class="odd-val">4.10</span></button>
-                            <button class="white-odd-btn"><span class="odd-label">2</span><span class="odd-val">1.55</span></button>
-                        </div>
+
+                    <!-- Date 2 -->
+                    <div class="date-header">17 May 2026</div>
+                    <div class="upcoming-match-row">
+                        <div class="um-time">14:30</div>
+                        <div class="um-teams"><span>Manchester United</span><span>Nottingham Forest</span></div>
+                        <div class="um-odds"><div class="um-odd-box">1.64</div><div class="um-odd-box">4.25</div><div class="um-odd-box">4.87</div></div>
+                    </div>
+                    <div class="upcoming-match-row">
+                        <div class="um-time">17:00</div>
+                        <div class="um-teams"><span>Everton</span><span>Sunderland</span></div>
+                        <div class="um-odds"><div class="um-odd-box">1.86</div><div class="um-odd-box">3.74</div><div class="um-odd-box">4.10</div></div>
+                    </div>
+                    <div class="upcoming-match-row">
+                        <div class="um-time">17:00</div>
+                        <div class="um-teams"><span>Brentford</span><span>Crystal Palace</span></div>
+                        <div class="um-odds"><div class="um-odd-box">1.75</div><div class="um-odd-box">4.26</div><div class="um-odd-box">4.08</div></div>
+                    </div>
+                    <div class="upcoming-match-row">
+                        <div class="um-time">17:00</div>
+                        <div class="um-teams"><span>Wolverhampton Wand...</span><span>Fulham</span></div>
+                        <div class="um-odds"><div class="um-odd-box">3.68</div><div class="um-odd-box">3.92</div><div class="um-odd-box">1.91</div></div>
+                    </div>
+                    <div class="upcoming-match-row">
+                        <div class="um-time">17:00</div>
+                        <div class="um-teams"><span>Leeds United</span><span>Brighton and Hove Albion</span></div>
+                        <div class="um-odds"><div class="um-odd-box">3.21</div><div class="um-odd-box">3.54</div><div class="um-odd-box">2.19</div></div>
+                    </div>
+                    <div class="upcoming-match-row">
+                        <div class="um-time">19:30</div>
+                        <div class="um-teams"><span>Newcastle United</span><span>West Ham United</span></div>
+                        <div class="um-odds"><div class="um-odd-box">2.06</div><div class="um-odd-box">3.77</div><div class="um-odd-box">3.33</div></div>
+                    </div>
+
+                    <!-- Date 3 -->
+                    <div class="date-header">18 May 2026</div>
+                    <div class="upcoming-match-row">
+                        <div class="um-time">22:00</div>
+                        <div class="um-teams"><span>Arsenal</span><span>Burnley</span></div>
+                        <div class="um-odds"><div class="um-odd-box">1.11</div><div class="um-odd-box">10.00</div><div class="um-odd-box">19.78</div></div>
+                    </div>
+
+                    <!-- Date 4 -->
+                    <div class="date-header">19 May 2026</div>
+                    <div class="upcoming-match-row">
+                        <div class="um-time">22:15</div>
+                        <div class="um-teams"><span>Chelsea</span><span>Tottenham Hotspur</span></div>
+                        <div class="um-odds"><div class="um-odd-box">-</div><div class="um-odd-box">-</div><div class="um-odd-box">-</div></div>
+                    </div>
+                    
+                    <div style="text-align: center; padding: 10px; background: #eee; color: #555; font-size: 13px; font-weight: bold; cursor: pointer; border-bottom: 2px solid var(--accent-red);">
+                        Show less <i class="fa-solid fa-chevron-up"></i>
                     </div>
                 </div>
                 
-                <div class="game-category-header" style="margin-top: 30px;"><div class="category-title"><span class="dots-icon-horiz">•••</span><h2>Popular Matches</h2></div></div>
-                <table class="matches-table">
-                    <thead><tr><th>Time</th><th>Event</th><th>1</th><th>X</th><th>2</th></tr></thead>
-                    <tbody>
-                        <tr><td>12:00</td><td>PSG - B Munich</td><td class="odds-cell">2.33</td><td class="odds-cell">3.84</td><td class="odds-cell">2.77</td></tr>
-                        <tr><td>14:30</td><td>Atl Madrid - Arsenal</td><td class="odds-cell">2.87</td><td class="odds-cell">3.21</td><td class="odds-cell">2.56</td></tr>
-                    </tbody>
-                </table>
+                <div class="game-category-header" style="margin-top: 15px; border-radius: 0;">
+                    <div class="category-title"><span class="dots-icon-horiz">•••</span><h2>Popular Matches</h2></div>
+                </div>
                 
-                <div class="game-category-header" style="margin-top: 30px;"><div class="category-title"><span class="dots-icon-horiz">•••</span><h2>Top Leagues</h2></div></div>
-                <nav class="leagues-nav">
-                    <a href="#" class="league-tab active"><i class="fa-regular fa-futbol"></i> Football</a>
-                    <a href="#" class="league-tab"><i class="fa-solid fa-basketball"></i> Basketball</a>
-                </nav>
-                <ul class="leagues-list" style="margin-bottom: 40px;">
-                    <li><a href="#"><img src="logo.png" alt="" class="league-logo placeholder-icon"> Premier League</a></li>
-                    <li><a href="#"><img src="logo.png" alt="" class="league-logo placeholder-icon"> Bundesliga</a></li>
-                    <li><a href="#"><img src="logo.png" alt="" class="league-logo placeholder-icon"> La Liga</a></li>
-                </ul>
             </section>
 
-            <!-- VIRTUAL GAMES SECTION (Hidden by default, triggered by Nav) -->
+            <!-- VIRTUAL GAMES SECTION -->
             <section id="virtualSection" class="virtual-content" style="display: none; background-color: #2b2b36; padding: 15px 0 50px 0;">
                 
                 <!-- Crash Games -->
@@ -247,7 +257,7 @@
         </div>
 
         <!-- ========================================== -->
-        <!-- PAYMENTS VIEW                              -->
+        <!-- PAYMENTS VIEW (Deposit, Withdraw)          -->
         <!-- ========================================== -->
         <div id="paymentsView" style="display: none; background-color: #f4f4f4; min-height: 100vh; padding-bottom: 50px;">
             <div class="payments-title-bar" style="background-color: var(--bg-header); color: white; text-align: center; padding: 15px; font-size: 15px; font-weight: 700; font-family: var(--font-condensed);">PAYMENTS</div>
@@ -259,47 +269,47 @@
 
             <!-- 1. DEPOSIT METHODS -->
             <div id="depositContent" class="pay-content-area" style="padding: 15px;">
-                <div class="payment-card" style="background: white; border: 1px solid #ddd; margin-bottom: 15px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-radius: 2px;">
-                    <div class="pay-logo-area" style="padding: 25px; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: center;">
-                        <img src="1.png" alt="Telebirr" style="height: 35px; width: 100%; object-fit: contain;">
-                    </div>
-                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><span>Service Fee</span></div>
-                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><b>Free</b></div>
-                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><span>Process Time</span></div>
-                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><b>5-10 minutes</b></div>
-                    <button class="btn-deposit-action" style="width: 90%; margin: 20px auto; background: white; color: #15803d; border: 2px solid #15803d; padding: 12px; font-size: 15px; font-weight: bold; font-family: var(--font-condensed); border-radius: 2px; cursor: pointer; text-transform: uppercase;" onclick="openDepositAction('telebirr')">Deposit</button>
+                <div class="payment-card">
+                    <div class="pay-logo-area"><img src="1.png" alt="Telebirr"></div>
+                    <div class="pay-detail-row"><span>Service Fee</span></div>
+                    <div class="pay-detail-row"><b>Free</b></div>
+                    <div class="pay-detail-row"><span>Process Time</span></div>
+                    <div class="pay-detail-row"><b>5-10 minutes</b></div>
+                    <button class="btn-deposit-action" onclick="openDepositAction('telebirr')">Deposit</button>
                 </div>
-                <div class="payment-card" style="background: white; border: 1px solid #ddd; margin-bottom: 15px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-radius: 2px;">
-                    <div class="pay-logo-area" style="padding: 25px; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: center;">
-                        <img src="usdt.png" alt="USDT-TON" style="height: 35px; width: 100%; object-fit: contain;">
-                    </div>
-                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><span>Service Fee</span></div>
-                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><b>Free</b></div>
-                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><span>Process Time</span></div>
-                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><b>5-10 minutes</b></div>
-                    <button class="btn-deposit-action" style="width: 90%; margin: 20px auto; background: white; color: #15803d; border: 2px solid #15803d; padding: 12px; font-size: 15px; font-weight: bold; font-family: var(--font-condensed); border-radius: 2px; cursor: pointer; text-transform: uppercase;">Deposit</button>
+                <div class="payment-card">
+                    <div class="pay-logo-area"><img src="usdt.png" alt="USDT-TON"></div>
+                    <div class="pay-detail-row"><span>Service Fee</span></div>
+                    <div class="pay-detail-row"><b>Free</b></div>
+                    <div class="pay-detail-row"><span>Process Time</span></div>
+                    <div class="pay-detail-row"><b>5-10 minutes</b></div>
+                    <button class="btn-deposit-action">Deposit</button>
                 </div>
-                <div class="payment-card" style="background: white; border: 1px solid #ddd; margin-bottom: 15px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-radius: 2px;">
-                    <div class="pay-logo-area" style="padding: 25px; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: center;">
-                        <img src="usdtt.png" alt="Tether USDT TRC20" style="height: 35px; width: 100%; object-fit: contain;">
-                    </div>
-                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><span>Service Fee</span></div>
-                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><b>Free</b></div>
-                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><span>Process Time</span></div>
-                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><b>Instant</b></div>
-                    <button class="btn-deposit-action" style="width: 90%; margin: 20px auto; background: white; color: #15803d; border: 2px solid #15803d; padding: 12px; font-size: 15px; font-weight: bold; font-family: var(--font-condensed); border-radius: 2px; cursor: pointer; text-transform: uppercase;">Deposit</button>
+                <div class="payment-card">
+                    <div class="pay-logo-area"><img src="usdtt.png" alt="Tether USDT TRC20"></div>
+                    <div class="pay-detail-row"><span>Service Fee</span></div>
+                    <div class="pay-detail-row"><b>Free</b></div>
+                    <div class="pay-detail-row"><span>Process Time</span></div>
+                    <div class="pay-detail-row"><b>Instant</b></div>
+                    <button class="btn-deposit-action">Deposit</button>
+                </div>
+                <div class="payment-card">
+                    <div class="pay-logo-area"><img src="voucher.png" alt="Voucher"></div>
+                    <div class="pay-detail-row"><span>Service Fee</span></div>
+                    <div class="pay-detail-row"><b>Free</b></div>
+                    <div class="pay-detail-row"><span>Process Time</span></div>
+                    <div class="pay-detail-row"><b>Instant</b></div>
+                    <button class="btn-deposit-action">Deposit</button>
                 </div>
             </div>
 
             <!-- 2. DEPOSIT ACTION (TELEBIRR REPLICA) -->
             <div id="depositActionTelebirr" style="display: none; background: white; padding-bottom: 20px;">
-                <div class="pay-logo-area" style="padding: 15px; border-bottom: 1px solid #eee; display: flex; justify-content: center;">
-                    <img src="1.png" alt="Telebirr" style="height: 40px; object-fit: contain;">
-                </div>
-                <div style="display:flex; flex-direction:column; align-items:center; padding: 12px; border-bottom: 1px solid #eee;"><span style="color:#666; font-size:13px; margin-bottom:5px;">Service Fee</span><b style="font-size:14px; color: #333;">Free</b></div>
-                <div style="display:flex; flex-direction:column; align-items:center; padding: 12px; border-bottom: 1px solid #eee;"><span style="color:#666; font-size:13px; margin-bottom:5px;">Process Time</span><b style="font-size:14px; color: #333;">5-10 minutes</b></div>
-                <div style="display:flex; flex-direction:column; align-items:center; padding: 12px; border-bottom: 1px solid #eee;"><span style="color:#666; font-size:13px; margin-bottom:5px; font-weight: bold;">Min. Amount</span><b style="font-size:14px; color: #333;">500 ETB</b></div>
-                <div style="display:flex; flex-direction:column; align-items:center; padding: 12px; border-bottom: 1px solid #eee;"><span style="color:#666; font-size:13px; margin-bottom:5px; font-weight: bold;">Max. Amount</span><b style="font-size:14px; color: #333;">75000 ETB</b></div>
+                <div class="pay-logo-area" style="padding: 15px; border-bottom: 1px solid #eee; display: flex; justify-content: center;"><img src="1.png" alt="Telebirr" style="height: 40px; object-fit: contain;"></div>
+                <div class="action-detail-row"><span style="color:#666; font-size:13px;">Service Fee</span><b style="font-size:14px; color:#333;">Free</b></div>
+                <div class="action-detail-row"><span style="color:#666; font-size:13px;">Process Time</span><b style="font-size:14px; color:#333;">5-10 minutes</b></div>
+                <div class="action-detail-row"><span style="color:#666; font-size:13px; font-weight:bold;">Min. Amount</span><b style="font-size:14px; color:#333;">500 ETB</b></div>
+                <div class="action-detail-row"><span style="color:#666; font-size:13px; font-weight:bold;">Max. Amount</span><b style="font-size:14px; color:#333;">75000 ETB</b></div>
                 
                 <div class="deposit-instructions" style="padding: 20px; text-align: left; background: #fff;">
                     <p style="color: #666; font-size: 13px; line-height: 1.5; margin-bottom: 10px;">1. Copy Mobile number from the Mobile number field</p>
@@ -318,72 +328,115 @@
                     <p style="font-weight: bold; font-size: 14px; color: #555; margin-bottom: 10px;">Select or type in the amount to be deposited.</p>
                     
                     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 15px;">
-                        <button class="amount-btn" style="background-color: #1ea0d9; color: white; border: none; padding: 12px 0; font-size: 14px; border-radius: 2px; cursor: pointer; font-family: var(--font-regular);">100</button>
-                        <button class="amount-btn" style="background-color: #1ea0d9; color: white; border: none; padding: 12px 0; font-size: 14px; border-radius: 2px; cursor: pointer; font-family: var(--font-regular);">200</button>
-                        <button class="amount-btn" style="background-color: #1ea0d9; color: white; border: none; padding: 12px 0; font-size: 14px; border-radius: 2px; cursor: pointer; font-family: var(--font-regular);">500</button>
-                        <button class="amount-btn" style="background-color: #1ea0d9; color: white; border: none; padding: 12px 0; font-size: 14px; border-radius: 2px; cursor: pointer; font-family: var(--font-regular);">700</button>
-                        <button class="amount-btn" style="background-color: #1ea0d9; color: white; border: none; padding: 12px 0; font-size: 14px; border-radius: 2px; cursor: pointer; font-family: var(--font-regular);">1000</button>
-                        <button class="amount-btn" style="background-color: #1ea0d9; color: white; border: none; padding: 12px 0; font-size: 14px; border-radius: 2px; cursor: pointer; font-family: var(--font-regular);">2000</button>
+                        <button class="amount-btn">100</button><button class="amount-btn">200</button><button class="amount-btn">500</button>
+                        <button class="amount-btn">700</button><button class="amount-btn">1000</button><button class="amount-btn">2000</button>
                     </div>
                     
                     <div style="position: relative; margin-bottom: 20px;">
                         <input type="number" placeholder="Amount" style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 2px; font-size: 14px; outline: none; text-align: right;">
                     </div>
-                    <button class="btn-submit-red" style="background-color: #cd5c5c !important; color: white !important; margin-bottom: 20px; border: none; border-radius: 2px; font-weight: 700; font-family: var(--font-condensed); width: 100%; padding: 14px; font-size: 16px; cursor: pointer;" onclick="alert('Deposit Request Submitted!')">DEPOSIT</button>
+                    <button class="btn-submit-red" style="background-color: #cd5c5c !important; margin-bottom: 20px;" onclick="alert('Deposit Request Submitted!')">DEPOSIT</button>
                 </div>
                 <div style="padding: 0 20px;">
                     <button onclick="backToDepositMethods()" style="width: 100%; padding: 15px; background: #fff; border: 1px solid #ddd; color: #555; font-weight: bold; font-family: var(--font-condensed); font-size: 13px; cursor: pointer; border-radius: 2px; text-transform: uppercase;">CHOOSE ANOTHER DEPOSIT METHOD</button>
                 </div>
             </div>
 
-            <!-- 3. WITHDRAWAL METHODS CONTENT -->
+            <!-- 3. WITHDRAWAL METHODS CONTENT (Now fully built out like screenshot) -->
             <div id="withdrawContent" class="pay-content-area" style="display: none; padding: 15px;">
-                <div class="payment-card" style="background: white; border: 1px solid #ddd; margin-bottom: 15px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-radius: 2px;">
-                    <div class="pay-logo-area" style="padding: 25px; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: center;">
-                        <img src="1.png" alt="Telebirr" style="height: 35px; width: 100%; object-fit: contain;">
-                    </div>
-                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><span>Service Fee</span></div>
-                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><b>Free</b></div>
-                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><span>Process Time</span></div>
-                    <div class="pay-detail-row" style="padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333;"><b>5-10 minutes</b></div>
-                    <button class="btn-deposit-action" style="width: 90%; margin: 20px auto; background: white; color: #cd122d; border: 2px solid #cd122d; padding: 12px; font-size: 15px; font-weight: bold; font-family: var(--font-condensed); border-radius: 2px; cursor: pointer; text-transform: uppercase;" onclick="alert('Withdraw process started.')">Withdraw</button>
+                <div class="payment-card">
+                    <div class="pay-logo-area"><img src="1.png" alt="Telebirr"></div>
+                    <div class="pay-detail-row"><span>Service Fee</span></div><div class="pay-detail-row"><b>Free</b></div>
+                    <div class="pay-detail-row"><span>Process Time</span></div><div class="pay-detail-row"><b>5-10 minutes</b></div>
+                    <!-- Calls specific action page for withdraw -->
+                    <button class="btn-deposit-action withdraw-red-btn" onclick="openWithdrawAction('telebirr')">Withdraw</button>
+                </div>
+                <div class="payment-card">
+                    <div class="pay-logo-area"><img src="usdt.png" alt="USDT-TON"></div>
+                    <div class="pay-detail-row"><span>Service Fee</span></div><div class="pay-detail-row"><b>Free</b></div>
+                    <div class="pay-detail-row"><span>Process Time</span></div><div class="pay-detail-row"><b>5-10 minutes</b></div>
+                    <button class="btn-deposit-action withdraw-red-btn" onclick="openWithdrawAction('usdt-ton')">Withdraw</button>
+                </div>
+                <div class="payment-card">
+                    <div class="pay-logo-area"><img src="usdtt.png" alt="Tether USDT TRC20"></div>
+                    <div class="pay-detail-row"><span>Service Fee</span></div><div class="pay-detail-row"><b>Free</b></div>
+                    <div class="pay-detail-row"><span>Process Time</span></div><div class="pay-detail-row"><b>Instant</b></div>
+                    <button class="btn-deposit-action withdraw-red-btn" onclick="openWithdrawAction('usdt-trc20')">Withdraw</button>
+                </div>
+                <div class="payment-card">
+                    <div class="pay-logo-area"><img src="voucher.png" alt="Voucher"></div>
+                    <div class="pay-detail-row"><span>Service Fee</span></div><div class="pay-detail-row"><b>Free</b></div>
+                    <div class="pay-detail-row"><span>Process Time</span></div><div class="pay-detail-row"><b>Instant</b></div>
+                    <button class="btn-deposit-action withdraw-red-btn" onclick="openWithdrawAction('voucher')">Withdraw</button>
                 </div>
             </div>
 
-            <!-- 4. WITHDRAWAL REQUESTS -->
+            <!-- 4. WITHDRAWAL ACTION PAGE (Based on Screenshot 145843) -->
+            <div id="withdrawActionPage" style="display: none; background: white; padding-bottom: 20px;">
+                <div style="padding: 15px; border-bottom: 1px solid #eee; text-align: center;">
+                    <img id="withdrawActionLogo" src="usdt.png" style="height: 35px; object-fit: contain;">
+                </div>
+                <div style="padding: 15px; border-bottom: 1px solid #eee; text-align: center; color: #555; font-size: 14px;">
+                     1000000 ETB
+                </div>
+                <div style="padding: 20px;">
+                    <label style="font-weight: bold; font-size: 13px; color: #555; display:block; margin-bottom:5px;">Currency</label>
+                    <select style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 2px; margin-bottom: 15px; font-size: 14px; outline: none; background: #fff; color: #333;">
+                        <option>ET - ETB</option>
+                    </select>
+
+                    <label style="font-weight: bold; font-size: 13px; color: #555; display:block; margin-bottom:5px;">Network</label>
+                    <div style="margin-bottom: 15px; font-size: 14px; color: #555;" id="withdrawActionNetworkText">TON</div>
+
+                    <label style="font-weight: bold; font-size: 13px; color: #555; display:block; margin-bottom:5px;">Address to transfer coins to:</label>
+                    <input type="text" style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 2px; margin-bottom: 20px; font-size: 14px; outline: none;">
+
+                    <p style="font-weight: bold; font-size: 14px; color: #555; margin-bottom: 10px;">Select or type in the amount to be withdrawn.</p>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 15px;">
+                        <button class="amount-btn">1100</button><button class="amount-btn">3000</button><button class="amount-btn">5000</button>
+                        <button class="amount-btn">10000</button><button class="amount-btn">25000</button><button class="amount-btn">50000</button>
+                    </div>
+                    
+                    <div style="position: relative; margin-bottom: 20px;">
+                        <input type="number" placeholder="Amount" style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 2px; font-size: 14px; outline: none; text-align: right;">
+                    </div>
+                    
+                    <button class="btn-submit-red" style="background-color: #cd5c5c !important; color: white !important; margin-bottom: 20px;" onclick="alert('Withdrawal Request Submitted!')">WITHDRAW</button>
+                </div>
+                
+                <div style="padding: 0 20px;">
+                    <button onclick="backToWithdrawMethods()" style="width: 100%; padding: 15px; background: #fff; border: 1px solid #ddd; color: #555; font-weight: bold; font-family: var(--font-condensed); font-size: 13px; cursor: pointer; border-radius: 2px; text-transform: uppercase;">CHOOSE ANOTHER WITHDRAW METHOD</button>
+                </div>
+            </div>
+
+            <!-- 5. WITHDRAWAL REQUESTS HISTORY -->
             <div id="withdrawalReqContent" class="pay-content-area" style="display: none; padding: 15px;">
                 <div class="filter-group" style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 15px;">
-                    <select class="filter-select" style="padding: 14px; border: 1px solid #ccc; background: #f9f9f9; font-family: var(--font-regular); color: #333; font-size: 14px; border-radius: 2px; font-weight: bold;"><option>Date Filter</option></select>
-                    <select class="filter-select" style="padding: 14px; border: 1px solid #ccc; background: #f9f9f9; font-family: var(--font-regular); color: #333; font-size: 14px; border-radius: 2px; font-weight: bold;"><option>Status Filter</option></select>
-                    <select class="filter-select" style="padding: 14px; border: 1px solid #ccc; background: #f9f9f9; font-family: var(--font-regular); color: #333; font-size: 14px; border-radius: 2px; font-weight: bold;"><option>Payment Filter</option></select>
+                    <select class="filter-select"><option>Date Filter</option></select>
+                    <select class="filter-select"><option>Status Filter</option></select>
+                    <select class="filter-select"><option>Payment Filter</option></select>
                 </div>
                 <div class="filter-actions" style="display: flex; gap: 10px; margin-bottom: 20px;">
-                    <button class="btn-filter-search" style="flex: 1; background: var(--accent-red); color: white; border: none; padding: 14px; font-weight: bold; font-family: var(--font-condensed); font-size: 15px; border-radius: 2px; cursor: pointer;">Search</button>
-                    <button class="btn-filter-clear" style="flex: 1; background: #a30e23; color: white; border: none; padding: 14px; font-weight: bold; font-family: var(--font-condensed); font-size: 15px; border-radius: 2px; cursor: pointer;">Clear</button>
+                    <button class="btn-filter-search">Search</button>
+                    <button class="btn-filter-clear">Clear</button>
                 </div>
                 <table class="withdrawal-table" style="width: 100%; border-collapse: collapse; background: white; border: 1px solid #ddd; font-size: 12px; text-align: center;">
-                    <thead><tr><th style="background: var(--accent-red); color: white; padding: 12px; border-right: 1px solid #a30e23; font-weight: bold; font-family: var(--font-condensed);">Request Date</th><th style="background: var(--accent-red); color: white; padding: 12px; border-right: 1px solid #a30e23; font-weight: bold; font-family: var(--font-condensed);">Amount</th><th style="background: var(--accent-red); color: white; padding: 12px; border-right: 1px solid #a30e23; font-weight: bold; font-family: var(--font-condensed);">Status</th><th style="background: var(--accent-red); color: white; padding: 12px; border-right: 1px solid #a30e23; font-weight: bold; font-family: var(--font-condensed);">Payment ID</th><th style="background: var(--accent-red); color: white; padding: 12px; border-right: 1px solid #a30e23; font-weight: bold; font-family: var(--font-condensed);">Actions</th></tr></thead>
+                    <thead><tr><th style="background: var(--accent-red); color: white; padding: 12px; border-right: 1px solid #a30e23;">Request Date</th><th style="background: var(--accent-red); color: white; padding: 12px; border-right: 1px solid #a30e23;">Amount</th><th style="background: var(--accent-red); color: white; padding: 12px; border-right: 1px solid #a30e23;">Status</th><th style="background: var(--accent-red); color: white; padding: 12px; border-right: 1px solid #a30e23;">Payment ID</th><th style="background: var(--accent-red); color: white; padding: 12px;">Actions</th></tr></thead>
                     <tbody>
                         <tr><td colspan="5" class="empty-state-row" style="background: #f9f9f9; color: #333; font-size: 14px; font-weight: bold; padding: 15px 10px; border-bottom: 1px solid #ddd;">There are no Withdrawal Requests!</td></tr>
                     </tbody>
                 </table>
             </div>
         </div>
+
     </main>
 
     <!-- Chat Bubble -->
-    <div class="floating-chat-bubble">
-        <span class="chat-icon"><i class="fa-solid fa-comments"></i></span>
-    </div>
+    <div class="floating-chat-bubble"><span class="chat-icon"><i class="fa-solid fa-comments"></i></span></div>
 
-    <!-- ========================================== -->
-    <!-- LEFT SIDEBAR - CHOOSE A SPORT              -->
-    <!-- ========================================== -->
+    <!-- LEFT SIDEBAR -->
     <aside id="leftSidebar" class="side-drawer left-drawer">
-        <div class="drawer-header white-bg">
-            <button class="close-drawer-btn" id="closeLeftBtn">✕</button>
-            <h3>Choose a sport</h3>
-        </div>
+        <div class="drawer-header white-bg"><button class="close-drawer-btn" id="closeLeftBtn">✕</button><h3>Choose a sport</h3></div>
         <div class="drawer-content white-bg">
             <ul class="sports-chooser-list">
                 <li><a href="#"><span class="sport-icon"><i class="fa-regular fa-futbol"></i></span> Football <span class="chevron">&#10095;</span></a></li>
@@ -393,36 +446,35 @@
     </aside>
 
     <!-- ========================================== -->
-    <!-- RIGHT SIDEBAR - LOGGED OUT                 -->
+    <!-- RIGHT SIDEBAR - LOGGED OUT (Perfect Match) -->
     <!-- ========================================== -->
     <aside id="loggedOutDrawer" class="side-drawer right-drawer">
-        <div class="drawer-content white-bg" style="width: 100%; max-width: 350px;">
-            <div class="drawer-header white-bg" style="justify-content: center; position: relative; padding: 20px;">
-                <button class="close-drawer-btn" id="closeLoggedOutBtn" style="position: absolute; left: 15px; top: 15px; color: #CD122D;">✕</button>
-                <h3 style="color: #333; text-transform: uppercase; font-weight: bold; font-size: 12px; font-family: var(--font-condensed);">ACCOUNT ALREADY EXISTING?</h3>
+        <!-- Made much wider, matching screenshot -->
+        <div class="drawer-content white-bg" style="width: 90%; max-width: 400px;">
+            <div class="drawer-header white-bg" style="display: flex; align-items: center; justify-content: center; position: relative; padding: 20px;">
+                <button class="close-drawer-btn" id="closeLoggedOutBtn" style="position: absolute; left: 15px; color: #CD122D; font-size: 26px;">✕</button>
+                <h3 style="color: #333; text-transform: uppercase; font-weight: bold; font-size: 14px; font-family: var(--font-condensed); margin:0;">ACCOUNT ALREADY EXISTING?</h3>
             </div>
             
-            <div class="drawer-body user-body" style="padding-top: 10px;">
-                <button id="openLoginModalBtn" class="btn-submit btn-submit-red full-width" style="background-color: #CD122D !important; color: #ffffff !important; border: none !important; border-radius: 2px; font-weight: 700; font-family: var(--font-condensed); width: 100%; padding: 14px; font-size: 16px; cursor: pointer;">LOGIN</button>
-                <h3 class="user-sub-title" style="margin: 15px 0; font-size: 11px; color: #777; text-align: center; font-weight: normal;">New user?</h3>
-                <button id="openRegisterModalBtn" class="btn-submit btn-submit-red full-width" style="background-color: #CD122D !important; color: #ffffff !important; border: none !important; border-radius: 2px; font-weight: 700; font-family: var(--font-condensed); width: 100%; padding: 14px; font-size: 16px; cursor: pointer;">REGISTER</button>
+            <div class="drawer-body user-body" style="padding-top: 15px; padding-bottom: 10px;">
+                <button id="openLoginModalBtn" class="btn-submit btn-submit-red full-width" style="background-color: #CD122D !important; color: #ffffff !important; border: none !important; border-radius: 2px; font-weight: 700; font-family: var(--font-condensed); width: 100%; padding: 16px; font-size: 16px; cursor: pointer;">LOGIN</button>
+                <h3 class="user-sub-title" style="margin: 15px 0; font-size: 13px; color: #777; text-align: center; font-weight: normal;">New user?</h3>
+                <button id="openRegisterModalBtn" class="btn-submit btn-submit-red full-width" style="background-color: #CD122D !important; color: #ffffff !important; border: none !important; border-radius: 2px; font-weight: 700; font-family: var(--font-condensed); width: 100%; padding: 16px; font-size: 16px; cursor: pointer;">REGISTER</button>
             </div>
             
-            <div class="drawer-section gray-bg text-center" style="background-color: white !important; padding: 15px 20px; border-bottom: 1px solid #eeeeee;">
-                <a href="#" class="user-link" style="justify-content: center; color: #000; text-decoration: none; font-size: 13px; font-weight: bold; display: flex; align-items: center; gap: 10px;"><i class="fa-solid fa-comments"></i> LIVE CHAT</a>
+            <div class="drawer-section gray-bg text-center" style="background-color: white !important; padding: 20px 20px; border-bottom: 1px solid #eeeeee;">
+                <a href="#" class="user-link" style="justify-content: center; color: #000; text-decoration: none; font-size: 15px; font-weight: bold; display: flex; align-items: center; gap: 10px;"><i class="fa-solid fa-comments"></i> LIVE CHAT</a>
             </div>
             
-            <div class="drawer-section white-bg text-center" style="padding: 15px 20px; border-bottom: 1px solid #eeeeee;">
-                <a href="#" class="language-dropdown" style="color: #111; text-decoration: none; font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                    <span style="font-size: 16px; margin-right: 6px;">🇬🇧</span> English ⌄
+            <div class="drawer-section white-bg text-center" style="padding: 20px 20px; border-bottom: 1px solid #eeeeee;">
+                <a href="#" class="language-dropdown" style="color: #111; text-decoration: none; font-size: 16px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <span style="font-size: 18px; margin-right: 6px;">🇬🇧</span> English ⌄
                 </a>
             </div>
         </div>
     </aside>
 
-    <!-- ========================================== -->
-    <!-- RIGHT SIDEBAR - LOGGED IN MENU             -->
-    <!-- ========================================== -->
+    <!-- RIGHT SIDEBAR - LOGGED IN MENU -->
     <aside id="loggedInDrawer" class="side-drawer right-drawer">
         <div class="drawer-content white-bg" style="width: 100%; max-width: 350px;">
             <div class="logged-in-header" style="background-color: #ffffff !important; display: flex; align-items: center; padding: 15px 20px; border-bottom: 1px solid #eee;">
@@ -465,8 +517,8 @@
             </ul>
 
             <div class="drawer-section white-bg text-center" style="padding: 15px 20px; border-bottom: 1px solid #eeeeee;">
-                <a href="#" class="language-dropdown" style="color: #111; text-decoration: none; font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                    <span style="font-size: 16px; margin-right: 6px;">🇬🇧</span> English ⌄
+                <a href="#" class="language-dropdown" style="color: #111; text-decoration: none; font-size: 16px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <span style="font-size: 18px; margin-right: 6px;">🇬🇧</span> English ⌄
                 </a>
             </div>
 
@@ -476,32 +528,18 @@
         </div>
     </aside>
 
-    <!-- MODALS (Login & Register Input Forms) -->
+    <!-- MODALS (Login & Register) -->
     <div id="loginModal" class="modal" style="z-index: 100002; display: none; position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8);">
         <div class="modal-content" style="background-color: var(--modal-bg); margin: 15vh auto; width: 90%; max-width: 340px; border-radius: 4px; position: relative; box-shadow: 0 15px 35px rgba(0,0,0,0.5);">
             <button class="close-modal-btn" data-modal="loginModal" style="position: absolute; top: 10px; right: 12px; color: white; font-size: 20px; cursor: pointer; background: none; border: none;">✕</button>
             <div class="modal-header-area" style="text-align: center; padding: 25px 15px 10px 15px;"><img src="logo.png" alt="KonjoBet" style="height: 35px; margin-bottom: 5px;"></div>
             <div class="modal-body" style="padding: 20px;">
                 <form id="loginForm">
-                    <div class="form-group" style="margin-bottom: 14px;">
-                        <div class="phone-input-group" style="display: flex; background-color: #ffffff; overflow: hidden; border-radius: 2px;">
-                            <span class="phone-prefix" style="padding: 12px; background-color: #ffffff; color: #000; border-right: 1px solid #ccc; font-weight: 700; display: flex; align-items: center; font-size: 14px; font-family: var(--font-condensed);">ET +251 ⌄</span>
-                            <input type="text" id="loginPhone" class="modal-input" placeholder="Number" required style="width: 100%; padding: 12px; border: none; background-color: #ffffff; color: #000; font-size: 14px; outline: none; border-radius: 2px; font-family: var(--font-regular); font-weight: bold;">
-                        </div>
-                    </div>
-                    <div class="form-group" style="margin-bottom: 14px;">
-                        <div class="password-input-group" style="position: relative; display: flex; align-items: center;">
-                            <input type="password" id="loginPassword" class="modal-input" placeholder="Password" required style="width: 100%; padding: 12px; border: none; background-color: #ffffff; color: #000; font-size: 14px; outline: none; border-radius: 2px; font-family: var(--font-regular); font-weight: bold; padding-right: 35px;">
-                            <span class="eye-icon" style="position: absolute; right: 12px; color: #6b7280; cursor: pointer; font-size: 16px;"><i class="fa-solid fa-eye-slash"></i></span>
-                        </div>
-                    </div>
+                    <div class="form-group" style="margin-bottom: 14px;"><div class="phone-input-group" style="display: flex; background-color: #ffffff; overflow: hidden; border-radius: 2px;"><span class="phone-prefix" style="padding: 12px; background-color: #ffffff; color: #000; border-right: 1px solid #ccc; font-weight: 700; display: flex; align-items: center; font-size: 14px; font-family: var(--font-condensed);">ET +251 ⌄</span><input type="text" id="loginPhone" class="modal-input" placeholder="Number" required style="width: 100%; padding: 12px; border: none; background-color: #ffffff; color: #000; font-size: 14px; outline: none; border-radius: 2px; font-family: var(--font-regular); font-weight: bold;"></div></div>
+                    <div class="form-group" style="margin-bottom: 14px;"><div class="password-input-group" style="position: relative; display: flex; align-items: center;"><input type="password" id="loginPassword" class="modal-input" placeholder="Password" required style="width: 100%; padding: 12px; border: none; background-color: #ffffff; color: #000; font-size: 14px; outline: none; border-radius: 2px; font-family: var(--font-regular); font-weight: bold; padding-right: 35px;"><span class="eye-icon" style="position: absolute; right: 12px; color: #6b7280; cursor: pointer; font-size: 16px;"><i class="fa-solid fa-eye-slash"></i></span></div></div>
                     <button type="submit" class="btn-submit btn-submit-white" style="width: 100%; padding: 14px; border: none; font-weight: 700; font-family: var(--font-condensed); font-size: 15px; cursor: pointer; margin-top: 5px; border-radius: 2px; text-transform: uppercase; background-color: white; color: var(--modal-bg);">LOGIN</button>
                 </form>
-                <div class="modal-footer-links" style="display: flex; justify-content: center; gap: 10px; margin-top: 15px; padding-bottom: 5px;">
-                    <a href="#" style="color: white; text-decoration: none; font-size: 12px; font-weight: 500;">Forgot Password</a>
-                    <span style="color: rgba(255,255,255,0.5); font-size: 12px;">|</span>
-                    <a href="#" id="switchToRegister" style="color: white; text-decoration: none; font-size: 12px; font-weight: 500;">Create Account</a>
-                </div>
+                <div class="modal-footer-links" style="display: flex; justify-content: center; gap: 10px; margin-top: 15px; padding-bottom: 5px;"><a href="#" style="color: white; text-decoration: none; font-size: 12px; font-weight: 500;">Forgot Password</a><span style="color: rgba(255,255,255,0.5); font-size: 12px;">|</span><a href="#" id="switchToRegister" style="color: white; text-decoration: none; font-size: 12px; font-weight: 500;">Create Account</a></div>
             </div>
         </div>
     </div>
@@ -509,48 +547,17 @@
     <div id="registerModal" class="modal" style="z-index: 100002; display: none; position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8);">
         <div class="modal-content" style="background-color: var(--modal-bg); margin: 15vh auto; width: 90%; max-width: 340px; border-radius: 4px; position: relative; box-shadow: 0 15px 35px rgba(0,0,0,0.5);">
             <button class="close-modal-btn" data-modal="registerModal" style="position: absolute; top: 10px; right: 12px; color: white; font-size: 20px; cursor: pointer; background: none; border: none;">✕</button>
-            <div class="modal-header-area" style="text-align: center; padding: 25px 15px 10px 15px;">
-                <img src="logo.png" alt="KonjoBet" style="height: 35px; margin-bottom: 5px;">
-                <h2 class="modal-title" style="color: white; font-size: 18px; font-weight: 700; font-family: var(--font-condensed); margin: 0; text-transform: uppercase;">Register</h2>
-            </div>
+            <div class="modal-header-area" style="text-align: center; padding: 25px 15px 10px 15px;"><img src="logo.png" alt="KonjoBet" style="height: 35px; margin-bottom: 5px;"><h2 class="modal-title" style="color: white; font-size: 18px; font-weight: 700; font-family: var(--font-condensed); margin: 0; text-transform: uppercase;">Register</h2></div>
             <div class="modal-body" style="padding: 20px;">
                 <form id="registerForm">
-                    <div class="form-group" style="margin-bottom: 14px;">
-                        <label style="display: block; color: white; font-size: 12px; font-weight: bold; margin-bottom: 6px;">Phone number *</label>
-                        <div class="phone-input-group" style="display: flex; background-color: #ffffff; overflow: hidden; border-radius: 2px;">
-                            <span class="phone-prefix" style="padding: 12px; background-color: #ffffff; color: #000; border-right: 1px solid #ccc; font-weight: 700; display: flex; align-items: center; font-size: 14px; font-family: var(--font-condensed);">ET +251</span>
-                            <input type="text" id="regPhone" class="modal-input" required style="width: 100%; padding: 12px; border: none; background-color: #ffffff; color: #000; font-size: 14px; outline: none; border-radius: 2px; font-family: var(--font-regular); font-weight: bold;">
-                        </div>
-                    </div>
-                    <div class="form-group" style="margin-bottom: 14px;">
-                        <label style="display: block; color: white; font-size: 12px; font-weight: bold; margin-bottom: 6px;">Password</label>
-                        <div class="password-input-group" style="position: relative; display: flex; align-items: center;">
-                            <input type="password" id="regPassword" class="modal-input" required style="width: 100%; padding: 12px; border: none; background-color: #ffffff; color: #000; font-size: 14px; outline: none; border-radius: 2px; font-family: var(--font-regular); font-weight: bold; padding-right: 35px;">
-                            <span class="eye-icon" style="position: absolute; right: 12px; color: #6b7280; cursor: pointer; font-size: 16px;"><i class="fa-solid fa-eye-slash"></i></span>
-                        </div>
-                    </div>
-                    <div class="form-group" style="margin-bottom: 14px;">
-                        <label style="display: block; color: white; font-size: 12px; font-weight: bold; margin-bottom: 6px;">Confirm Password</label>
-                        <div class="password-input-group" style="position: relative; display: flex; align-items: center;">
-                            <input type="password" id="regConfirmPassword" class="modal-input" required style="width: 100%; padding: 12px; border: none; background-color: #ffffff; color: #000; font-size: 14px; outline: none; border-radius: 2px; font-family: var(--font-regular); font-weight: bold; padding-right: 35px;">
-                            <span class="eye-icon" style="position: absolute; right: 12px; color: #6b7280; cursor: pointer; font-size: 16px;"><i class="fa-solid fa-eye-slash"></i></span>
-                        </div>
-                    </div>
-                    <div class="checkbox-group" style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 12px;">
-                        <input type="checkbox" id="ageCheck" checked required style="margin-top: 3px; width: 16px; height: 16px;">
-                        <label for="ageCheck" style="color: white; font-size: 11px; line-height: 1.4;">I confirm that I am OVER 18 *</label>
-                    </div>
-                    <div class="checkbox-group" style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 12px;">
-                        <input type="checkbox" id="termsCheck" checked required style="margin-top: 3px; width: 16px; height: 16px;">
-                        <label for="termsCheck" style="color: white; font-size: 11px; line-height: 1.4;">If you continue, you'll confirm that you've read and agree with the terms of use and the privacy policy</label>
-                    </div>
+                    <div class="form-group" style="margin-bottom: 14px;"><label style="display: block; color: white; font-size: 12px; font-weight: bold; margin-bottom: 6px;">Phone number *</label><div class="phone-input-group" style="display: flex; background-color: #ffffff; overflow: hidden; border-radius: 2px;"><span class="phone-prefix" style="padding: 12px; background-color: #ffffff; color: #000; border-right: 1px solid #ccc; font-weight: 700; display: flex; align-items: center; font-size: 14px; font-family: var(--font-condensed);">ET +251</span><input type="text" id="regPhone" class="modal-input" required style="width: 100%; padding: 12px; border: none; background-color: #ffffff; color: #000; font-size: 14px; outline: none; border-radius: 2px; font-family: var(--font-regular); font-weight: bold;"></div></div>
+                    <div class="form-group" style="margin-bottom: 14px;"><label style="display: block; color: white; font-size: 12px; font-weight: bold; margin-bottom: 6px;">Password</label><div class="password-input-group" style="position: relative; display: flex; align-items: center;"><input type="password" id="regPassword" class="modal-input" required style="width: 100%; padding: 12px; border: none; background-color: #ffffff; color: #000; font-size: 14px; outline: none; border-radius: 2px; font-family: var(--font-regular); font-weight: bold; padding-right: 35px;"><span class="eye-icon" style="position: absolute; right: 12px; color: #6b7280; cursor: pointer; font-size: 16px;"><i class="fa-solid fa-eye-slash"></i></span></div></div>
+                    <div class="form-group" style="margin-bottom: 14px;"><label style="display: block; color: white; font-size: 12px; font-weight: bold; margin-bottom: 6px;">Confirm Password</label><div class="password-input-group" style="position: relative; display: flex; align-items: center;"><input type="password" id="regConfirmPassword" class="modal-input" required style="width: 100%; padding: 12px; border: none; background-color: #ffffff; color: #000; font-size: 14px; outline: none; border-radius: 2px; font-family: var(--font-regular); font-weight: bold; padding-right: 35px;"><span class="eye-icon" style="position: absolute; right: 12px; color: #6b7280; cursor: pointer; font-size: 16px;"><i class="fa-solid fa-eye-slash"></i></span></div></div>
+                    <div class="checkbox-group" style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 12px;"><input type="checkbox" id="ageCheck" checked required style="margin-top: 3px; width: 16px; height: 16px;"><label for="ageCheck" style="color: white; font-size: 11px; line-height: 1.4;">I confirm that I am OVER 18 *</label></div>
+                    <div class="checkbox-group" style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 12px;"><input type="checkbox" id="termsCheck" checked required style="margin-top: 3px; width: 16px; height: 16px;"><label for="termsCheck" style="color: white; font-size: 11px; line-height: 1.4;">If you continue, you'll confirm that you've read and agree with the terms of use and the privacy policy</label></div>
                     <button type="submit" class="btn-submit btn-submit-dim" style="width: 100%; padding: 14px; border: none; font-weight: 700; font-family: var(--font-condensed); font-size: 15px; cursor: pointer; margin-top: 5px; border-radius: 2px; text-transform: uppercase; background-color: rgba(255,255,255,0.2); color: white;">REGISTER</button>
                 </form>
-                <div class="modal-footer-links" style="display: flex; justify-content: center; gap: 10px; margin-top: 15px; padding-bottom: 5px;">
-                    <a href="#" style="color: white; text-decoration: none; font-size: 12px; font-weight: 500;">Support</a>
-                    <span style="color: rgba(255,255,255,0.5); font-size: 12px;">|</span>
-                    <a href="#" id="switchToLogin" style="color: white; text-decoration: none; font-size: 12px; font-weight: 500;">Enter</a>
-                </div>
+                <div class="modal-footer-links" style="display: flex; justify-content: center; gap: 10px; margin-top: 15px; padding-bottom: 5px;"><a href="#" style="color: white; text-decoration: none; font-size: 12px; font-weight: 500;">Support</a><span style="color: rgba(255,255,255,0.5); font-size: 12px;">|</span><a href="#" id="switchToLogin" style="color: white; text-decoration: none; font-size: 12px; font-weight: 500;">Enter</a></div>
             </div>
         </div>
     </div>

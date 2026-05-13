@@ -1,6 +1,3 @@
-// ==========================================
-// DOM ELEMENTS
-// ==========================================
 const homeView = document.getElementById('homeView');
 const paymentsView = document.getElementById('paymentsView');
 const homeLogoBtn = document.getElementById('homeLogoBtn');
@@ -13,7 +10,6 @@ const navVirtualBtn = document.getElementById('navVirtualBtn');
 
 const loggedOutActions = document.getElementById('loggedOutActions');
 const loggedInActions = document.getElementById('loggedInActions');
-
 const loginModal = document.getElementById('loginModal');
 const registerModal = document.getElementById('registerModal');
 
@@ -21,19 +17,13 @@ const sideDrawerLeft = document.getElementById('leftSidebar');
 const loggedOutDrawer = document.getElementById('loggedOutDrawer');
 const loggedInDrawer = document.getElementById('loggedInDrawer');
 
-// ==========================================
-// INITIALIZATION
-// ==========================================
+// INIT
 document.addEventListener('DOMContentLoaded', () => {
     const savedUser = localStorage.getItem('konjo_user');
-    if (savedUser) {
-        showLoggedInState(savedUser);
-    }
+    if (savedUser) showLoggedInState(savedUser);
 });
 
-// ==========================================
-// TOP NAVIGATION (Sports vs Virtuals)
-// ==========================================
+// TOP NAVIGATION TOGGLES
 navSportBtn.onclick = (e) => {
     e.preventDefault();
     navSportBtn.classList.add('nav-item-active');
@@ -58,38 +48,30 @@ navVirtualBtn.onclick = (e) => {
     if(actionBar) actionBar.style.display = 'flex';
 };
 
-// Make Virtual Games Clickable
+// VIRTUAL GAMES CLICK
 document.querySelectorAll('.game-card').forEach(card => {
     card.onclick = () => alert("Launching virtual game...");
 });
 
-
-// ==========================================
-// AUTHENTICATION LOGIC (Gasha-style bypass)
-// ==========================================
+// AUTHENTICATION
 const API_URL = '/api'; 
 
 function showLoggedInState(phone) {
     loggedOutActions.style.display = 'none';
     loggedInActions.style.display = 'flex';
     document.getElementById('displayUserId').innerText = phone;
-    
     loggedOutDrawer.style.display = "none";
     loginModal.style.display = "none";
     registerModal.style.display = "none";
 }
 
-// --- REGISTRATION ---
 document.getElementById('registerForm').onsubmit = async function(e) {
     e.preventDefault(); 
     const phone = document.getElementById('regPhone').value;
     const password = document.getElementById('regPassword').value;
     const confirmPassword = document.getElementById('regConfirmPassword').value;
 
-    if (password !== confirmPassword) {
-        alert("Passwords do not match!");
-        return;
-    }
+    if (password !== confirmPassword) { alert("Passwords do not match!"); return; }
 
     if (/^\d{9}$/.test(phone)) {
         localStorage.setItem('konjo_user', phone);
@@ -110,15 +92,10 @@ document.getElementById('registerForm').onsubmit = async function(e) {
             registerModal.style.display = "none";
             document.getElementById('registerForm').reset();
             loginModal.style.display = "block";
-        } else {
-            alert("Registration Error: " + data.message);
-        }
-    } catch (error) {
-        alert("Failed to connect to the server.");
-    }
+        } else { alert("Registration Error: " + data.message); }
+    } catch (error) { alert("Failed to connect to the server."); }
 };
 
-// --- LOGIN ---
 document.getElementById('loginForm').onsubmit = async function(e) {
     e.preventDefault(); 
     const phone = document.getElementById('loginPhone').value;
@@ -142,15 +119,10 @@ document.getElementById('loginForm').onsubmit = async function(e) {
             localStorage.setItem('konjo_user', phone);
             alert("Logged in successfully!");
             showLoggedInState(phone);
-        } else {
-            alert("Login Error: " + data.message);
-        }
-    } catch (error) {
-        alert("Failed to connect to the server.");
-    }
+        } else { alert("Login Error: " + data.message); }
+    } catch (error) { alert("Failed to connect to the server."); }
 };
 
-// --- LOGOUT ---
 document.getElementById('logoutBtn').onclick = () => {
     localStorage.removeItem('konjo_user');
     loggedInActions.style.display = 'none';
@@ -160,60 +132,31 @@ document.getElementById('logoutBtn').onclick = () => {
     homeView.style.display = 'block';
     paymentsView.style.display = 'none';
     if(actionBar) actionBar.style.display = 'flex';
-
+    navSportBtn.click();
     alert("Logged out securely.");
 };
 
-// ==========================================
-// MENU & MODAL TOGGLING
-// ==========================================
-
+// MODALS & MENUS
 const openRightMenu = () => {
-    const savedUser = localStorage.getItem('konjo_user');
-    if (savedUser) {
-        loggedInDrawer.style.display = 'block';
-    } else {
-        loggedOutDrawer.style.display = 'block';
-    }
+    if (localStorage.getItem('konjo_user')) loggedInDrawer.style.display = 'block';
+    else loggedOutDrawer.style.display = 'block';
 };
-
 document.getElementById('dotsMenuBtn').onclick = openRightMenu;
 document.getElementById('loggedInDotsBtn').onclick = openRightMenu;
 
 document.getElementById('closeLoggedOutBtn').onclick = () => loggedOutDrawer.style.display = 'none';
 document.getElementById('closeUserDrawerBtn').onclick = () => loggedInDrawer.style.display = 'none';
 
-document.getElementById('openLoginModalBtn').onclick = () => {
-    loggedOutDrawer.style.display = "none";
-    loginModal.style.display = "block";
-};
-document.getElementById('openRegisterModalBtn').onclick = () => {
-    loggedOutDrawer.style.display = "none";
-    registerModal.style.display = "block";
-};
+document.getElementById('openLoginModalBtn').onclick = () => { loggedOutDrawer.style.display = "none"; loginModal.style.display = "block"; };
+document.getElementById('openRegisterModalBtn').onclick = () => { loggedOutDrawer.style.display = "none"; registerModal.style.display = "block"; };
+document.getElementById('switchToRegister').onclick = (e) => { e.preventDefault(); loginModal.style.display = "none"; registerModal.style.display = "block"; };
+document.getElementById('switchToLogin').onclick = (e) => { e.preventDefault(); registerModal.style.display = "none"; loginModal.style.display = "block"; };
 
-document.getElementById('switchToRegister').onclick = (e) => {
-    e.preventDefault();
-    loginModal.style.display = "none";
-    registerModal.style.display = "block";
-};
-document.getElementById('switchToLogin').onclick = (e) => {
-    e.preventDefault();
-    registerModal.style.display = "none";
-    loginModal.style.display = "block";
-};
-
-document.getElementById('openDrawerBtn').onclick = () => {
-    sideDrawerLeft.style.display = "block";
-};
-document.getElementById('closeLeftBtn').onclick = () => {
-    sideDrawerLeft.style.display = "none";
-};
+document.getElementById('openDrawerBtn').onclick = () => sideDrawerLeft.style.display = "block";
+document.getElementById('closeLeftBtn').onclick = () => sideDrawerLeft.style.display = "none";
 
 document.querySelectorAll('.close-modal-btn').forEach(btn => {
-    btn.onclick = function() {
-        document.getElementById(this.getAttribute('data-modal')).style.display = "none";
-    }
+    btn.onclick = function() { document.getElementById(this.getAttribute('data-modal')).style.display = "none"; }
 });
 
 window.onclick = function(event) {
@@ -240,57 +183,51 @@ document.querySelectorAll('.eye-icon i').forEach(icon => {
     };
 });
 
-// ==========================================
-// VIEWS TOGGLING (Payments Logic)
-// ==========================================
+// PAYMENTS VIEW LOGIC
 homeLogoBtn.onclick = () => {
     paymentsView.style.display = 'none';
     homeView.style.display = 'block';
     if(actionBar) actionBar.style.display = 'flex';
-    navSportBtn.click(); // Reset to sport view
+    navSportBtn.click();
 };
 
 window.openPaymentsTab = function(tabName) {
     homeView.style.display = 'none';
     paymentsView.style.display = 'block';
     loggedInDrawer.style.display = 'none'; 
-    
     if(actionBar) actionBar.style.display = 'none';
     
     const depositContent = document.getElementById('depositContent');
     const depositActionTelebirr = document.getElementById('depositActionTelebirr');
     const withdrawContent = document.getElementById('withdrawContent');
+    const withdrawActionPage = document.getElementById('withdrawActionPage');
     const withdrawalReqContent = document.getElementById('withdrawalReqContent');
-    const tabDepositBtn = document.getElementById('tabDepositBtn');
-    const tabWithdrawBtn = document.getElementById('tabWithdrawBtn');
-    const tabWithdrawReqBtn = document.getElementById('tabWithdrawReqBtn');
-
-    tabDepositBtn.classList.remove('active');
-    tabWithdrawBtn.classList.remove('active');
-    tabWithdrawReqBtn.classList.remove('active');
+    
+    document.getElementById('tabDepositBtn').classList.remove('active');
+    document.getElementById('tabWithdrawBtn').classList.remove('active');
+    document.getElementById('tabWithdrawReqBtn').classList.remove('active');
     
     depositContent.style.display = 'none';
     depositActionTelebirr.style.display = 'none';
     withdrawContent.style.display = 'none';
+    withdrawActionPage.style.display = 'none';
     withdrawalReqContent.style.display = 'none';
 
     if (tabName === 'Deposit') {
-        tabDepositBtn.classList.add('active');
+        document.getElementById('tabDepositBtn').classList.add('active');
         depositContent.style.display = 'block'; 
     } else if (tabName === 'Withdraw') {
-        tabWithdrawBtn.classList.add('active');
+        document.getElementById('tabWithdrawBtn').classList.add('active');
         withdrawContent.style.display = 'block'; 
     } else if (tabName === 'Withdrawal Request') {
-        tabWithdrawReqBtn.classList.add('active');
+        document.getElementById('tabWithdrawReqBtn').classList.add('active');
         withdrawalReqContent.style.display = 'block';
     }
 }
 
 window.openDepositAction = function(method) {
     document.getElementById('depositContent').style.display = 'none';
-    if(method === 'telebirr') {
-        document.getElementById('depositActionTelebirr').style.display = 'block';
-    }
+    if(method === 'telebirr') document.getElementById('depositActionTelebirr').style.display = 'block';
 }
 
 window.backToDepositMethods = function() {
@@ -298,16 +235,36 @@ window.backToDepositMethods = function() {
     document.getElementById('depositContent').style.display = 'block';
 }
 
+window.openWithdrawAction = function(method) {
+    document.getElementById('withdrawContent').style.display = 'none';
+    
+    // Dynamic text changes based on method clicked
+    let networkText = "TON";
+    let logoSrc = "usdt.png";
+    let titleText = "USDT-TON";
+
+    if(method === 'telebirr') { networkText = "Telebirr"; logoSrc = "1.png"; titleText = "Telebirr"; }
+    else if(method === 'usdt-trc20') { networkText = "TRC20"; logoSrc = "usdtt.png"; titleText = "TETHER USDT TRC20"; }
+    else if(method === 'voucher') { networkText = "Voucher Network"; logoSrc = "voucher.png"; titleText = "Voucher"; }
+
+    document.getElementById('withdrawActionLogo').src = logoSrc;
+    document.getElementById('withdrawActionNetworkText').innerText = networkText;
+    
+    document.getElementById('withdrawActionPage').style.display = 'block';
+}
+
+window.backToWithdrawMethods = function() {
+    document.getElementById('withdrawActionPage').style.display = 'none';
+    document.getElementById('withdrawContent').style.display = 'block';
+}
+
 document.getElementById('tabDepositBtn').onclick = () => openPaymentsTab('Deposit');
 document.getElementById('tabWithdrawBtn').onclick = () => openPaymentsTab('Withdraw');
 document.getElementById('tabWithdrawReqBtn').onclick = () => openPaymentsTab('Withdrawal Request');
 
-// ==========================================
-// IMAGE SLIDER LOGIC
-// ==========================================
+// SLIDER
 const track = document.querySelector('.slider-track');
 const dots = document.querySelectorAll('.slider-dots .dot');
-
 if (track && dots.length > 0) {
     track.addEventListener('scroll', () => {
         const slideWidth = track.clientWidth;

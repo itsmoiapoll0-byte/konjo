@@ -29,7 +29,7 @@ body { font-family: var(--font-regular); background-color: var(--bg-main-content
 .profile-initial { width: 24px; height: 24px; background-color: #f7931e; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 13px; }
 .dots-icon-vertical { color: white; font-size: 20px; }
 
-/* --- Red Top Navigation (Sport/Virtual Toggle) --- */
+/* --- Red Top Navigation --- */
 .main-nav { background-color: var(--bg-nav); padding: 15px 15px; }
 .main-nav ul { list-style: none; display: flex; align-items: center; gap: 20px; overflow-x: auto; scrollbar-width: none; }
 .main-nav ul::-webkit-scrollbar { display: none; }
@@ -55,6 +55,17 @@ body { font-family: var(--font-regular); background-color: var(--bg-main-content
 .slider-dots { position: absolute; bottom: 10px; left: 0; right: 0; display: flex; justify-content: center; gap: 6px; }
 .dot { width: 6px; height: 6px; background-color: rgba(255,255,255,0.5); border-radius: 50%; }
 .dot.active { background-color: white; }
+
+/* ========================================== */
+/* UPCOMING MATCHES LIST (NEW FEATURE)        */
+/* ========================================== */
+.upcoming-matches-container { background: white; margin-top: 10px; }
+.date-header { background: #e6e6e6; padding: 8px 10px; font-weight: bold; font-size: 14px; color: #333; font-family: var(--font-condensed); border-bottom: 1px solid #ddd; }
+.upcoming-match-row { display: flex; border-bottom: 1px solid #ddd; background: #f8f8f8; }
+.um-time { padding: 15px 10px; color: #666; font-size: 13px; min-width: 55px; border-right: 1px solid #eee; display: flex; align-items: center;}
+.um-teams { padding: 12px 10px; flex: 1; display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 500; color: #222; justify-content: center;}
+.um-odds { display: flex; background: #e6e6e8; }
+.um-odd-box { width: 55px; display: flex; align-items: center; justify-content: center; border-left: 1px solid #fff; font-weight: 700; font-family: var(--font-condensed); font-size: 14px; color: #111;}
 
 /* ========================================== */
 /* VIRTUAL GAMES GRID SYSTEM                  */
@@ -101,7 +112,6 @@ body { font-family: var(--font-regular); background-color: var(--bg-main-content
 .leagues-list { list-style: none; background-color: white; border-radius: 4px; overflow: hidden; border: 1px solid #e5e5e5; margin: 0 10px;}
 .leagues-list li { border-bottom: 1px solid #eeeeee; }
 .leagues-list li a { display: flex; align-items: center; gap: 10px; padding: 14px 15px; color: #222; text-decoration: none; font-size: 13px; font-weight: 500;}
-.league-logo { width: 18px; height: 18px; }
 
 /* --- Floating Chat Bubble --- */
 .floating-chat-bubble { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background-color: var(--accent-red); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 50; cursor: pointer; }
@@ -113,19 +123,31 @@ body { font-family: var(--font-regular); background-color: var(--bg-main-content
 .side-drawer { display: none; position: fixed; z-index: 99999; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.7); }
 .drawer-content { position: absolute; top: 0; width: 85%; max-width: 320px; height: 100%; background-color: #ffffff !important; display: flex; flex-direction: column; overflow-y: auto; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
 .left-drawer .drawer-content { left: 0; }
-.right-drawer .drawer-content { right: 0; max-width: 350px;}
+.right-drawer .drawer-content { right: 0; max-width: 400px;}
 
 .white-bg { background-color: #ffffff !important; color: #000000 !important; }
 .gray-bg { background-color: #f4f4f6 !important; color: #333333 !important; }
 
-/* Left Drawer Specifics */
 .drawer-header { display: flex; align-items: center; padding: 15px 20px; border-bottom: 1px solid #eeeeee; }
 .drawer-header h3 { font-size: 14px; font-weight: 500; font-family: var(--font-regular); margin-left: 15px;}
 .close-drawer-btn { background: none; border: none; color: #000; font-size: 22px; cursor: pointer; }
 .white-btn { color: #ffffff !important; }
 
+/* Left Drawer Specifics */
 .sports-chooser-list { list-style: none; }
 .sports-chooser-list li { border-bottom: 1px solid #eeeeee; }
 .sports-chooser-list li a { display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; color: #222; text-decoration: none; font-size: 14px; font-weight: 500; }
 .sport-icon { margin-right: 15px; color: var(--accent-red); font-size: 18px; width: 20px; text-align: center; }
 .chevron { color: #aaa; font-size: 14px; }
+
+/* --- PAYMENTS TABS --- */
+.payments-title-bar { background-color: var(--bg-header); color: white; text-align: center; padding: 15px; font-size: 15px; font-weight: 700; font-family: var(--font-condensed); }
+.payments-tabs-nav { display: flex; background: var(--bg-header); border-top: 1px solid rgba(255,255,255,0.1); }
+.pay-tab { flex: 1; background: none; border: none; color: white; padding: 15px 5px; font-size: 14px; font-weight: 500; font-family: var(--font-condensed); cursor: pointer; border-bottom: 3px solid transparent; }
+.pay-tab.active { color: var(--accent-yellow); border-bottom: 3px solid var(--accent-yellow); font-weight: bold; }
+.pay-content-area { padding: 15px; }
+.payment-card { background: white; border: 1px solid #ddd; margin-bottom: 15px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-radius: 2px; }
+.pay-logo-area { padding: 25px; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: center;}
+.pay-detail-row { padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333; }
+.btn-deposit-action { width: 90%; margin: 20px auto; background: white; color: #15803d; border: 2px solid #15803d; padding: 12px; font-size: 15px; font-weight: bold; font-family: var(--font-condensed); border-radius: 2px; cursor: pointer; text-transform: uppercase; }
+.amount-btn { background-color: #1ea0d9; color: white; border: none; padding: 12px 0; font-size: 14px; border-radius: 2px; cursor: pointer; font-family: var(--font-regular); }
