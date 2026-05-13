@@ -3,15 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>KonjoBet Replica - Sport & Virtuals</title>
+    <title>KonjoBet Replica - Final Production</title>
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Real Site Typography Stack -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome Kit -->
     <script src="https://kit.fontawesome.com/5d2ece54cc.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -19,9 +15,9 @@
     <!-- Mobile Header -->
     <header class="mobile-header">
         <button class="icon-btn hamburger-btn" id="openDrawerBtn">
-            <i class="fa-solid fa-bars" style="font-size: 24px; color: white;"></i>
+            <i class="fa-solid fa-bars"></i>
         </button>
-        <div class="logo-area" id="homeLogoBtn" style="cursor: pointer;">
+        <div class="logo-area" id="homeLogoBtn">
             <img src="logo.png" alt="KonjoBet">
         </div>
         
@@ -35,11 +31,11 @@
         </div>
 
         <!-- Logged IN Actions (Hidden by default) -->
-        <div class="top-actions" id="loggedInActions" style="display: none; gap: 15px; align-items: center;">
-            <button class="icon-btn"><i class="fa-solid fa-gift" style="font-size: 20px;"></i></button>
+        <div class="top-actions" id="loggedInActions" style="display: none;">
+            <button class="icon-btn"><i class="fa-solid fa-gift"></i></button>
             <button class="icon-btn" id="loggedInDotsBtn">
-                <i class="fa-solid fa-user" style="font-size: 20px;"></i>
-                <i class="fa-solid fa-ellipsis-vertical" style="font-size: 20px; margin-left: 8px;"></i>
+                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-ellipsis-vertical" style="margin-left: 8px;"></i>
             </button>
         </div>
     </header>
@@ -63,32 +59,12 @@
     
     <!-- Action Bar -->
     <div class="action-bar" id="actionBar">
-        <button class="action-btn">
-            <span class="icon"><i class="fa-solid fa-ticket"></i></span>
-            <span>Check Bet</span>
-        </button>
-        <button class="action-btn">
-            <span class="icon"><i class="fa-solid fa-magnifying-glass"></i></span>
-            <span>Search Event</span>
-        </button>
-        <button class="action-btn active">
-            <span class="icon"><i class="fa-solid fa-stopwatch"></i></span>
-            <span>IN-PLAY</span>
-        </button>
-        <button class="action-btn">
-            <span class="icon"><i class="fa-solid fa-receipt"></i></span>
-            <span>My Bets</span>
-        </button>
-        <button class="action-btn">
-            <span class="count-badge">783</span>
-            <span class="icon"><i class="fa-regular fa-futbol"></i></span>
-            <span>Football</span>
-        </button>
-        <button class="action-btn">
-            <span class="count-badge">85</span>
-            <span class="icon"><i class="fa-solid fa-basketball"></i></span>
-            <span>Basketball</span>
-        </button>
+        <button class="action-btn"><span class="icon"><i class="fa-solid fa-ticket"></i></span><span>Check Bet</span></button>
+        <button class="action-btn"><span class="icon"><i class="fa-solid fa-magnifying-glass"></i></span><span>Search Event</span></button>
+        <button class="action-btn active"><span class="icon"><i class="fa-solid fa-stopwatch"></i></span><span>IN-PLAY</span></button>
+        <button class="action-btn"><span class="icon"><i class="fa-solid fa-receipt"></i></span><span>My Bets</span></button>
+        <button class="action-btn"><span class="count-badge">783</span><span class="icon"><i class="fa-regular fa-futbol"></i></span><span>Football</span></button>
+        <button class="action-btn"><span class="count-badge">85</span><span class="icon"><i class="fa-solid fa-basketball"></i></span><span>Basketball</span></button>
     </div>
 
     <!-- MAIN WRAPPER -->
@@ -97,12 +73,10 @@
         <!-- ========================================== -->
         <!-- HOME VIEW (Toggles Sport vs Virtual)       -->
         <!-- ========================================== -->
-        <div id="homeView" style="background-color: #f4f4f4; min-height: 100vh;">
+        <div id="homeView">
             
             <!-- SPORTS SECTION -->
             <section id="sportsSection">
-                
-                <!-- Slideshow moved inside Sports to hide on Virtual/Payments -->
                 <div class="promo-slider-container" id="promoSlider">
                     <div class="slider-track">
                         <div class="slide"><img src="slide1.png" alt="Promo 1"></div>
@@ -114,10 +88,7 @@
                     </div>
                 </div>
 
-                <!-- Exact Upcoming Matches List -->
                 <div class="upcoming-matches-container">
-                    
-                    <!-- Date 1 -->
                     <div class="date-header">15 May 2026</div>
                     <div class="upcoming-match-row">
                         <div class="um-time">22:00</div>
@@ -125,7 +96,6 @@
                         <div class="um-odds"><div class="um-odd-box">2.94</div><div class="um-odd-box">3.71</div><div class="um-odd-box">2.27</div></div>
                     </div>
 
-                    <!-- Date 2 -->
                     <div class="date-header">17 May 2026</div>
                     <div class="upcoming-match-row">
                         <div class="um-time">14:30</div>
@@ -158,7 +128,6 @@
                         <div class="um-odds"><div class="um-odd-box">2.06</div><div class="um-odd-box">3.77</div><div class="um-odd-box">3.33</div></div>
                     </div>
 
-                    <!-- Date 3 -->
                     <div class="date-header">18 May 2026</div>
                     <div class="upcoming-match-row">
                         <div class="um-time">22:00</div>
@@ -166,7 +135,6 @@
                         <div class="um-odds"><div class="um-odd-box">1.11</div><div class="um-odd-box">10.00</div><div class="um-odd-box">19.78</div></div>
                     </div>
 
-                    <!-- Date 4 -->
                     <div class="date-header">19 May 2026</div>
                     <div class="upcoming-match-row">
                         <div class="um-time">22:15</div>
@@ -174,109 +142,102 @@
                         <div class="um-odds"><div class="um-odd-box">-</div><div class="um-odd-box">-</div><div class="um-odd-box">-</div></div>
                     </div>
                     
-                    <div class="show-less-bar">
-                        Show less <i class="fa-solid fa-chevron-up"></i>
-                    </div>
-                </div>
-
-                <div class="game-category-header" style="margin-top: 15px; border-radius: 0;">
-                    <div class="category-title"><span class="dots-icon-horiz">•••</span><h2>Popular Matches</h2></div>
+                    <div class="show-less-bar">Show less <i class="fa-solid fa-chevron-up"></i></div>
                 </div>
             </section>
 
             <!-- VIRTUAL GAMES SECTION -->
             <section id="virtualSection" class="virtual-content" style="display: none;">
-                
                 <!-- Crash Games -->
                 <div class="virtual-category-header"><h2>Crash Games</h2><button class="btn-circle-red"><i class="fa-solid fa-chevron-right"></i></button></div>
                 <div class="games-grid">
-                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Aero.webp" alt="Aero"><div class="game-info-bar"><span>Aero</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Avia Rush.webp" alt="Avia Rush"><div class="game-info-bar"><span>Avia Rush</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/AviaMasters.webp" alt="AviaMasters"><div class="game-info-bar"><span>AviaMasters</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Aviator.webp" alt="Aviator"><div class="game-info-bar"><span>Aviator</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Aviatrix.webp" alt="Aviatrix"><div class="game-info-bar"><span>Aviatrix</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Chicken Route.webp" alt="Chicken Route"><div class="game-info-bar"><span>Chicken Route</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><span class="race-ribbon">Race</span><img src="Crash Games/Fury Flight.webp" alt="Fury Flight"><div class="game-info-bar"><span>Fury Flight</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/HydroPlane.webp" alt="HydroPlane"><div class="game-info-bar"><span>HydroPlane</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Limbo.webp" alt="Limbo"><div class="game-info-bar"><span>Limbo</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Money Booster.webp" alt="Money Booster"><div class="game-info-bar"><span>Money Booster</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><span class="race-ribbon">Race</span><img src="Crash Games/Nomad.webp" alt="Nomad"><div class="game-info-bar"><span>Nomad</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><span class="race-ribbon">Race</span><img src="Crash Games/Orizon.webp" alt="Orizon"><div class="game-info-bar"><span>Orizon</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Aero.webp" onerror="this.src='slide1.png'" alt="Aero"><div class="game-info-bar"><span>Aero</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Avia Rush.webp" onerror="this.src='slide1.png'" alt="Avia Rush"><div class="game-info-bar"><span>Avia Rush</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/AviaMasters.webp" onerror="this.src='slide1.png'" alt="AviaMasters"><div class="game-info-bar"><span>AviaMasters</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Aviator.webp" onerror="this.src='slide1.png'" alt="Aviator"><div class="game-info-bar"><span>Aviator</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Aviatrix.webp" onerror="this.src='slide1.png'" alt="Aviatrix"><div class="game-info-bar"><span>Aviatrix</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Chicken Route.webp" onerror="this.src='slide1.png'" alt="Chicken Route"><div class="game-info-bar"><span>Chicken Route</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><span class="race-ribbon">Race</span><img src="Crash Games/Fury Flight.webp" onerror="this.src='slide1.png'" alt="Fury Flight"><div class="game-info-bar"><span>Fury Flight</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/HydroPlane.webp" onerror="this.src='slide1.png'" alt="HydroPlane"><div class="game-info-bar"><span>HydroPlane</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Limbo.webp" onerror="this.src='slide1.png'" alt="Limbo"><div class="game-info-bar"><span>Limbo</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Crash Games/Money Booster.webp" onerror="this.src='slide1.png'" alt="Money Booster"><div class="game-info-bar"><span>Money Booster</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><span class="race-ribbon">Race</span><img src="Crash Games/Nomad.webp" onerror="this.src='slide1.png'" alt="Nomad"><div class="game-info-bar"><span>Nomad</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><span class="race-ribbon">Race</span><img src="Crash Games/Orizon.webp" onerror="this.src='slide1.png'" alt="Orizon"><div class="game-info-bar"><span>Orizon</span><i class="fa-solid fa-heart"></i></div></div>
                 </div>
 
                 <!-- Special Konjo -->
                 <div class="virtual-category-header"><h2>Special Konjo</h2><button class="btn-circle-red"><i class="fa-solid fa-chevron-right"></i></button></div>
                 <div class="games-grid">
-                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Aero.webp" alt="Aero"><div class="game-info-bar"><span>Aero</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Aztec Bonanza.webp" alt="Aztec Bonanza"><div class="game-info-bar"><span>Aztec Bonanza</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Big Bass Bonaza.webp" alt="Big Bass Bonaza"><div class="game-info-bar"><span>Big Bass Bonaza</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Chicken Route.webp" alt="Chicken Route"><div class="game-info-bar"><span>Chicken Route</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/coin Craze Jackpot.webp" alt="coin Craze Jackpot"><div class="game-info-bar"><span>coin Craze Jackpot</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><span class="race-ribbon">Race</span><img src="Special Konjo/Fury Flight.webp" alt="Fury Flight"><div class="game-info-bar"><span>Fury Flight</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Money Booster.webp" alt="Money Booster"><div class="game-info-bar"><span>Money Booster</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><span class="race-ribbon">Race</span><img src="Special Konjo/Nomad.webp" alt="Nomad"><div class="game-info-bar"><span>Nomad</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><span class="race-ribbon">Race</span><img src="Special Konjo/Orizon.webp" alt="Orizon"><div class="game-info-bar"><span>Orizon</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Redy.webp" alt="Redy"><div class="game-info-bar"><span>Redy</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Skydot.webp" alt="Skydot"><div class="game-info-bar"><span>Skydot</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Pilot Chicken.webp" alt="Pilot Chicken"><div class="game-info-bar"><span>Pilot Chicken</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Plinko.webp" alt="Plinko"><div class="game-info-bar"><span>Plinko</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Rocket Dice.webp" alt="Rocket Dice"><div class="game-info-bar"><span>Rocket Dice</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Scratch Dice.webp" alt="Scratch Dice"><div class="game-info-bar"><span>Scratch Dice</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Turboplan.webp" alt="Turboplan"><div class="game-info-bar"><span>Turboplan</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Aero.webp" onerror="this.src='slide2.png'" alt="Aero"><div class="game-info-bar"><span>Aero</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Aztec Bonanza.webp" onerror="this.src='slide2.png'" alt="Aztec Bonanza"><div class="game-info-bar"><span>Aztec Bonanza</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Big Bass Bonaza.webp" onerror="this.src='slide2.png'" alt="Big Bass Bonaza"><div class="game-info-bar"><span>Big Bass Bonaza</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Chicken Route.webp" onerror="this.src='slide2.png'" alt="Chicken Route"><div class="game-info-bar"><span>Chicken Route</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/coin Craze Jackpot.webp" onerror="this.src='slide2.png'" alt="coin Craze Jackpot"><div class="game-info-bar"><span>coin Craze Jackpot</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><span class="race-ribbon">Race</span><img src="Special Konjo/Fury Flight.webp" onerror="this.src='slide2.png'" alt="Fury Flight"><div class="game-info-bar"><span>Fury Flight</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Money Booster.webp" onerror="this.src='slide2.png'" alt="Money Booster"><div class="game-info-bar"><span>Money Booster</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><span class="race-ribbon">Race</span><img src="Special Konjo/Nomad.webp" onerror="this.src='slide2.png'" alt="Nomad"><div class="game-info-bar"><span>Nomad</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><span class="race-ribbon">Race</span><img src="Special Konjo/Orizon.webp" onerror="this.src='slide2.png'" alt="Orizon"><div class="game-info-bar"><span>Orizon</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Redy.webp" onerror="this.src='slide2.png'" alt="Redy"><div class="game-info-bar"><span>Redy</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Skydot.webp" onerror="this.src='slide2.png'" alt="Skydot"><div class="game-info-bar"><span>Skydot</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Pilot Chicken.webp" onerror="this.src='slide2.png'" alt="Pilot Chicken"><div class="game-info-bar"><span>Pilot Chicken</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Plinko.webp" onerror="this.src='slide2.png'" alt="Plinko"><div class="game-info-bar"><span>Plinko</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Rocket Dice.webp" onerror="this.src='slide2.png'" alt="Rocket Dice"><div class="game-info-bar"><span>Rocket Dice</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Scratch Dice.webp" onerror="this.src='slide2.png'" alt="Scratch Dice"><div class="game-info-bar"><span>Scratch Dice</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Special Konjo/Turboplan.webp" onerror="this.src='slide2.png'" alt="Turboplan"><div class="game-info-bar"><span>Turboplan</span><i class="fa-solid fa-heart"></i></div></div>
                 </div>
 
                 <!-- All Slots -->
                 <div class="virtual-category-header"><h2>All Slots</h2><button class="btn-circle-red"><i class="fa-solid fa-chevron-right"></i></button></div>
                 <div class="games-grid">
-                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/1Tap Spins.webp" alt="1Tap Spins"><div class="game-info-bar"><span>1Tap Spins</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/3 Apex Treasures 93.webp" alt="3 Apex Treasures 93"><div class="game-info-bar"><span>3 Apex Treasures 93</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/3 Hells Pots.webp" alt="3 Hells Pots"><div class="game-info-bar"><span>3 Hells Pots</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/3 Kings Scratch.webp" alt="3 Kings Scratch"><div class="game-info-bar"><span>3 Kings Scratch</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/3 Lucky Bao.webp" alt="3 Lucky Bao"><div class="game-info-bar"><span>3 Lucky Bao</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/3 Magic Eggs.webp" alt="3 Magic Eggs"><div class="game-info-bar"><span>3 Magic Eggs</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/12 Deadly Spins.webp" alt="12 Deadly Spins"><div class="game-info-bar"><span>12 Deadly Spins</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/20 Ducking Hot.webp" alt="20 Ducking Hot"><div class="game-info-bar"><span>20 Ducking Hot</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/20 Hot Bar.webp" alt="20 Hot Bar"><div class="game-info-bar"><span>20 Hot Bar</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/20 Royal Hot Lucky Coin.webp" alt="20 Royal Hot Lucky Coin"><div class="game-info-bar"><span>20 Royal Hot Lucky Coin</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/100 Bracelets.webp" alt="100 Bracelets"><div class="game-info-bar"><span>100 Bracelets</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/100 Dunking Hot.webp" alt="100 Dunking Hot"><div class="game-info-bar"><span>100 Dunking Hot</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/777 Rush.webp" alt="777 Rush"><div class="game-info-bar"><span>777 Rush</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/777 Triple Sevens.webp" alt="777 Triple Sevens"><div class="game-info-bar"><span>777 Triple Sevens</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/888 Gold.webp" alt="888 Gold"><div class="game-info-bar"><span>888 Gold</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/Agent 7.webp" alt="Agent 7"><div class="game-info-bar"><span>Agent 7</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/1Tap Spins.webp" onerror="this.src='slide3.png'" alt="1Tap Spins"><div class="game-info-bar"><span>1Tap Spins</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/3 Apex Treasures 93.webp" onerror="this.src='slide3.png'" alt="3 Apex Treasures 93"><div class="game-info-bar"><span>3 Apex Treasures 93</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/3 Hells Pots.webp" onerror="this.src='slide3.png'" alt="3 Hells Pots"><div class="game-info-bar"><span>3 Hells Pots</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/3 Kings Scratch.webp" onerror="this.src='slide3.png'" alt="3 Kings Scratch"><div class="game-info-bar"><span>3 Kings Scratch</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/3 Lucky Bao.webp" onerror="this.src='slide3.png'" alt="3 Lucky Bao"><div class="game-info-bar"><span>3 Lucky Bao</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/3 Magic Eggs.webp" onerror="this.src='slide3.png'" alt="3 Magic Eggs"><div class="game-info-bar"><span>3 Magic Eggs</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/12 Deadly Spins.webp" onerror="this.src='slide3.png'" alt="12 Deadly Spins"><div class="game-info-bar"><span>12 Deadly Spins</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/20 Ducking Hot.webp" onerror="this.src='slide3.png'" alt="20 Ducking Hot"><div class="game-info-bar"><span>20 Ducking Hot</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/20 Hot Bar.webp" onerror="this.src='slide3.png'" alt="20 Hot Bar"><div class="game-info-bar"><span>20 Hot Bar</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/20 Royal Hot Lucky Coin.webp" onerror="this.src='slide3.png'" alt="20 Royal Hot Lucky Coin"><div class="game-info-bar"><span>20 Royal Hot Lucky Coin</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/100 Bracelets.webp" onerror="this.src='slide3.png'" alt="100 Bracelets"><div class="game-info-bar"><span>100 Bracelets</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/100 Dunking Hot.webp" onerror="this.src='slide3.png'" alt="100 Dunking Hot"><div class="game-info-bar"><span>100 Dunking Hot</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/777 Rush.webp" onerror="this.src='slide3.png'" alt="777 Rush"><div class="game-info-bar"><span>777 Rush</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/777 Triple Sevens.webp" onerror="this.src='slide3.png'" alt="777 Triple Sevens"><div class="game-info-bar"><span>777 Triple Sevens</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/888 Gold.webp" onerror="this.src='slide3.png'" alt="888 Gold"><div class="game-info-bar"><span>888 Gold</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="All Slots/Agent 7.webp" onerror="this.src='slide3.png'" alt="Agent 7"><div class="game-info-bar"><span>Agent 7</span><i class="fa-solid fa-heart"></i></div></div>
                 </div>
 
                 <!-- Spribe -->
                 <div class="virtual-category-header"><h2>Spribe</h2><button class="btn-circle-red"><i class="fa-solid fa-chevron-right"></i></button></div>
                 <div class="games-grid">
-                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Balloon.webp" alt="Balloon"><div class="game-info-bar"><span>Balloon</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Dice.webp" alt="Dice"><div class="game-info-bar"><span>Dice</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Goal.webp" alt="Goal"><div class="game-info-bar"><span>Goal</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Hi lo.webp" alt="Hi lo"><div class="game-info-bar"><span>Hi lo</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Hotline.webp" alt="Hotline"><div class="game-info-bar"><span>Hotline</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Keno 80.webp" alt="Keno 80"><div class="game-info-bar"><span>Keno 80</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Keno.webp" alt="Keno"><div class="game-info-bar"><span>Keno</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Mines.webp" alt="Mines"><div class="game-info-bar"><span>Mines</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Mini Roulette.webp" alt="Mini Roulette"><div class="game-info-bar"><span>Mini Roulette</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Plinko.webp" alt="Plinko"><div class="game-info-bar"><span>Plinko</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Trader.webp" alt="Trader"><div class="game-info-bar"><span>Trader</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Balloon.webp" onerror="this.src='slide4.png'" alt="Balloon"><div class="game-info-bar"><span>Balloon</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Dice.webp" onerror="this.src='slide4.png'" alt="Dice"><div class="game-info-bar"><span>Dice</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Goal.webp" onerror="this.src='slide4.png'" alt="Goal"><div class="game-info-bar"><span>Goal</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Hi lo.webp" onerror="this.src='slide4.png'" alt="Hi lo"><div class="game-info-bar"><span>Hi lo</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Hotline.webp" onerror="this.src='slide4.png'" alt="Hotline"><div class="game-info-bar"><span>Hotline</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Keno 80.webp" onerror="this.src='slide4.png'" alt="Keno 80"><div class="game-info-bar"><span>Keno 80</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Keno.webp" onerror="this.src='slide4.png'" alt="Keno"><div class="game-info-bar"><span>Keno</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Mines.webp" onerror="this.src='slide4.png'" alt="Mines"><div class="game-info-bar"><span>Mines</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Mini Roulette.webp" onerror="this.src='slide4.png'" alt="Mini Roulette"><div class="game-info-bar"><span>Mini Roulette</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Plinko.webp" onerror="this.src='slide4.png'" alt="Plinko"><div class="game-info-bar"><span>Plinko</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="Spribe/Trader.webp" onerror="this.src='slide4.png'" alt="Trader"><div class="game-info-bar"><span>Trader</span><i class="fa-solid fa-heart"></i></div></div>
                 </div>
 
                 <!-- B gaming -->
                 <div class="virtual-category-header"><h2>B gaming</h2><button class="btn-circle-red"><i class="fa-solid fa-chevron-right"></i></button></div>
                 <div class="games-grid">
-                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/All Lucky Clovers 5.webp" alt="All Lucky Clovers 5"><div class="game-info-bar"><span>All Lucky Clovers 5</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/All Lucky Clovers 20.webp" alt="All Lucky Clovers 20"><div class="game-info-bar"><span>All Lucky Clovers 20</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/All Lucky Clovers 40.webp" alt="All Lucky Clovers 40"><div class="game-info-bar"><span>All Lucky Clovers 40</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/All Lucky Clovers 100.webp" alt="All Lucky Clovers 100"><div class="game-info-bar"><span>All Lucky Clovers 100</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/Avalon.webp" alt="Avalon"><div class="game-info-bar"><span>Avalon</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/Aztec Magic Bonanza.webp" alt="Aztec Magic Bonanza"><div class="game-info-bar"><span>Aztec Magic Bonanza</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/Aztec Magic Deluxe.webp" alt="Aztec Magic Deluxe"><div class="game-info-bar"><span>Aztec Magic Deluxe</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/Beer Bonanza.webp" alt="Beer Bonanza"><div class="game-info-bar"><span>Beer Bonanza</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/Bonanza Billion.webp" alt="Bonanza Billion"><div class="game-info-bar"><span>Bonanza Billion</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/Book of Cats Megaways.webp" alt="Book of Cats Megaways"><div class="game-info-bar"><span>Book of Cats Megaways</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/Book of cats.webp" alt="Book of cats"><div class="game-info-bar"><span>Book of cats</span><i class="fa-solid fa-heart"></i></div></div>
-                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/Book of Pyramids.webp" alt="Book of Pyramids"><div class="game-info-bar"><span>Book of Pyramids</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/All Lucky Clovers 5.webp" onerror="this.src='slide1.png'" alt="All Lucky Clovers 5"><div class="game-info-bar"><span>All Lucky Clovers 5</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/All Lucky Clovers 20.webp" onerror="this.src='slide1.png'" alt="All Lucky Clovers 20"><div class="game-info-bar"><span>All Lucky Clovers 20</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/All Lucky Clovers 40.webp" onerror="this.src='slide1.png'" alt="All Lucky Clovers 40"><div class="game-info-bar"><span>All Lucky Clovers 40</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/All Lucky Clovers 100.webp" onerror="this.src='slide1.png'" alt="All Lucky Clovers 100"><div class="game-info-bar"><span>All Lucky Clovers 100</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/Avalon.webp" onerror="this.src='slide1.png'" alt="Avalon"><div class="game-info-bar"><span>Avalon</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/Aztec Magic Bonanza.webp" onerror="this.src='slide1.png'" alt="Aztec Magic Bonanza"><div class="game-info-bar"><span>Aztec Magic Bonanza</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/Aztec Magic Deluxe.webp" onerror="this.src='slide1.png'" alt="Aztec Magic Deluxe"><div class="game-info-bar"><span>Aztec Magic Deluxe</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/Beer Bonanza.webp" onerror="this.src='slide1.png'" alt="Beer Bonanza"><div class="game-info-bar"><span>Beer Bonanza</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/Bonanza Billion.webp" onerror="this.src='slide1.png'" alt="Bonanza Billion"><div class="game-info-bar"><span>Bonanza Billion</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/Book of Cats Megaways.webp" onerror="this.src='slide1.png'" alt="Book of Cats Megaways"><div class="game-info-bar"><span>Book of Cats Megaways</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/Book of cats.webp" onerror="this.src='slide1.png'" alt="Book of cats"><div class="game-info-bar"><span>Book of cats</span><i class="fa-solid fa-heart"></i></div></div>
+                    <div class="game-card"><span class="game-badge">New</span><img src="B gaming/Book of Pyramids.webp" onerror="this.src='slide1.png'" alt="Book of Pyramids"><div class="game-info-bar"><span>Book of Pyramids</span><i class="fa-solid fa-heart"></i></div></div>
                 </div>
             </section>
         </div>
@@ -304,13 +265,13 @@
                     <div class="pay-logo-area"><img src="usdt.png" alt="USDT-TON"></div>
                     <div class="pay-detail-row"><span>Service Fee</span><b>Free</b></div>
                     <div class="pay-detail-row"><span>Process Time</span><b>5-10 minutes</b></div>
-                    <button class="btn-deposit-action">Deposit</button>
+                    <button class="btn-deposit-action" onclick="openDepositAction('usdt-ton')">Deposit</button>
                 </div>
                 <div class="payment-card">
                     <div class="pay-logo-area"><img src="usdtt.png" alt="Tether USDT TRC20"></div>
                     <div class="pay-detail-row"><span>Service Fee</span><b>Free</b></div>
                     <div class="pay-detail-row"><span>Process Time</span><b>Instant</b></div>
-                    <button class="btn-deposit-action">Deposit</button>
+                    <button class="btn-deposit-action" onclick="openDepositAction('usdt-trc20')">Deposit</button>
                 </div>
                 <div class="payment-card">
                     <div class="pay-logo-area"><img src="voucher.png" alt="Voucher"></div>
@@ -320,7 +281,9 @@
                 </div>
             </div>
 
-            <!-- 2. DEPOSIT ACTION PAGE (TELEBIRR REPLICA) -->
+            <!-- 2. SPECIFIC DEPOSIT ACTION PAGES -->
+            
+            <!-- Telebirr Deposit -->
             <div id="depositActionTelebirr" class="action-page" style="display: none;">
                 <div class="pay-logo-area action-page-logo"><img src="1.png" alt="Telebirr"></div>
                 <div class="action-detail-row"><span>Service Fee</span><b>Free</b></div>
@@ -332,12 +295,12 @@
                     <p>1. Copy Mobile number from the Mobile number field</p>
                     <label>Receiver Mobile Number</label>
                     <div class="copy-input-group">
-                        <input type="text" value="930099568" readonly>
-                        <button><i class="fa-regular fa-copy"></i></button>
+                        <input type="text" value="0963242274" readonly id="telebirrCopyInput">
+                        <button onclick="navigator.clipboard.writeText(document.getElementById('telebirrCopyInput').value);"><i class="fa-regular fa-copy"></i></button>
                     </div>
 
-                    <p>2. Go to the Telebir app, choose "Send Money to Individual" paste the Mobile number and make the transfer</p>
-                    <p>3. Next. copy the transaction number and paste it into the Transaction Reference field</p>
+                    <p>2. Go to the Telebirr app, choose "Send Money to Individual" paste the Mobile number and make the transfer</p>
+                    <p>3. Next, copy the transaction number and paste it into the Transaction Reference field</p>
                     
                     <label>Transaction ID</label>
                     <input type="text" placeholder="ABCD123456" class="amount-input" style="text-align: left;">
@@ -349,12 +312,77 @@
                     </div>
                     
                     <input type="number" placeholder="Amount" class="amount-input">
-                    <button class="btn-submit-red" onclick="alert('Deposit Request Submitted!')">DEPOSIT</button>
+                    <button class="btn-submit-red">DEPOSIT</button>
                 </div>
+                <button class="btn-back" onclick="backToDepositMethods()">CHOOSE ANOTHER DEPOSIT METHOD</button>
+            </div>
+
+            <!-- USDT-TON Deposit -->
+            <div id="depositActionUsdtTon" class="action-page" style="display: none;">
+                <div class="pay-logo-area action-page-logo"><img src="usdt.png" alt="USDT-TON"></div>
+                <div class="action-detail-row"><span>Service Fee</span><b>Free</b></div>
+                <div class="action-detail-row"><span>Process Time</span><b>5-10 minutes</b></div>
+                <div class="action-detail-row"><span>Min. Amount</span><b>500 ETB</b></div>
+                <div class="action-detail-row"><span>Max. Amount</span><b>75000 ETB</b></div>
                 
-                <div style="padding: 0 20px;">
-                    <button class="btn-back" onclick="backToDepositMethods()">CHOOSE ANOTHER DEPOSIT METHOD</button>
+                <div class="deposit-instructions">
+                    <p>1. Copy the USDT-TON Address below</p>
+                    <label>Receiver USDT-TON Address</label>
+                    <div class="copy-input-group">
+                        <input type="text" value="UQA8-x1wNdmNHeTrDygi_02O0PSuG3Xyif3qCqsxvXeKpeRR" readonly id="usdtTonCopyInput" style="font-size: 10px;">
+                        <button onclick="navigator.clipboard.writeText(document.getElementById('usdtTonCopyInput').value);"><i class="fa-regular fa-copy"></i></button>
+                    </div>
+
+                    <p>2. Go to your Crypto Wallet, select USDT on the TON network, paste the address and make the transfer.</p>
+                    <p>3. Next, copy the transaction hash and paste it into the Transaction Reference field.</p>
+                    
+                    <label>Transaction ID / Hash</label>
+                    <input type="text" placeholder="0x..." class="amount-input" style="text-align: left;">
+
+                    <p>Select or type in the amount to be deposited.</p>
+                    <div class="amount-grid">
+                        <button class="amount-btn">100</button><button class="amount-btn">200</button><button class="amount-btn">500</button>
+                        <button class="amount-btn">700</button><button class="amount-btn">1000</button><button class="amount-btn">2000</button>
+                    </div>
+                    
+                    <input type="number" placeholder="Amount" class="amount-input">
+                    <button class="btn-submit-red">DEPOSIT</button>
                 </div>
+                <button class="btn-back" onclick="backToDepositMethods()">CHOOSE ANOTHER DEPOSIT METHOD</button>
+            </div>
+
+            <!-- USDT-TRC20 Deposit -->
+            <div id="depositActionUsdtTrc20" class="action-page" style="display: none;">
+                <div class="pay-logo-area action-page-logo"><img src="usdtt.png" alt="USDT-TRC20"></div>
+                <div class="action-detail-row"><span>Service Fee</span><b>Free</b></div>
+                <div class="action-detail-row"><span>Process Time</span><b>Instant</b></div>
+                <div class="action-detail-row"><span>Min. Amount</span><b>500 ETB</b></div>
+                <div class="action-detail-row"><span>Max. Amount</span><b>75000 ETB</b></div>
+                
+                <div class="deposit-instructions">
+                    <p>1. Copy the USDT-TRC20 Address below</p>
+                    <label>Receiver USDT-TRC20 Address</label>
+                    <div class="copy-input-group">
+                        <input type="text" value="TNkGLYwtjcSk2A9U8cxJzttGeGEgz56hSP" readonly id="usdtTrc20CopyInput" style="font-size: 11px;">
+                        <button onclick="navigator.clipboard.writeText(document.getElementById('usdtTrc20CopyInput').value);"><i class="fa-regular fa-copy"></i></button>
+                    </div>
+
+                    <p>2. Go to your Crypto Wallet, select USDT on the TRC20 network, paste the address and make the transfer.</p>
+                    <p>3. Next, copy the transaction hash and paste it into the Transaction Reference field.</p>
+                    
+                    <label>Transaction ID / Hash</label>
+                    <input type="text" placeholder="0x..." class="amount-input" style="text-align: left;">
+
+                    <p>Select or type in the amount to be deposited.</p>
+                    <div class="amount-grid">
+                        <button class="amount-btn">100</button><button class="amount-btn">200</button><button class="amount-btn">500</button>
+                        <button class="amount-btn">700</button><button class="amount-btn">1000</button><button class="amount-btn">2000</button>
+                    </div>
+                    
+                    <input type="number" placeholder="Amount" class="amount-input">
+                    <button class="btn-submit-red">DEPOSIT</button>
+                </div>
+                <button class="btn-back" onclick="backToDepositMethods()">CHOOSE ANOTHER DEPOSIT METHOD</button>
             </div>
 
             <!-- 3. WITHDRAWAL METHODS CONTENT -->
@@ -392,7 +420,7 @@
                 
                 <div class="deposit-instructions">
                     <label>Currency</label>
-                    <select class="filter-select" style="margin-bottom: 15px;"><option>ET - ETB</option></select>
+                    <select class="filter-select" style="margin-bottom: 15px; width: 100%;"><option>ET - ETB</option></select>
 
                     <label>Network</label>
                     <div id="withdrawActionNetworkText" style="margin-bottom: 15px; font-size: 14px; color: #555;">TON</div>
@@ -407,12 +435,9 @@
                     </div>
                     
                     <input type="number" placeholder="Amount" class="amount-input">
-                    <button class="btn-submit-red" onclick="alert('Withdrawal Request Submitted!')">WITHDRAW</button>
+                    <button class="btn-submit-red">WITHDRAW</button>
                 </div>
-                
-                <div style="padding: 0 20px;">
-                    <button class="btn-back" onclick="backToWithdrawMethods()">CHOOSE ANOTHER WITHDRAW METHOD</button>
-                </div>
+                <button class="btn-back" onclick="backToWithdrawMethods()">CHOOSE ANOTHER WITHDRAW METHOD</button>
             </div>
 
             <!-- 5. WITHDRAWAL REQUESTS HISTORY -->
@@ -440,14 +465,9 @@
     <!-- Chat Bubble -->
     <div class="floating-chat-bubble"><span class="chat-icon"><i class="fa-solid fa-comments"></i></span></div>
 
-    <!-- ========================================== -->
-    <!-- LEFT SIDEBAR - CHOOSE A SPORT              -->
-    <!-- ========================================== -->
+    <!-- LEFT SIDEBAR -->
     <aside id="leftSidebar" class="side-drawer left-drawer">
-        <div class="drawer-header white-bg">
-            <button class="close-drawer-btn" id="closeLeftBtn">✕</button>
-            <h3>Choose a sport</h3>
-        </div>
+        <div class="drawer-header white-bg"><button class="close-drawer-btn" id="closeLeftBtn">✕</button><h3>Choose a sport</h3></div>
         <div class="drawer-content white-bg">
             <ul class="sports-chooser-list">
                 <li><a href="#"><span class="sport-icon"><i class="fa-regular fa-futbol"></i></span> Football <span class="chevron">&#10095;</span></a></li>
@@ -456,11 +476,8 @@
         </div>
     </aside>
 
-    <!-- ========================================== -->
-    <!-- RIGHT SIDEBAR - LOGGED OUT (Perfect Match) -->
-    <!-- ========================================== -->
+    <!-- RIGHT SIDEBAR - LOGGED OUT -->
     <aside id="loggedOutDrawer" class="side-drawer right-drawer">
-        <!-- Made much wider, matching screenshot -->
         <div class="drawer-content white-bg logged-out-content">
             <div class="drawer-header white-bg" style="display: flex; align-items: center; justify-content: center; position: relative; padding: 20px;">
                 <button class="close-drawer-btn" id="closeLoggedOutBtn" style="position: absolute; left: 15px; color: #CD122D; font-size: 26px;">✕</button>
@@ -468,24 +485,22 @@
             </div>
             
             <div class="drawer-body user-body" style="padding-top: 15px; padding-bottom: 10px;">
-                <button id="openLoginModalBtn" class="btn-submit btn-submit-red full-width">LOGIN</button>
+                <button id="openLoginModalBtn" class="btn-submit-red">LOGIN</button>
                 <h3 class="user-sub-title" style="margin: 15px 0; font-size: 13px; color: #777; text-align: center; font-weight: normal;">New user?</h3>
-                <button id="openRegisterModalBtn" class="btn-submit btn-submit-red full-width">REGISTER</button>
+                <button id="openRegisterModalBtn" class="btn-submit-red">REGISTER</button>
             </div>
             
-            <div class="drawer-section text-center" style="background-color: white; padding: 20px 20px; border-bottom: 1px solid #eeeeee;">
+            <div class="drawer-section text-center" style="background-color: white; padding: 20px; border-bottom: 1px solid #eeeeee;">
                 <a href="#" class="user-link center" style="color: #000; text-decoration: none; font-size: 15px; font-weight: bold; gap: 10px;">
                     <i class="fa-solid fa-comments"></i> LIVE CHAT
                 </a>
             </div>
-            
-            <div class="drawer-section text-center" style="padding: 20px 20px; border-bottom: 1px solid #eeeeee; background-color: white;">
+            <div class="drawer-section text-center" style="padding: 20px; border-bottom: 1px solid #eeeeee; background-color: white;">
                 <a href="#" class="language-dropdown center" style="color: #111; text-decoration: none; font-size: 16px; gap: 8px;">
                     <img src="flag.png" alt="English" style="height: 16px; width: 24px; border-radius: 2px;"> English ⌄
                 </a>
             </div>
-
-            <!-- RESTORED APP STORE BOXES -->
+            <!-- APP STORE BOXES -->
             <div class="drawer-section gray-bg app-links-section" style="padding: 20px 15px;">
                 <div class="app-links-row">
                     <a href="#" style="background: white;"><i class="fa-brands fa-android fa-2x" style="color: #a4c639;"></i>Application<br><b>Android</b></a>
@@ -495,48 +510,46 @@
         </div>
     </aside>
 
-    <!-- ========================================== -->
-    <!-- RIGHT SIDEBAR - LOGGED IN MENU             -->
-    <!-- ========================================== -->
+    <!-- RIGHT SIDEBAR - LOGGED IN MENU -->
     <aside id="loggedInDrawer" class="side-drawer right-drawer">
-        <div class="drawer-content white-bg">
-            <div class="logged-in-header">
-                <button class="close-drawer-btn white-btn" id="closeUserDrawerBtn" style="color: #333 !important; font-size: 20px; font-weight: normal; margin-right: 15px; padding: 0;">✕</button>
-                <div class="user-id-display"><i class="fa-solid fa-user" style="color: #333 !important;"></i> <span id="displayUserId">918173078</span></div>
+        <div class="drawer-content white-bg" style="width: 100%; max-width: 350px;">
+            <div class="logged-in-header" style="background-color: #ffffff !important; display: flex; align-items: center; padding: 15px 20px; border-bottom: 1px solid #eee;">
+                <button class="close-drawer-btn white-btn" id="closeUserDrawerBtn" style="color: #333 !important; font-size: 20px; font-weight: normal; margin-right: 15px; padding: 0; background: none; border: none; cursor: pointer;">✕</button>
+                <div class="user-id-display" style="display: flex; align-items: center; gap: 10px; font-family: var(--font-condensed); font-weight: 700; font-size: 18px; color: #333 !important;"><i class="fa-solid fa-user" style="color: #333 !important;"></i> <span id="displayUserId">918173078</span></div>
             </div>
             
-            <div class="balance-container">
-                <div class="balance-top-row">
-                    <div class="real-balance">
-                        <span class="bal-label">Real Balance</span>
-                        <span class="bal-amount">0 ETB</span>
+            <div class="balance-container" style="background-color: #f9f9f9; padding: 15px 20px; border-bottom: 1px solid #ddd;">
+                <div class="balance-top-row" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                    <div class="real-balance" style="display: flex; flex-direction: column;">
+                        <span class="bal-label" style="font-weight: 700; font-size: 14px; color: #111; font-family: var(--font-condensed);">Real Balance</span>
+                        <span class="bal-amount" style="font-size: 13px; color: #555; margin-top: 2px;">0 ETB</span>
                     </div>
-                    <div class="bal-actions">
-                        <button class="btn-bal-action" onclick="openPaymentsTab('Deposit')">DEPOSIT</button>
-                        <button class="btn-bal-action" onclick="openPaymentsTab('Withdraw')">WITHDRAW</button>
+                    <div class="bal-actions" style="display: flex; gap: 5px;">
+                        <button class="btn-bal-action" onclick="openPaymentsTab('Deposit')" style="background-color: var(--accent-red); color: white; border: none; padding: 10px 14px; font-weight: 700; font-family: var(--font-condensed); border-radius: 2px; font-size: 13px; cursor: pointer; text-transform: uppercase;">DEPOSIT</button>
+                        <button class="btn-bal-action" onclick="openPaymentsTab('Withdraw')" style="background-color: var(--accent-red); color: white; border: none; padding: 10px 14px; font-weight: 700; font-family: var(--font-condensed); border-radius: 2px; font-size: 13px; cursor: pointer; text-transform: uppercase;">WITHDRAW</button>
                     </div>
                 </div>
-                <div class="bonus-balance">
-                    <span class="bal-label">Bonus Balance</span>
-                    <span class="bal-amount">0.00 ETB</span>
+                <div class="bonus-balance" style="display: flex; flex-direction: column; margin-bottom: 15px;">
+                    <span class="bal-label" style="font-weight: 700; font-size: 14px; color: #111; font-family: var(--font-condensed);">Bonus Balance</span>
+                    <span class="bal-amount" style="font-size: 13px; color: #555; margin-top: 2px;">0.00 ETB</span>
                 </div>
                 
-                <div class="balance-breakdown">
-                    <div class="breakdown-row red-text"><span>Total Balance</span><span>0.00 ETB</span></div>
-                    <div class="breakdown-row"><span>Balance Withdrawable</span><span>0 ETB</span></div>
-                    <div class="breakdown-row"><span>Balance Not Withdrawable</span><span>0.00 ETB</span></div>
-                    <div class="breakdown-row"><span>Bonus Balance</span><span>0.00 ETB</span></div>
+                <div class="balance-breakdown" style="border-top: 1px solid #eee; padding-top: 10px; display: flex; flex-direction: column; gap: 8px;">
+                    <div class="breakdown-row red-text" style="display: flex; justify-content: space-between; font-size: 13px; color: var(--accent-red);"><span>Total Balance</span><span>0.00 ETB</span></div>
+                    <div class="breakdown-row" style="display: flex; justify-content: space-between; font-size: 13px; color: #333;"><span>Balance Withdrawable</span><span>0 ETB</span></div>
+                    <div class="breakdown-row" style="display: flex; justify-content: space-between; font-size: 13px; color: #333;"><span>Balance Not Withdrawable</span><span>0.00 ETB</span></div>
+                    <div class="breakdown-row" style="display: flex; justify-content: space-between; font-size: 13px; color: #333;"><span>Bonus Balance</span><span>0.00 ETB</span></div>
                 </div>
             </div>
 
-            <ul class="user-menu-list">
-                <li><a href="#" onclick="openPaymentsTab('Deposit')"><i class="fa-solid fa-money-bill-1-wave"></i> Deposit</a></li>
-                <li><a href="#"><i class="fa-solid fa-file-invoice"></i> Account History</a></li>
-                <li><a href="#"><i class="fa-solid fa-user"></i> Profile</a></li>
-                <li><a href="#"><i class="fa-solid fa-list-ul"></i> Bet history</a></li>
-                <li><a href="#"><i class="fa-solid fa-trophy"></i> My Jackpots</a></li>
-                <li><a href="#"><i class="fa-solid fa-envelope"></i> Messages</a></li>
-                <li><a href="#"><i class="fa-solid fa-gift"></i> Bonus</a></li>
+            <ul class="user-menu-list" style="list-style: none; background: white;">
+                <li style="border-bottom: 1px solid #eee;"><a href="#" onclick="openPaymentsTab('Deposit')" style="display: flex; align-items: center; gap: 15px; padding: 16px 20px; color: #222; text-decoration: none; font-size: 15px; font-weight: 700; font-family: var(--font-condensed);"><i class="fa-solid fa-money-bill-1-wave" style="color: #444; font-size: 18px; width: 20px; text-align: center;"></i> Deposit</a></li>
+                <li style="border-bottom: 1px solid #eee;"><a href="#" style="display: flex; align-items: center; gap: 15px; padding: 16px 20px; color: #222; text-decoration: none; font-size: 15px; font-weight: 700; font-family: var(--font-condensed);"><i class="fa-solid fa-file-invoice" style="color: #444; font-size: 18px; width: 20px; text-align: center;"></i> Account History</a></li>
+                <li style="border-bottom: 1px solid #eee;"><a href="#" style="display: flex; align-items: center; gap: 15px; padding: 16px 20px; color: #222; text-decoration: none; font-size: 15px; font-weight: 700; font-family: var(--font-condensed);"><i class="fa-solid fa-user" style="color: #444; font-size: 18px; width: 20px; text-align: center;"></i> Profile</a></li>
+                <li style="border-bottom: 1px solid #eee;"><a href="#" style="display: flex; align-items: center; gap: 15px; padding: 16px 20px; color: #222; text-decoration: none; font-size: 15px; font-weight: 700; font-family: var(--font-condensed);"><i class="fa-solid fa-list-ul" style="color: #444; font-size: 18px; width: 20px; text-align: center;"></i> Bet history</a></li>
+                <li style="border-bottom: 1px solid #eee;"><a href="#" style="display: flex; align-items: center; gap: 15px; padding: 16px 20px; color: #222; text-decoration: none; font-size: 15px; font-weight: 700; font-family: var(--font-condensed);"><i class="fa-solid fa-trophy" style="color: #444; font-size: 18px; width: 20px; text-align: center;"></i> My Jackpots</a></li>
+                <li style="border-bottom: 1px solid #eee;"><a href="#" style="display: flex; align-items: center; gap: 15px; padding: 16px 20px; color: #222; text-decoration: none; font-size: 15px; font-weight: 700; font-family: var(--font-condensed);"><i class="fa-solid fa-envelope" style="color: #444; font-size: 18px; width: 20px; text-align: center;"></i> Messages</a></li>
+                <li style="border-bottom: 1px solid #eee;"><a href="#" style="display: flex; align-items: center; gap: 15px; padding: 16px 20px; color: #222; text-decoration: none; font-size: 15px; font-weight: 700; font-family: var(--font-condensed);"><i class="fa-solid fa-gift" style="color: #444; font-size: 18px; width: 20px; text-align: center;"></i> Bonus</a></li>
             </ul>
 
             <div class="drawer-section white-bg text-center" style="padding: 15px 20px; border-bottom: 1px solid #eeeeee;">
@@ -545,13 +558,13 @@
                 </a>
             </div>
 
-            <button class="btn-logout" id="logoutBtn">
+            <button class="btn-logout" id="logoutBtn" style="background-color: var(--accent-red); color: white; width: 100%; border: none; padding: 16px; font-size: 15px; font-weight: bold; font-family: var(--font-condensed); display: flex; align-items: center; gap: 10px; cursor: pointer; border-radius: 0;">
                 <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
             </button>
         </div>
     </aside>
 
-    <!-- MODALS (Login & Register Input Forms) -->
+    <!-- AUTHENTICATION MODALS -->
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <button class="close-modal-btn" data-modal="loginModal">✕</button>
@@ -570,7 +583,7 @@
                             <span class="eye-icon"><i class="fa-solid fa-eye-slash"></i></span>
                         </div>
                     </div>
-                    <button type="submit" class="btn-submit btn-submit-white">LOGIN</button>
+                    <button type="submit" class="btn-submit-white">LOGIN</button>
                 </form>
                 <div class="modal-footer-links">
                     <a href="#">Forgot Password</a><span>|</span><a href="#" id="switchToRegister">Create Account</a>
@@ -617,12 +630,23 @@
                         <input type="checkbox" id="termsCheck" checked required>
                         <label for="termsCheck">If you continue, you'll confirm that you've read and agree with the terms of use and the privacy policy</label>
                     </div>
-                    <button type="submit" class="btn-submit btn-submit-dim">REGISTER</button>
+                    <button type="submit" class="btn-submit-dim">REGISTER</button>
                 </form>
                 <div class="modal-footer-links">
                     <a href="#">Support</a><span>|</span><a href="#" id="switchToLogin">Enter</a>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- NEW: LOW BALANCE ANIMATED POPUP -->
+    <div id="lowBalanceModal" class="modal">
+        <div class="modal-content low-balance-box">
+            <button class="close-modal-btn" data-modal="lowBalanceModal" style="color: #999;">✕</button>
+            <i class="fa-solid fa-circle-exclamation" style="font-size: 50px; color: #cd122d; margin-bottom: 15px;"></i>
+            <h2 style="font-family: var(--font-condensed); color: #333; margin-bottom: 10px;">Your balance is low!</h2>
+            <p style="color: #cd122d; font-size: 15px; font-weight: bold; margin-bottom: 20px;">ቀሪ ሂሳብዎ አነስተኛ ነው!</p>
+            <button class="btn-submit-red" onclick="document.getElementById('lowBalanceModal').style.display='none'; openPaymentsTab('Deposit');" style="border-radius: 4px; padding: 12px; font-size: 14px;">DEPOSIT NOW</button>
         </div>
     </div>
 

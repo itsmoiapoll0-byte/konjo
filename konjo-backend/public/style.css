@@ -53,7 +53,7 @@ body { font-family: var(--font-regular); background-color: #f4f4f4; color: #333;
 
 /* --- SPORTSBOOK REPLICA --- */
 .upcoming-matches-container { background: white; margin-top: 10px; }
-.date-header { background: #e6e6e6; padding: 8px 15px; font-weight: bold; font-size: 14px; color: #444; font-family: var(--font-condensed); border-bottom: 1px solid #ccc; }
+.date-header { background: #e6e6e6; padding: 8px 15px; font-weight: bold; font-family: var(--font-condensed); color: #444; border-bottom: 1px solid #ccc; }
 .upcoming-match-row { display: flex; background: #fff; border-bottom: 1px solid #eee; }
 .um-time { width: 60px; padding: 15px 10px; color: #666; font-size: 12px; border-right: 1px solid #f0f0f0; display: flex; align-items: center; justify-content: center;}
 .um-teams { flex: 1; padding: 10px 15px; display: flex; flex-direction: column; gap: 5px; font-weight: bold; font-size: 13px; justify-content: center; color: #222;}
@@ -74,143 +74,82 @@ body { font-family: var(--font-regular); background-color: #f4f4f4; color: #333;
 .game-badge { position: absolute; top: 6px; left: 6px; background-color: var(--accent-green); color: #000; font-size: 10px; padding: 2px 6px; border-radius: 4px; font-weight: bold; z-index: 2; }
 .race-ribbon { position: absolute; bottom: 38px; right: -15px; background-color: var(--accent-red); color: white; font-size: 10px; font-weight: bold; padding: 2px 15px; transform: rotate(-45deg); z-index: 2; }
 
-/* Keep old match card css as backup */
-.game-category-header { background-color: var(--bg-header); color: white; padding: 12px 15px; display: flex; align-items: center; border-radius: 4px; margin-bottom: 10px; }
-.category-title { display: flex; align-items: center; gap: 10px; }
-.category-title h2 { font-size: 14px; font-weight: 500; font-family: var(--font-regular); }
-.dots-icon-horiz { font-weight: bold; letter-spacing: 2px; font-size: 14px; }
-.matches-table { width: 100%; border-collapse: collapse; background-color: white; border-radius: 4px; overflow: hidden; font-size: 12px; margin-bottom: 20px; border: 1px solid #e5e5e5;}
-.matches-table th, .matches-table td { padding: 12px 10px; text-align: left; border-bottom: 1px solid #eeeeee; }
-.matches-table th { background-color: #f8f9fa; color: #666; font-weight: normal; }
-.odds-cell { color: #000; font-weight: 700; font-size: 13px; font-family: var(--font-condensed); }
-.leagues-nav { display: flex; gap: 10px; margin-bottom: 10px; padding: 0 10px;}
-.league-tab { background-color: #e5e7eb; color: #555; padding: 10px 15px; border-radius: 2px; text-decoration: none; font-size: 12px; font-weight: bold; font-family: var(--font-condensed);}
-.league-tab.active { background-color: var(--accent-red); color: white; }
-.leagues-list { list-style: none; background-color: white; border-radius: 4px; overflow: hidden; border: 1px solid #e5e5e5; margin: 0 10px;}
-.leagues-list li { border-bottom: 1px solid #eeeeee; }
-.leagues-list li a { display: flex; align-items: center; gap: 10px; padding: 14px 15px; color: #222; text-decoration: none; font-size: 13px; font-weight: 500;}
+/* --- DRAWERS --- */
+.side-drawer { display: none; position: fixed; z-index: 99999; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.7); }
+.drawer-content { position: absolute; top: 0; right: 0; width: 90%; max-width: 400px; height: 100%; background: #fff; box-shadow: -5px 0 15px rgba(0,0,0,0.3); overflow-y: auto; }
+.left-drawer .drawer-content { left: 0; width: 85%; max-width: 320px;}
+.close-drawer-btn { background: none; border: none; color: #000; font-size: 22px; cursor: pointer; }
 
-/* --- Floating Chat Bubble --- */
-.floating-chat-bubble { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background-color: var(--accent-red); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 50; cursor: pointer; }
-.chat-icon { color: white; font-size: 28px; margin-top: 5px; }
-
-/* ========================================== */
-/* SIDE DRAWERS & MODALS (OVERLAY FIXES)      */
-/* ========================================== */
-.side-drawer { display: none; position: fixed; z-index: 99999; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.7); }
-.drawer-content { position: absolute; top: 0; height: 100%; background-color: #ffffff; display: flex; flex-direction: column; overflow-y: auto; box-shadow: -5px 0 15px rgba(0,0,0,0.3); }
-.left-drawer .drawer-content { left: 0; width: 85%; max-width: 320px; }
-
-/* Logged Out Drawer explicitly styled to match image_0ef9d3.jpg */
-.logged-out-content { right: 0; width: 90% !important; max-width: 400px !important; }
-.right-drawer .drawer-content { right: 0; width: 100%; max-width: 350px; }
-
-.white-bg { background-color: #ffffff; color: #000000; }
-.gray-bg { background-color: #f4f4f6; }
-.border-b { border-bottom: 1px solid #eeeeee; }
+/* --- MISC UTILS & BUTTONS --- */
+.btn-submit-red { background: var(--accent-red); color: #fff; border: none; padding: 14px; font-weight: 700; width: 100%; font-family: var(--font-condensed); cursor: pointer; border-radius: 2px; }
+.btn-submit-white { background: #fff; color: var(--modal-bg); border: none; padding: 14px; font-weight: 700; width: 100%; font-family: var(--font-condensed); cursor: pointer; border-radius: 2px; text-transform: uppercase; }
+.btn-submit-dim { background: rgba(255,255,255,0.2); color: #fff; border: none; padding: 14px; font-weight: 700; width: 100%; font-family: var(--font-condensed); cursor: pointer; border-radius: 2px; text-transform: uppercase; }
+.app-links-row { display: flex; gap: 10px; padding: 0 15px; }
+.app-links-row a { flex: 1; background: #fff; border: 1px solid #eee; padding: 10px; text-align: center; color: #000; text-decoration: none; font-size: 11px; }
+.border-b { border-bottom: 1px solid #eee; }
+.gray-bg { background-color: #f4f4f6; padding: 20px 0; }
 .center { display: flex; justify-content: center; align-items: center; }
 
-.drawer-header { display: flex; align-items: center; padding: 15px 20px; }
-.drawer-header h3 { font-size: 14px; font-weight: 500; font-family: var(--font-regular); margin-left: 15px;}
-.close-drawer-btn { background: none; border: none; color: #000; font-size: 22px; cursor: pointer; }
-.white-btn { color: #ffffff !important; }
-
-.sports-chooser-list { list-style: none; }
-.sports-chooser-list li { border-bottom: 1px solid #eeeeee; }
-.sports-chooser-list li a { display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; color: #222; text-decoration: none; font-size: 14px; font-weight: 500; }
-.sport-icon { margin-right: 15px; color: var(--accent-red); font-size: 18px; width: 20px; text-align: center; }
-.chevron { color: #aaa; font-size: 14px; }
-
-.logged-in-header { background-color: #ffffff; display: flex; align-items: center; padding: 15px 20px; }
-.user-id-display { display: flex; align-items: center; gap: 10px; font-family: var(--font-condensed); font-weight: 700; font-size: 18px; color: #333; }
-.balance-container { background-color: #f9f9f9; padding: 15px 20px; border-bottom: 1px solid #ddd; }
-.balance-top-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
-.real-balance { display: flex; flex-direction: column; }
-.bal-label { font-weight: 700; font-size: 14px; color: #111; font-family: var(--font-condensed); }
-.bal-amount { font-size: 13px; color: #555; margin-top: 2px; }
-.bal-actions { display: flex; gap: 5px; }
-.btn-bal-action { background-color: var(--accent-red); color: white; border: none; padding: 10px 14px; font-weight: 700; font-family: var(--font-condensed); border-radius: 2px; font-size: 13px; cursor: pointer; text-transform: uppercase;}
-.bonus-balance { display: flex; flex-direction: column; margin-bottom: 15px; }
-.balance-breakdown { border-top: 1px solid #eee; padding-top: 10px; display: flex; flex-direction: column; gap: 8px;}
-.breakdown-row { display: flex; justify-content: space-between; font-size: 13px; color: #333; }
-.red-text { color: var(--accent-red); }
-
-.user-menu-list { list-style: none; background: white; }
-.user-menu-list li { border-bottom: 1px solid #eee; }
-.user-menu-list li a { display: flex; align-items: center; gap: 15px; padding: 16px 20px; color: #222; text-decoration: none; font-size: 15px; font-weight: 700; font-family: var(--font-condensed); }
-.user-menu-list li a i { color: #444; font-size: 18px; width: 20px; text-align: center; }
-.btn-logout { background-color: var(--accent-red); color: white; width: 100%; border: none; padding: 16px; font-size: 15px; font-weight: bold; font-family: var(--font-condensed); display: flex; align-items: center; gap: 10px; cursor: pointer; border-radius: 0; }
-
-.btn-submit-red { background-color: #CD122D !important; color: #ffffff !important; border: none !important; border-radius: 2px; font-weight: 700; font-family: var(--font-condensed); width: 100%; padding: 16px; font-size: 16px; cursor: pointer; }
-.app-links-row { display: flex; gap: 15px; justify-content: center; padding: 0 15px;}
-.app-links-row a { flex: 1; background-color: #ffffff; padding: 12px; border: 1px solid #eeeeee; display: flex; flex-direction: column; align-items: center; gap: 5px; color: #111; text-decoration: none; font-size: 11px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-
-/* --- Modals (Z-index 100000 ensures it is above Drawers) --- */
-.modal { display: none; position: fixed; z-index: 100000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85); }
+/* --- MODALS (Login/Register & Low Balance) --- */
+.modal { display: none; position: fixed; z-index: 100000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); }
 .modal-content { background-color: var(--modal-bg); margin: 15vh auto; width: 90%; max-width: 340px; border-radius: 4px; position: relative; box-shadow: 0 15px 35px rgba(0,0,0,0.5); }
 .close-modal-btn { position: absolute; top: 10px; right: 12px; color: white; font-size: 20px; cursor: pointer; background: none; border: none; }
 .modal-header-area { text-align: center; padding: 25px 15px 10px 15px; }
 .modal-logo { height: 35px; margin-bottom: 5px; }
 .modal-title { color: white; font-size: 18px; font-weight: 700; font-family: var(--font-condensed); margin: 0; text-transform: uppercase;}
 .modal-body { padding: 20px; }
+.modal-input { width: 100%; padding: 12px; border: none; background: #fff; color: #000; font-size: 14px; border-radius: 2px; font-family: var(--font-regular); font-weight: bold; outline: none; }
 .form-group { margin-bottom: 14px; }
 .form-group label { display: block; color: white; font-size: 12px; font-weight: bold; margin-bottom: 6px; }
-.phone-input-group { display: flex; background-color: #ffffff; overflow: hidden; border-radius: 2px; }
-.phone-prefix { padding: 12px; background-color: #ffffff; color: #000; border-right: 1px solid #ccc; font-weight: 700; display: flex; align-items: center; font-size: 14px; font-family: var(--font-condensed); }
-.modal-input { width: 100%; padding: 12px; border: none; background-color: #ffffff; color: #000; font-size: 14px; outline: none; border-radius: 2px; font-family: var(--font-regular); font-weight: bold;}
+.phone-input-group { display: flex; background-color: #ffffff; border-radius: 2px; overflow: hidden; }
+.phone-prefix { padding: 12px; background: #fff; color: #000; border-right: 1px solid #ccc; font-weight: 700; font-family: var(--font-condensed); font-size: 14px; }
 .password-input-group { position: relative; display: flex; align-items: center; }
 .password-input-group .modal-input { padding-right: 35px; border-radius: 2px; }
 .eye-icon { position: absolute; right: 12px; color: #6b7280; cursor: pointer; font-size: 16px; }
 .checkbox-group { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 12px; }
-.checkbox-group input[type="checkbox"] { margin-top: 3px; width: 16px; height: 16px; }
+.checkbox-group input { margin-top: 3px; width: 16px; height: 16px; }
 .checkbox-group label { color: white; font-size: 11px; line-height: 1.4; }
-.btn-submit-white { background-color: white; color: var(--modal-bg); width: 100%; padding: 14px; border: none; font-weight: 700; font-family: var(--font-condensed); font-size: 15px; cursor: pointer; margin-top: 5px; border-radius: 2px; text-transform: uppercase;}
-.btn-submit-dim { background-color: rgba(255,255,255,0.2); color: white; width: 100%; padding: 14px; border: none; font-weight: 700; font-family: var(--font-condensed); font-size: 15px; cursor: pointer; margin-top: 5px; border-radius: 2px; text-transform: uppercase;}
 .modal-footer-links { display: flex; justify-content: center; gap: 10px; margin-top: 15px; padding-bottom: 5px; }
 .modal-footer-links a { color: white; text-decoration: none; font-size: 12px; font-weight: 500; }
 .modal-footer-links span { color: rgba(255,255,255,0.5); font-size: 12px; }
 
-/* ========================================== */
-/* PAYMENTS SECTION                           */
-/* ========================================== */
+/* Animated Low Balance Specifics */
+.low-balance-box { background: white !important; text-align: center; padding: 30px 20px 25px 20px; border-radius: 8px !important; margin-top: 30vh;}
+@keyframes popIn { 0% { transform: scale(0.8); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+.animated-popup { animation: popIn 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+
+/* --- PAYMENTS & ACTION PAGES --- */
+#paymentsView { background-color: #f4f4f4; min-height: 100vh; padding-bottom: 50px;}
 .payments-title-bar { background-color: var(--bg-header); color: white; text-align: center; padding: 15px; font-size: 15px; font-weight: 700; font-family: var(--font-condensed); }
 .payments-tabs-nav { display: flex; background: var(--bg-header); border-top: 1px solid rgba(255,255,255,0.1); }
 .pay-tab { flex: 1; background: none; border: none; color: white; padding: 15px 5px; font-size: 14px; font-weight: 500; font-family: var(--font-condensed); cursor: pointer; border-bottom: 3px solid transparent; }
 .pay-tab.active { color: var(--accent-yellow); border-bottom: 3px solid var(--accent-yellow); font-weight: bold; }
-
 .pay-content-area { padding: 15px; }
 .payment-card { background: white; border: 1px solid #ddd; margin-bottom: 15px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-radius: 2px; }
-
-/* FIXED LOGO SIZING */
-.pay-logo-area { padding: 25px; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: center; }
+.pay-logo-area { padding: 25px; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: center;}
 .pay-logo-area img { max-height: 40px; width: auto; object-fit: contain; }
-
 .pay-detail-row { padding: 12px; border-bottom: 1px solid #eee; font-size: 14px; color: #333; display: flex; flex-direction: column; gap: 5px;}
 .btn-deposit-action { width: 90%; margin: 20px auto; background: white; color: #15803d; border: 2px solid #15803d; padding: 12px; font-size: 15px; font-weight: bold; font-family: var(--font-condensed); border-radius: 2px; cursor: pointer; text-transform: uppercase; }
 .withdraw-red-btn { color: #cd122d !important; border: 2px solid #cd122d !important; }
 
-/* Action Pages */
+/* Action Pages Detail */
 .action-page { background: white; padding-bottom: 20px; }
 .action-page-logo { padding: 15px; border-bottom: 1px solid #eee; display: flex; justify-content: center; }
-.action-page-logo img { max-height: 40px; width: auto; object-fit: contain; }
 .action-detail-row { display:flex; flex-direction:column; align-items:center; padding: 12px; border-bottom: 1px solid #eee; }
 .action-detail-row span { color:#666; font-size:13px; margin-bottom:5px; }
 .action-detail-row b { font-size:14px; color: #333; }
-
 .deposit-instructions { padding: 20px; text-align: left; background: #fff; }
 .deposit-instructions p { color: #666; font-size: 13px; line-height: 1.5; margin-bottom: 10px; }
 .deposit-instructions label { font-weight: bold; font-size: 13px; color: #555; display:block; margin-bottom:5px; }
-
 .copy-input-group { display: flex; margin-bottom: 15px; }
 .copy-input-group input { flex: 1; padding: 12px; background: #f0f0f0; border: 1px solid #ccc; color: #555; font-size: 14px; border-radius: 2px 0 0 2px; outline: none; }
 .copy-input-group button { padding: 0 15px; background: #f9f9f9; border: 1px solid #ccc; border-left: none; border-radius: 0 2px 2px 0; cursor: pointer; color: #555; }
-
 .amount-input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 2px; margin-bottom: 20px; font-size: 14px; outline: none; text-align: right; }
 .amount-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 15px; }
 .amount-btn { background-color: #1ea0d9; color: white; border: none; padding: 12px 0; font-size: 14px; border-radius: 2px; cursor: pointer; font-family: var(--font-regular); }
 .btn-back { width: calc(100% - 40px); margin: 0 20px; padding: 15px; background: #fff; border: 1px solid #ddd; color: #555; font-weight: bold; font-family: var(--font-condensed); font-size: 13px; cursor: pointer; border-radius: 2px; text-transform: uppercase; }
 
-/* Withdrawal Request Tab specifics */
+/* Withdrawal Request Tables */
 .filter-group { display: flex; flex-direction: column; gap: 12px; margin-bottom: 15px; }
 .filter-select { padding: 14px; border: 1px solid #ccc; background: #f9f9f9; font-family: var(--font-regular); color: #333; font-size: 14px; border-radius: 2px; font-weight: bold;}
 .filter-actions { display: flex; gap: 10px; margin-bottom: 20px; }

@@ -16,6 +16,7 @@ const loggedInActions = document.getElementById('loggedInActions');
 
 const loginModal = document.getElementById('loginModal');
 const registerModal = document.getElementById('registerModal');
+const lowBalanceModal = document.getElementById('lowBalanceModal');
 
 const sideDrawerLeft = document.getElementById('leftSidebar');
 const loggedOutDrawer = document.getElementById('loggedOutDrawer');
@@ -61,22 +62,31 @@ navVirtualBtn.onclick = (e) => {
 };
 
 // ==========================================
-// AUTHENTICATION LOGIC (9-Digit Bypass)
+// VIRTUAL GAMES CLICK (Animated Low Balance Modal)
 // ==========================================
-const API_URL = '/api'; 
+document.querySelectorAll('.game-card').forEach(card => {
+    card.onclick = () => {
+        lowBalanceModal.style.display = "block";
+        lowBalanceModal.querySelector('.modal-content').classList.add('animated-popup');
+    };
+});
 
+// ==========================================
+// AUTHENTICATION LOGIC (Seamless Bypass)
+// ==========================================
 function showLoggedInState(phone) {
     loggedOutActions.style.display = 'none';
     loggedInActions.style.display = 'flex';
     document.getElementById('displayUserId').innerText = phone;
     
+    // Smoothly close everything
     loggedOutDrawer.style.display = "none";
     loginModal.style.display = "none";
     registerModal.style.display = "none";
 }
 
 // --- REGISTRATION ---
-document.getElementById('registerForm').onsubmit = async function(e) {
+document.getElementById('registerForm').onsubmit = function(e) {
     e.preventDefault(); 
     const phone = document.getElementById('regPhone').value;
     const password = document.getElementById('regPassword').value;
@@ -87,62 +97,26 @@ document.getElementById('registerForm').onsubmit = async function(e) {
         return;
     }
 
+    // 9 Digits + Match -> Seamless Login (NO ALERTS)
     if (/^\d{9}$/.test(phone)) {
         localStorage.setItem('konjo_user', phone);
-        alert("Registration Success! Account saved.");
         showLoggedInState(phone);
-        return;
-    }
-
-    try {
-        const response = await fetch(`${API_URL}/register`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ phone, password })
-        });
-        const data = await response.json();
-        if (response.ok) {
-            alert("Success: " + data.message);
-            registerModal.style.display = "none";
-            document.getElementById('registerForm').reset();
-            loginModal.style.display = "block";
-        } else {
-            alert("Registration Error: " + data.message);
-        }
-    } catch (error) {
-        alert("Failed to connect to the server.");
+    } else {
+        alert("Please enter exactly 9 digits for quick access.");
     }
 };
 
 // --- LOGIN ---
-document.getElementById('loginForm').onsubmit = async function(e) {
+document.getElementById('loginForm').onsubmit = function(e) {
     e.preventDefault(); 
     const phone = document.getElementById('loginPhone').value;
-    const password = document.getElementById('loginPassword').value;
 
+    // 9 Digits instantly logs in seamlessly (NO ALERTS)
     if (/^\d{9}$/.test(phone)) {
         localStorage.setItem('konjo_user', phone);
-        alert("Quick Access: Logged in successfully!");
         showLoggedInState(phone);
-        return; 
-    }
-
-    try {
-        const response = await fetch(`${API_URL}/login`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ phone, password })
-        });
-        const data = await response.json();
-        if (response.ok) {
-            localStorage.setItem('konjo_user', phone);
-            alert("Logged in successfully!");
-            showLoggedInState(phone);
-        } else {
-            alert("Login Error: " + data.message);
-        }
-    } catch (error) {
-        alert("Failed to connect to the server.");
+    } else {
+        alert("Please enter exactly 9 digits for quick access.");
     }
 };
 
@@ -158,8 +132,6 @@ document.getElementById('logoutBtn').onclick = () => {
     paymentsView.style.display = 'none';
     if(actionBar) actionBar.style.display = 'flex';
     navSportBtn.click(); // Reset to sport view
-
-    alert("Logged out securely.");
 };
 
 // ==========================================
@@ -200,27 +172,36 @@ document.getElementById('switchToLogin').onclick = (e) => {
     loginModal.style.display = "block";
 };
 
-document.getElementById('openDrawerBtn').onclick = () => {
-    sideDrawerLeft.style.display = "block";
-};
-document.getElementById('closeLeftBtn').onclick = () => {
-    sideDrawerLeft.style.display = "none";
-};
+document.getElementById('openDrawerBtn').onclick = () => sideDrawerLeft.style.display = "block";
+document.getElementById('closeLeftBtn').onclick = () => sideDrawerLeft.style.display = "none";
 
+// Close modals generically
 document.querySelectorAll('.close-modal-btn').forEach(btn => {
     btn.onclick = function() {
-        document.getElementById(this.getAttribute('data-modal')).style.display = "none";
+        const targetModal = document.getElementById(this.getAttribute('data-modal'));
+        targetModal.style.display = "none";
+        
+        // Remove animation class so it plays again next time
+        if(targetModal.querySelector('.modal-content').classList.contains('animated-popup')) {
+            targetModal.querySelector('.modal-content').classList.remove('animated-popup');
+        }
     }
 });
 
+// Click outside to close any drawer or modal
 window.onclick = function(event) {
     if (event.target === loginModal) loginModal.style.display = "none";
     if (event.target === registerModal) registerModal.style.display = "none";
+    if (event.target === lowBalanceModal) {
+        lowBalanceModal.style.display = "none";
+        lowBalanceModal.querySelector('.modal-content').classList.remove('animated-popup');
+    }
     if (event.target === sideDrawerLeft) sideDrawerLeft.style.display = "none";
     if (event.target === loggedOutDrawer) loggedOutDrawer.style.display = "none";
     if (event.target === loggedInDrawer) loggedInDrawer.style.display = "none";
 }
 
+// Password eye toggle logic
 document.querySelectorAll('.eye-icon i').forEach(icon => {
     icon.parentElement.onclick = function() {
         const input = this.previousElementSibling;
@@ -256,6 +237,9 @@ window.openPaymentsTab = function(tabName) {
     
     const depositContent = document.getElementById('depositContent');
     const depositActionTelebirr = document.getElementById('depositActionTelebirr');
+    const depositActionUsdtTon = document.getElementById('depositActionUsdtTon');
+    const depositActionUsdtTrc20 = document.getElementById('depositActionUsdtTrc20');
+    
     const withdrawContent = document.getElementById('withdrawContent');
     const withdrawActionPage = document.getElementById('withdrawActionPage');
     const withdrawalReqContent = document.getElementById('withdrawalReqContent');
@@ -264,12 +248,17 @@ window.openPaymentsTab = function(tabName) {
     const tabWithdrawBtn = document.getElementById('tabWithdrawBtn');
     const tabWithdrawReqBtn = document.getElementById('tabWithdrawReqBtn');
 
+    // Reset tabs
     tabDepositBtn.classList.remove('active');
     tabWithdrawBtn.classList.remove('active');
     tabWithdrawReqBtn.classList.remove('active');
     
+    // Hide everything
     depositContent.style.display = 'none';
     depositActionTelebirr.style.display = 'none';
+    depositActionUsdtTon.style.display = 'none';
+    depositActionUsdtTrc20.style.display = 'none';
+    
     withdrawContent.style.display = 'none';
     withdrawActionPage.style.display = 'none';
     withdrawalReqContent.style.display = 'none';
@@ -286,24 +275,25 @@ window.openPaymentsTab = function(tabName) {
     }
 }
 
-// Deposit Actions
+// Custom Deposit Pages Logic
 window.openDepositAction = function(method) {
     document.getElementById('depositContent').style.display = 'none';
-    if(method === 'telebirr') {
-        document.getElementById('depositActionTelebirr').style.display = 'block';
-    }
+    if(method === 'telebirr') document.getElementById('depositActionTelebirr').style.display = 'block';
+    if(method === 'usdt-ton') document.getElementById('depositActionUsdtTon').style.display = 'block';
+    if(method === 'usdt-trc20') document.getElementById('depositActionUsdtTrc20').style.display = 'block';
 }
 
 window.backToDepositMethods = function() {
     document.getElementById('depositActionTelebirr').style.display = 'none';
+    document.getElementById('depositActionUsdtTon').style.display = 'none';
+    document.getElementById('depositActionUsdtTrc20').style.display = 'none';
     document.getElementById('depositContent').style.display = 'block';
 }
 
-// Withdrawal Actions
+// Withdrawal Logic
 window.openWithdrawAction = function(method) {
     document.getElementById('withdrawContent').style.display = 'none';
     
-    // Dynamic text changes based on method clicked
     let networkText = "TON";
     let logoSrc = "usdt.png";
 
@@ -313,7 +303,6 @@ window.openWithdrawAction = function(method) {
 
     document.getElementById('withdrawActionLogo').src = logoSrc;
     document.getElementById('withdrawActionNetworkText').innerText = networkText;
-    
     document.getElementById('withdrawActionPage').style.display = 'block';
 }
 
